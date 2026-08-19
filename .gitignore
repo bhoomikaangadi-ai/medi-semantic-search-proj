@@ -15,3 +15,43 @@ __pycache__
 
 # ignore special files or folds
 .DS_Store
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+env/
+medgraphrag/
+
+# Environment/secrets
+.env
+*.env
+
+# IDE
+.vscode/
+.idea/
+
+# Neo4j / databases
+data/
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Large/generated files
+*.bin
+*.pt
+*.pth
+*.safetensors

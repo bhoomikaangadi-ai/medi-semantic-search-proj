@@ -1,75 +1,288 @@
-import openai
-from openai import OpenAI
 from concurrent.futures import ThreadPoolExecutor
-import tiktoken
-import os
 
-# Add your own OpenAI API key
-openai_api_key = os.getenv("OPENAI_API_KEY")
+from camel.models import OllamaModel
+from camel.agents import ChatAgent
+from camel.messages import BaseMessage
+
+
+# ============================================================
+# Ollama Model
+# ============================================================
+
+model = OllamaModel(
+    model_type="qwen2.5:3b",
+    model_config_dict={
+        "temperature": 0.0,
+        "max_tokens": 1024,
+    },
+    url="http://127.0.0.1:11434/v1",
+)
+
+
+# ============================================================
+# Summary Prompt
+# ============================================================
 
 sum_prompt = """
-Generate a structured summary from the provided medical source (report, paper, or book), strictly adhering to the following categories. The summary should list key information under each category in a concise format: 'CATEGORY_NAME: Key information'. No additional explanations or detailed descriptions are necessary unless directly related to the categories:
+Generate a structured summary from the provided medical text.
 
-ANATOMICAL_STRUCTURE: Mention any anatomical structures specifically discussed.
-BODY_FUNCTION: List any body functions highlighted.
-BODY_MEASUREMENT: Include normal measurements like blood pressure or temperature.
-BM_RESULT: Results of these measurements.
-BM_UNIT: Units for each measurement.
-BM_VALUE: Values of these measurements.
-LABORATORY_DATA: Outline any laboratory tests mentioned.
-LAB_RESULT: Outcomes of these tests (e.g., 'increased', 'decreased').
-LAB_VALUE: Specific values from the tests.
-LAB_UNIT: Units of measurement for these values.
-MEDICINE: Name medications discussed.
-MED_DOSE, MED_DURATION, MED_FORM, MED_FREQUENCY, MED_ROUTE, MED_STATUS, MED_STRENGTH, MED_UNIT, MED_TOTALDOSE: Provide concise details for each medication attribute.
-PROBLEM: Identify any medical conditions or findings.
-PROCEDURE: Describe any procedures.
-PROCEDURE_RESULT: Outcomes of these procedures.
-PROC_METHOD: Methods used.
-SEVERITY: Severity of the conditions mentioned.
-MEDICAL_DEVICE: List any medical devices used.
-SUBSTANCE_ABUSE: Note any substance abuse mentioned.
-Each category should be addressed only if relevant to the content of the medical source. Ensure the summary is clear and direct, suitable for quick reference.
+IMPORTANT RULES:
+- Use ONLY information explicitly present in the text.
+- Do NOT invent or assume information.
+- Do NOT add information from outside the text.
+- Keep the output concise and factual.
+- Return ONLY categories that contain relevant information.
+
+Use the following categories when relevant:
+
+ANATOMICAL_STRUCTURE:
+Anatomical structures specifically discussed.
+
+BODY_FUNCTION:
+Body functions discussed.
+
+BODY_MEASUREMENT:
+Measurements such as blood pressure, temperature,
+oxygen saturation, ejection fraction, etc.
+
+BM_RESULT:
+Result of the measurement.
+
+BM_UNIT:
+Unit of measurement.
+
+BM_VALUE:
+Numerical value.
+
+LABORATORY_DATA:
+Laboratory tests mentioned.
+
+LAB_RESULT:
+Results of laboratory tests.
+
+LAB_VALUE:
+Numerical laboratory values.
+
+LAB_UNIT:
+Units of laboratory measurements.
+
+MEDICINE:
+Medications mentioned.
+
+MED_DOSE:
+Medication dose.
+
+MED_DURATION:
+Medication duration.
+
+MED_FORM:
+Medication form.
+
+MED_FREQUENCY:
+Medication frequency.
+
+MED_ROUTE:
+Medication route.
+
+MED_STATUS:
+Whether the medication was started, stopped,
+continued, or discontinued.
+
+MED_STRENGTH:
+Medication strength.
+
+MED_UNIT:
+Medication unit.
+
+MED_TOTALDOSE:
+Total medication dose if explicitly mentioned.
+
+PROBLEM:
+Medical conditions, diagnoses, symptoms, or findings.
+
+PROCEDURE:
+Medical procedures performed.
+
+PROCEDURE_RESULT:
+Results of procedures.
+
+PROC_METHOD:
+Methods used.
+
+SEVERITY:
+Severity of medical conditions.
+
+MEDICAL_DEVICE:
+Medical devices used.
+
+SUBSTANCE_ABUSE:
+Substance abuse information, only if explicitly mentioned.
+
+FORMAT:
+
+CATEGORY_NAME: information
+
+Example:
+
+PROBLEM: Congestive heart failure; cardiorespiratory arrest.
+
+MEDICINE: Metoprolol; captopril.
+
+MED_STATUS: Metoprolol and captopril were prescribed.
+
+BODY_MEASUREMENT: Oxygen saturation.
+
+BM_VALUE: Greater than 95%.
+
+BM_UNIT: Percent; oxygen delivered at 2 liters.
+
+Do not provide explanations outside the categories.
 """
 
-def call_openai_api(chunk):
-    client = OpenAI(
-        api_key=os.getenv("OPENAI_API_KEY"),
-        base_url=os.getenv("OPENAI_API_BASE_URL")
-    )
-    response = client.chat.completions.create(
-        model="gpt-4-1106-preview",
-        messages=[
-            {"role": "system", "content": sum_prompt},
-            {"role": "user", "content": f" {chunk}"},
-        ],
-        max_tokens=500,
-        n=1,
-        stop=None,
-        temperature=0.5,
-    )
-    return response.choices[0].message.content
 
-def split_into_chunks(text, tokens=500):
-    encoding = tiktoken.encoding_for_model('gpt-4-1106-preview')
-    words = encoding.encode(text)
+# ============================================================
+# Summarize One Chunk
+# ============================================================
+
+def call_ollama_api(chunk):
+
+    try:
+
+        agent = ChatAgent(
+            system_message=BaseMessage.make_assistant_message(
+                role_name="Medical Summarizer",
+                content=sum_prompt
+            ),
+            model=model
+        )
+
+        message = BaseMessage.make_user_message(
+            role_name="User",
+            content=chunk
+        )
+
+        response = agent.step(message)
+
+        if response is None:
+            return ""
+
+        if response.msg is None:
+            return ""
+
+        return response.msg.content
+
+    except Exception as e:
+
+        print("ERROR while summarizing chunk:")
+        print(e)
+
+        return ""
+
+
+# ============================================================
+# Split Text Into Chunks
+# ============================================================
+
+def split_into_chunks(text, words_per_chunk=800):
+
+    words = text.split()
+
     chunks = []
-    for i in range(0, len(words), tokens):
-        chunks.append(' '.join(encoding.decode(words[i:i + tokens])))
-    return chunks   
+
+    for i in range(0, len(words), words_per_chunk):
+
+        chunk = " ".join(
+            words[i:i + words_per_chunk]
+        )
+
+        if chunk.strip():
+            chunks.append(chunk)
+
+    return chunks
+
+
+# ============================================================
+# Process All Chunks
+# ============================================================
 
 def process_chunks(content):
-    chunks = split_into_chunks(content)
 
-    # Processes chunks in parallel
-    with ThreadPoolExecutor() as executor:
-        responses = list(executor.map(call_openai_api, chunks))
-    # print(responses)
+    chunks = split_into_chunks(
+        content,
+        words_per_chunk=800
+    )
+
+    print("\n========================================")
+    print("Summary generation")
+    print("Number of chunks:", len(chunks))
+    print("========================================\n")
+
+    responses = []
+
+    # Keep this low because Qwen is running locally.
+    with ThreadPoolExecutor(max_workers=2) as executor:
+
+        futures = []
+
+        for chunk in chunks:
+
+            futures.append(
+                executor.submit(
+                    call_ollama_api,
+                    chunk
+                )
+            )
+
+        for i, future in enumerate(futures):
+
+            try:
+
+                response = future.result()
+
+                print(
+                    f"Summary completed: "
+                    f"{i + 1}/{len(chunks)}"
+                )
+
+                if response:
+                    responses.append(response)
+
+            except Exception as e:
+
+                print(
+                    f"ERROR processing summary "
+                    f"chunk {i + 1}: {e}"
+                )
+
     return responses
 
 
-if __name__ == "__main__":
-    content = " sth you wanna test"
-    process_chunks(content)
+# ============================================================
+# Test
+# ============================================================
 
-# Can take up to a few minutes to run depending on the size of your data input
+if __name__ == "__main__":
+
+    content = """
+    The patient was admitted with cardiorespiratory arrest.
+    The patient had congestive heart failure with an ejection
+    fraction of 15% to 20%.
+
+    The patient was treated with metoprolol and captopril.
+
+    Oxygen saturation was greater than 95% on
+    2 liters nasal cannula.
+
+    The patient developed acute renal failure which
+    resolved following fluid resuscitation.
+    """
+
+    results = process_chunks(content)
+
+    print("\n========== SUMMARY ==========\n")
+
+    for i, result in enumerate(results):
+
+        print(f"--- Summary {i + 1} ---")
+        print(result)
+        print()
