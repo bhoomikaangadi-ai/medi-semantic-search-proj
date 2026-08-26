@@ -1,138 +1,194 @@
-from camel.storages import Neo4jGraph
-from utils import search_similar_nodes, call_llm
+import os
 
+# Windows OpenMP fix
+os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
+os.environ["OMP_NUM_THREADS"] = "1"
 
-# --------------------------------------------------
-# Neo4j connection
-# --------------------------------------------------
+import json
+import faiss
+import torch
+import ollama
+from transformers import AutoTokenizer, AutoModel
 
-n4j = Neo4jGraph(
-    url="bolt://127.0.0.1:7687",
-    username="neo4j",
-    password="Medical@123",
-)
+# ==========================================
+# CONFIGURATION
+# ==========================================
 
+MODEL_NAME = "dmis-lab/biobert-base-cased-v1.2"
+OLLAMA_MODEL = "qwen2.5:7b"
 
-# --------------------------------------------------
-# Retrieve relevant graph context
-# --------------------------------------------------
+# ==========================================
+# LOAD BIOBERT
+# ==========================================
 
-def get_relevant_context(query, top_k=5):
+print("Loading BioBERT...")
 
-    nodes = search_similar_nodes(
-        n4j,
-        query,
-        top_k=top_k
+tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
+model = AutoModel.from_pretrained(MODEL_NAME)
+model.eval()
+
+# ==========================================
+# LOAD FAISS + DATA
+# ==========================================
+
+print("Loading FAISS...")
+
+index = faiss.read_index("medical_faiss.index")
+
+with open("medical_chunks_source.json", encoding="utf-8") as f:
+    chunks = json.load(f)
+
+with open("medical_graph.json", encoding="utf-8") as f:
+    graph = json.load(f)
+
+print("System Ready!")
+
+# ==========================================
+# BIOBERT EMBEDDING
+# ==========================================
+
+def embed(text):
+    inputs = tokenizer(
+        text,
+        return_tensors="pt",
+        truncation=True,
+        padding=True,
+        max_length=512
     )
 
-    context = []
+    with torch.no_grad():
+        output = model(**inputs)
 
-    for node in nodes:
+    return output.last_hidden_state.mean(dim=1).numpy().astype("float32")
 
-        node_id = node["id"]
+# ==========================================
+# ONTOLOGY LOOKUP
+# ==========================================
 
-        context.append(
-            f"Node: {node_id}"
+def get_related_concepts(chunk_id):
+
+    chunk_name = f"chunk_{chunk_id}"
+
+    concept_ids = [
+        rel["target"]
+        for rel in graph["relationships"]
+        if rel["source"] == chunk_name
+    ]
+
+    names = []
+
+    for node in graph["nodes"]:
+        if node["id"] in concept_ids:
+            names.append(node["name"])
+
+    return list(dict.fromkeys(names))[:15]
+
+# ==========================================
+# HYBRID RERANKER
+# ==========================================
+
+def rerank_results(query, indices, distances):
+
+    query_words = set(query.lower().split())
+
+    ranked = []
+
+    for idx, distance in zip(indices[0], distances[0]):
+
+        chunk = chunks[idx]
+        text = chunk["text"].lower()
+
+        keyword_score = sum(word in text for word in query_words)
+
+        concepts = get_related_concepts(chunk["chunk_id"])
+        concept_text = " ".join(concepts).lower()
+
+        ontology_score = sum(word in concept_text for word in query_words)
+
+        faiss_score = 1 / (1 + float(distance))
+
+        final_score = (
+            faiss_score * 0.6
+            + keyword_score * 0.3
+            + ontology_score * 0.1
         )
 
-        cypher = """
-        MATCH (n)-[r]-(m)
-        WHERE n.id = $node_id
+        ranked.append((final_score, idx))
 
-        RETURN
-            n.id AS source,
-            type(r) AS relationship,
-            m.id AS target
-        """
+    ranked.sort(reverse=True)
 
-        relationships = n4j.query(
-            cypher,
-            {
-                "node_id": node_id
-            }
+    return [idx for _, idx in ranked[:5]]
+
+# ==========================================
+# SEARCH LOOP
+# ==========================================
+
+while True:
+
+    query = input("\nAsk a medical question (or type exit): ")
+
+    if query.lower() == "exit":
+        break
+
+    # BioBERT embedding
+    q = embed(query)
+
+    # Retrieve top-20 candidates from FAISS
+    distances, indices = index.search(q, 20)
+
+    # Hybrid reranking
+    best_indices = rerank_results(query, indices, distances)
+
+    evidence = []
+    concepts = set()
+
+    for idx in best_indices:
+
+        c = chunks[idx]
+
+        evidence.append(
+            f"[Source: {c['source']} | {c['document']} | Chunk {c['chunk_id']}]\n{c['text']}"
         )
 
-        for rel in relationships:
-
-            context.append(
-                f"{rel['source']} "
-                f"--[{rel['relationship']}]--> "
-                f"{rel['target']}"
-            )
-
-    return "\n".join(context)
-
-
-# --------------------------------------------------
-# Ask Qwen
-# --------------------------------------------------
-
-def ask_question(query):
-
-    context = get_relevant_context(
-        query,
-        top_k=5
-    )
+        concepts.update(get_related_concepts(c["chunk_id"]))
 
     prompt = f"""
+You are an AI medical semantic search assistant.
+
+Answer ONLY using the retrieved medical evidence.
+
 Question:
 {query}
 
-Relevant medical graph information:
-{context}
+Retrieved Evidence:
+{chr(10).join(evidence)}
 
-Answer the question using ONLY the information
-provided above.
-
-Do not invent medical information.
-
-If the information is insufficient, say:
-"Insufficient information in the medical graph."
-
-Give a concise answer.
+Related Medical Concepts:
+{", ".join(sorted(concepts))}
 """
 
-    system_prompt = """
-You are a medical Graph RAG question-answering assistant.
-
-Use only the retrieved graph information.
-
-Do not hallucinate or add information
-that is not present in the retrieved context.
-"""
-
-    print("\nGenerating answer using Qwen...\n")
-
-    answer = call_llm(
-        system_prompt,
-        prompt
+    response = ollama.chat(
+        model=OLLAMA_MODEL,
+        messages=[
+            {
+                "role": "user",
+                "content": prompt
+            }
+        ]
     )
 
-    return answer
+    print("\n" + "=" * 70)
+    print("AI SUMMARY")
+    print("=" * 70)
+    print(response["message"]["content"])
 
+    print("\nSources:")
 
-# --------------------------------------------------
-# Interactive real-time question answering
-# --------------------------------------------------
+    for idx in best_indices:
+        c = chunks[idx]
+        print(
+            f"- {c['source']} | {c['document']} | Chunk {c['chunk_id']}"
+        )
 
-if __name__ == "__main__":
-
-    print("========================================")
-    print("Medical Graph RAG")
-    print("Real-time Question Answering")
-    print("Type 'exit' to stop")
-    print("========================================")
-
-    while True:
-
-        question = input("\nQuestion: ")
-
-        if question.lower() == "exit":
-            break
-
-        answer = ask_question(question)
-
-        print("\n========================================")
-        print("FINAL ANSWER")
-        print("========================================")
-        print(answer)
+    print("\nRelated Concepts:")
+    print(", ".join(sorted(concepts)))

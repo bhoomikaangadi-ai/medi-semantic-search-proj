@@ -1,0 +1,54 @@
+{
+  "entity_types": [
+    "Disease",
+    "Symptom",
+    "Sign",
+    "WarningSign",
+    "SevereManifestation",
+    "DiagnosticTest",
+    "Treatment",
+    "Medication",
+    "Pathogen",
+    "VirusSerotype",
+    "Vector",
+    "RiskFactor",
+    "ClinicalPhase",
+    "BodySystem",
+    "PatientGroup"
+  ],
+
+  "relationship_types": [
+    "HAS_SYMPTOM",
+    "HAS_SIGN",
+    "HAS_WARNING_SIGN",
+    "HAS_SEVERE_MANIFESTATION",
+    "DIAGNOSED_BY",
+    "TREATED_WITH",
+    "CAUSED_BY",
+    "HAS_SEROTYPE",
+    "TRANSMITTED_BY",
+    "HAS_RISK_FACTOR",
+    "OCCURS_DURING",
+    "AFFECTS",
+    "MORE_COMMON_IN",
+    "MAY_PROGRESS_TO"
+  ],
+
+  "entity_classes": {
+    "Disease": ["T047"],
+    "Symptom": ["T184"],
+    "Sign": ["T033"],
+    "DiagnosticTest": ["T059"],
+    "Treatment": ["T061"],
+    "Medication": ["T121", "T200"],
+    "Pathogen": ["T005"],
+    "VirusSerotype": ["T005"],
+    "Vector": ["T001"],
+    "RiskFactor": ["T169"],
+    "ClinicalPhase": ["T169"],
+    "BodySystem": ["T023"],
+    "PatientGroup": ["T100"],
+    "WarningSign": ["T033", "T184"],
+    "SevereManifestation": ["T047", "T033"]
+  }
+}
