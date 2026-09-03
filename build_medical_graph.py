@@ -332,3 +332,13 @@ print("\nKnowledge Graph rebuilt successfully.")
 print(f"Nodes : {len(nodes)}")
 print(f"Edges : {len(edges)}")
 print(f"Saved : {OUTPUT_FILE}")
+
+# Relationship summary
+relation_counts = defaultdict(int)
+
+for edge in edges:
+    relation_counts[edge["relation"]] += 1
+
+print("\nRelationship Summary:")
+for relation, count in sorted(relation_counts.items()):
+    print(f"{relation}: {count}")
