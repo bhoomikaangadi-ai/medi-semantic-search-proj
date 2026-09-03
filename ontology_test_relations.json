@@ -1,0 +1,135 @@
+{
+    "chunk_id": 88,
+    "entities": [
+        {
+            "text": "lives",
+            "cui": "C0595998",
+            "canonical_name": "Household composition",
+            "semantic_types": [
+                "T033"
+            ],
+            "score": 0.979897141456604,
+            "ontology_class": "Sign"
+        },
+        {
+            "text": "dengue",
+            "cui": "C0011311",
+            "canonical_name": "Dengue Fever",
+            "semantic_types": [
+                "T047"
+            ],
+            "score": 0.9773181676864624,
+            "ontology_class": "Disease"
+        },
+        {
+            "text": "illness",
+            "cui": "C0221423",
+            "canonical_name": "Illness (finding)",
+            "semantic_types": [
+                "T184"
+            ],
+            "score": 0.9669414162635803,
+            "ontology_class": "Symptom"
+        },
+        {
+            "text": "Serology",
+            "cui": "C0036743",
+            "canonical_name": "Serologic tests",
+            "semantic_types": [
+                "T059"
+            ],
+            "score": 0.993281900882721,
+            "ontology_class": "DiagnosticTest"
+        },
+        {
+            "text": "Hematocrit Platelet Viraemia",
+            "cui": "C0474566",
+            "canonical_name": "Platelet hematocrit measurement",
+            "semantic_types": [
+                "T059"
+            ],
+            "score": 0.8235542178153992,
+            "ontology_class": "DiagnosticTest"
+        },
+        {
+            "text": "Febrile",
+            "cui": "C0015967",
+            "canonical_name": "Fever",
+            "semantic_types": [
+                "T184"
+            ],
+            "score": 0.9673194289207458,
+            "ontology_class": "Symptom"
+        },
+        {
+            "text": "high-grade fever",
+            "cui": "C0239573",
+            "canonical_name": "Fever, high-grade",
+            "semantic_types": [
+                "T033"
+            ],
+            "score": 0.8752333521842957,
+            "ontology_class": "Sign"
+        },
+        {
+            "text": "facial flushing",
+            "cui": "C0016382",
+            "canonical_name": "Flushing",
+            "semantic_types": [
+                "T184"
+            ],
+            "score": 0.970745325088501,
+            "ontology_class": "Symptom"
+        },
+        {
+            "text": "skin erythema",
+            "cui": "C0041834",
+            "canonical_name": "Erythema",
+            "semantic_types": [
+                "T047"
+            ],
+            "score": 0.9840260148048401,
+            "ontology_class": "Disease"
+        },
+        {
+            "text": "myalgia",
+            "cui": "C0231528",
+            "canonical_name": "Myalgia",
+            "semantic_types": [
+                "T184"
+            ],
+            "score": 0.9737851023674011,
+            "ontology_class": "Symptom"
+        },
+        {
+            "text": "arthralgia",
+            "cui": "C0003862",
+            "canonical_name": "Arthralgia",
+            "semantic_types": [
+                "T184"
+            ],
+            "score": 0.9625732898712158,
+            "ontology_class": "Symptom"
+        },
+        {
+            "text": "headache",
+            "cui": "C0018681",
+            "canonical_name": "Headache",
+            "semantic_types": [
+                "T184"
+            ],
+            "score": 0.9900735020637512,
+            "ontology_class": "Symptom"
+        },
+        {
+            "text": "sore throat",
+            "cui": "C0031350",
+            "canonical_name": "Pharyngitis",
+            "semantic_types": [
+                "T047"
+            ],
+            "score": 0.9937487840652466,
+            "ontology_class": "Disease"
+        }
+    ]
+}

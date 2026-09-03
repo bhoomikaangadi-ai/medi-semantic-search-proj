@@ -1,0 +1,41 @@
+# Ignore specific dataset folders
+dataset/
+dataset_paper/
+dataset_test/
+# test files are tracked
+.dockerignore
+app.sh
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+# Virtual environments
+.venv/
+venv/
+env/
+medgraphrag/
+# Environment/secrets
+.env
+*.env
+# IDE
+.vscode/
+.idea/
+# Neo4j / databases
+data/
+*.db
+*.sqlite
+*.sqlite3
+# Logs
+*.log
+# OS
+.DS_Store
+Thumbs.db
+# Jupyter
+.ipynb_checkpoints/
+# Large model files
+*.bin
+*.pt
+*.pth
+*.safetensors
+*.npy
+*.index

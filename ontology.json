@@ -1,0 +1,36 @@
+{
+    "entity_types": [
+        "Disease",
+        "Symptom",
+        "Sign",
+        "WarningSign",
+        "SevereManifestation",
+        "DiagnosticTest",
+        "Treatment",
+        "Medication",
+        "Pathogen",
+        "VirusSerotype",
+        "Vector",
+        "RiskFactor",
+        "ClinicalPhase",
+        "BodySystem",
+        "PatientGroup"
+    ],
+
+    "relationship_types": [
+        "HAS_SYMPTOM",
+        "HAS_SIGN",
+        "HAS_WARNING_SIGN",
+        "HAS_SEVERE_MANIFESTATION",
+        "DIAGNOSED_BY",
+        "TREATED_WITH",
+        "CAUSED_BY",
+        "HAS_SEROTYPE",
+        "TRANSMITTED_BY",
+        "HAS_RISK_FACTOR",
+        "OCCURS_DURING",
+        "AFFECTS",
+        "MORE_COMMON_IN",
+        "MAY_PROGRESS_TO"
+    ]
+}
