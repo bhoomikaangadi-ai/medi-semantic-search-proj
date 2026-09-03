@@ -1288,7 +1288,18 @@ print(
     f"Processing time: "
     f"{elapsed_time:.2f} seconds"
 )
+if statistics["scispacy_mentions"] > 0:
+    acceptance_rate = (
+        statistics["accepted_mentions"]
+        / statistics["scispacy_mentions"]
+    ) * 100
+else:
+    acceptance_rate = 0.0
 
+print(
+    f"Entity acceptance rate: "
+    f"{acceptance_rate:.2f}%"
+)
 
 # ============================================================
 # ONTOLOGY COUNTS
@@ -1433,11 +1444,19 @@ result = {
                 "chunks_processed"
             ],
 
-        "unique_entities":
+               "unique_entities":
             statistics[
                 "unique_entities"
-            ]
+            ],
+
+        "entity_acceptance_rate":
+            round(
+                acceptance_rate,
+                2
+            )
+        
     },
+        
 
 
     # --------------------------------------------------------

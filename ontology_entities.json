@@ -9,7 +9,8 @@
         "test_chunk_id": null,
         "total_chunks": 471,
         "processed_chunks": 471,
-        "unique_entities": 682
+        "unique_entities": 682,
+        "entity_acceptance_rate": 19.24
     },
     "entities": [
         {
