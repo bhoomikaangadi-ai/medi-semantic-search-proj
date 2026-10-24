@@ -152,7 +152,69 @@ RELATION_PATTERNS = {
             "pregnant",
             "infants"
         ]
-    )
+    ),
+    ("Disease", "Complication"): (
+    "HAS_COMPLICATION",
+    [
+        "progresses to",
+        "may develop",
+        "can lead to",
+        "complication",
+        "results in"
+    ]
+),
+("Disease", "LaboratoryTest"): (
+    "MONITORED_BY",
+    [
+        "monitor",
+        "platelet count",
+        "hematocrit",
+        "blood test",
+        "laboratory monitoring"
+    ]
+),
+("Disease", "PreventionMethod"): (
+    "PREVENTED_BY",
+    [
+        "prevent",
+        "prevention",
+        "mosquito net",
+        "mosquito nets",
+        "repellent",
+        "vector control",
+        "eliminate breeding sites"
+    ]
+),
+("Disease", "GeographicRegion"): (
+    "OCCURS_IN",
+    [
+        "occurs in",
+        "found in",
+        "endemic in",
+        "common in",
+        "tropical regions",
+        "subtropical regions"
+    ]
+),
+("Disease", "MosquitoSpecies"): (
+    "TRANSMITTED_BY",
+    [
+        "transmitted by",
+        "spread by",
+        "aedes aegypti",
+        "aedes albopictus"
+    ]
+),
+("Disease", "VirusSerotype"): (
+    "HAS_SEROTYPE",
+    [
+        "serotype",
+        "denv-1",
+        "denv-2",
+        "denv-3",
+        "denv-4"
+    ]
+)
 }
 
 # ============================================================
@@ -214,15 +276,26 @@ def valid_pair(source, target):
         return False
 
     allowed = {
-        "Symptom",
-        "Sign",
-        "DiagnosticTest",
-        "Treatment",
-        "Medication",
-        "Pathogen",
-        "BodySystem",
-        "PatientGroup"
-    }
+    "Symptom",
+    "Sign",
+    "WarningSign",
+    "SevereManifestation",
+    "Complication",
+    "DiagnosticTest",
+    "LaboratoryTest",
+    "Treatment",
+    "PreventionMethod",
+    "Medication",
+    "Pathogen",
+    "MosquitoSpecies",
+    "VirusSerotype",
+    "Vector",
+    "RiskFactor",
+    "ClinicalPhase",
+    "BodySystem",
+    "PatientGroup",
+    "GeographicRegion"
+}
 
     return target["ontology_class"] in allowed
 
@@ -332,3 +405,13 @@ print("\nKnowledge Graph rebuilt successfully.")
 print(f"Nodes : {len(nodes)}")
 print(f"Edges : {len(edges)}")
 print(f"Saved : {OUTPUT_FILE}")
+
+# Relationship summary
+relation_counts = defaultdict(int)
+
+for edge in edges:
+    relation_counts[edge["relation"]] += 1
+
+print("\nRelationship Summary:")
+for relation, count in sorted(relation_counts.items()):
+    print(f"{relation}: {count}")

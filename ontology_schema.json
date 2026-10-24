@@ -22,17 +22,24 @@
     "HAS_SIGN",
     "HAS_WARNING_SIGN",
     "HAS_SEVERE_MANIFESTATION",
+    "HAS_COMPLICATION",
     "DIAGNOSED_BY",
+    "CONFIRMED_BY",
+    "MONITORED_BY",
+    "HAS_LAB_FINDING",
     "TREATED_WITH",
+    "REQUIRES_HOSPITALIZATION",
     "CAUSED_BY",
-    "HAS_SEROTYPE",
     "TRANSMITTED_BY",
+    "HAS_SEROTYPE",
+    "PREVENTED_BY",
     "HAS_RISK_FACTOR",
-    "OCCURS_DURING",
     "AFFECTS",
     "MORE_COMMON_IN",
+    "OCCURS_IN",
+    "OCCURS_DURING",
     "MAY_PROGRESS_TO"
-  ],
+],
 
   "entity_classes": {
     "Disease": ["T047"],
@@ -49,6 +56,11 @@
     "BodySystem": ["T023"],
     "PatientGroup": ["T100"],
     "WarningSign": ["T033", "T184"],
-    "SevereManifestation": ["T047", "T033"]
+    "SevereManifestation": ["T047", "T033"],
+    "Complication" : ["T047"],
+    "LaboratoryTest": ["T059"],
+    "PreventionMethod": ["T061"],
+    "GeographicRegion": ["T083"],
+    "MosquitoSpecies": ["T001"]
   }
 }

@@ -1,6 +1,4 @@
 import os
-
-# Windows OpenMP fix
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 os.environ["OMP_NUM_THREADS"] = "1"
 
@@ -10,26 +8,22 @@ import torch
 import ollama
 from transformers import AutoTokenizer, AutoModel
 
-# ==========================================
+# ==========================================================
 # CONFIGURATION
-# ==========================================
+# ==========================================================
 
 MODEL_NAME = "dmis-lab/biobert-base-cased-v1.2"
 OLLAMA_MODEL = "qwen2.5:7b"
 
-# ==========================================
-# LOAD BIOBERT
-# ==========================================
+# ==========================================================
+# LOAD MODELS
+# ==========================================================
 
 print("Loading BioBERT...")
 
 tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
 model = AutoModel.from_pretrained(MODEL_NAME)
 model.eval()
-
-# ==========================================
-# LOAD FAISS + DATA
-# ==========================================
 
 print("Loading FAISS...")
 
@@ -43,17 +37,18 @@ with open("medical_graph.json", encoding="utf-8") as f:
 
 print("System Ready!")
 
-# ==========================================
-# BIOBERT EMBEDDING
-# ==========================================
+# ==========================================================
+# EMBEDDING
+# ==========================================================
 
 def embed(text):
+
     inputs = tokenizer(
         text,
         return_tensors="pt",
         truncation=True,
         padding=True,
-        max_length=512
+        max_length=512,
     )
 
     with torch.no_grad():
@@ -61,9 +56,9 @@ def embed(text):
 
     return output.last_hidden_state.mean(dim=1).numpy().astype("float32")
 
-# ==========================================
-# ONTOLOGY LOOKUP
-# ==========================================
+# ==========================================================
+# KNOWLEDGE GRAPH LOOKUP
+# ==========================================================
 
 def get_related_concepts(chunk_id):
 
@@ -81,11 +76,11 @@ def get_related_concepts(chunk_id):
         if node["id"] in concept_ids:
             names.append(node["name"])
 
-    return list(dict.fromkeys(names))[:15]
+    return list(dict.fromkeys(names))
 
-# ==========================================
-# HYBRID RERANKER
-# ==========================================
+# ==========================================================
+# HYBRID RERANKING
+# ==========================================================
 
 def rerank_results(query, indices, distances):
 
@@ -96,66 +91,82 @@ def rerank_results(query, indices, distances):
     for idx, distance in zip(indices[0], distances[0]):
 
         chunk = chunks[idx]
-        text = chunk["text"].lower()
 
-        keyword_score = sum(word in text for word in query_words)
+        keyword_score = sum(word in chunk["text"].lower()
+                            for word in query_words)
 
-        concepts = get_related_concepts(chunk["chunk_id"])
-        concept_text = " ".join(concepts).lower()
-
-        ontology_score = sum(word in concept_text for word in query_words)
+        ontology_score = sum(
+            word in " ".join(get_related_concepts(chunk["chunk_id"])).lower()
+            for word in query_words
+        )
 
         faiss_score = 1 / (1 + float(distance))
 
-        final_score = (
-            faiss_score * 0.6
-            + keyword_score * 0.3
-            + ontology_score * 0.1
+        final = (
+            faiss_score * 0.60
+            + keyword_score * 0.30
+            + ontology_score * 0.10
         )
 
-        ranked.append((final_score, idx))
+        ranked.append((final, idx))
 
     ranked.sort(reverse=True)
 
-    return [idx for _, idx in ranked[:5]]
+    return ranked[:3]
 
-# ==========================================
+# ==========================================================
+# DISPLAY
+# ==========================================================
+
+def line():
+    print("=" * 90)
+
+def section(title):
+    print(f"\n{title}")
+    print("-" * 90)
+
+# ==========================================================
 # SEARCH LOOP
-# ==========================================
+# ==========================================================
 
 while True:
 
-    query = input("\nAsk a medical question (or type exit): ")
+    query = input("\n🔍 Search Medical Information (type 'exit' to quit): ")
 
     if query.lower() == "exit":
+        print("\nThank you for using Medical Graph RAG.")
         break
 
-    # BioBERT embedding
+    print("\nSearching WHO medical knowledge...")
+
     q = embed(query)
 
-    # Retrieve top-20 candidates from FAISS
     distances, indices = index.search(q, 20)
 
-    # Hybrid reranking
-    best_indices = rerank_results(query, indices, distances)
+    ranked = rerank_results(query, indices, distances)
 
     evidence = []
     concepts = set()
 
-    for idx in best_indices:
+    for score, idx in ranked:
 
         c = chunks[idx]
 
         evidence.append(
-            f"[Source: {c['source']} | {c['document']} | Chunk {c['chunk_id']}]\n{c['text']}"
+            f"[WHO | {c['document']} | Chunk {c['chunk_id']}]\n{c['text']}"
         )
 
         concepts.update(get_related_concepts(c["chunk_id"]))
 
     prompt = f"""
-You are an AI medical semantic search assistant.
+You are an AI Medical Graph RAG Assistant.
 
-Answer ONLY using the retrieved medical evidence.
+Answer ONLY using the retrieved WHO medical evidence.
+
+Format:
+1. One-sentence direct answer.
+2. 3-6 bullet points.
+3. One-line conclusion.
 
 Question:
 {query}
@@ -163,7 +174,7 @@ Question:
 Retrieved Evidence:
 {chr(10).join(evidence)}
 
-Related Medical Concepts:
+Related Concepts:
 {", ".join(sorted(concepts))}
 """
 
@@ -172,23 +183,87 @@ Related Medical Concepts:
         messages=[
             {
                 "role": "user",
-                "content": prompt
+                "content": prompt,
             }
-        ]
+        ],
     )
 
-    print("\n" + "=" * 70)
-    print("AI SUMMARY")
-    print("=" * 70)
+    # ======================================================
+    # OUTPUT
+    # ======================================================
+
+    print()
+    line()
+    print("🩺 MEDICAL GRAPH RAG SEARCH")
+    line()
+
+    print(f"\nQuery: {query}")
+
+    # ------------------------------------------------------
+    section("AI Overview")
+
     print(response["message"]["content"])
 
-    print("\nSources:")
+    # ------------------------------------------------------
+    section("Top Relevant Documents")
 
-    for idx in best_indices:
+    for rank, (score, idx) in enumerate(ranked, start=1):
+
         c = chunks[idx]
-        print(
-            f"- {c['source']} | {c['document']} | Chunk {c['chunk_id']}"
-        )
 
-    print("\nRelated Concepts:")
-    print(", ".join(sorted(concepts)))
+        print(f"[{rank}] WHO Medical Evidence")
+        print(f"Document   : {c['document']}")
+        print(f"Source     : {c['source']}")
+        print(f"Chunk ID   : {c['chunk_id']}")
+        print(f"Relevance  : {score:.3f}")
+        print()
+
+    # ------------------------------------------------------
+    section("Knowledge Graph Concepts")
+
+    if concepts:
+        print(", ".join(sorted(concepts)[:25]))
+    else:
+        print("No linked concepts found.")
+
+    # ------------------------------------------------------
+    section("Related Images")
+
+    print("Future Feature")
+    print("• WHO medical illustrations")
+    print("• Disease lifecycle diagrams")
+    print("• Vector identification images")
+    print("• Symptom reference images")
+
+    # ------------------------------------------------------
+    section("Related Videos")
+
+    print("Future Feature")
+    print("• WHO educational videos")
+    print("• Disease awareness videos")
+    print("• Prevention tutorials")
+
+    # ------------------------------------------------------
+    section("PubMed Research")
+
+    print("Future Feature")
+    print("• Latest PubMed research papers")
+    print("• Clinical studies")
+    print("• DOI and abstracts")
+
+    # ------------------------------------------------------
+    section("Kaggle Datasets")
+
+    print("Future Feature")
+    print("• Medical datasets")
+    print("• Disease prediction datasets")
+    print("• Research datasets")
+
+    # ------------------------------------------------------
+    section("Search Summary")
+
+    print(f"Candidates searched : 20")
+    print(f"Results shown       : {len(ranked)}")
+    print(f"Knowledge concepts  : {len(concepts)}")
+
+    line()

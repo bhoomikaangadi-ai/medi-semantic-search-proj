@@ -3,8 +3,8 @@ from camel.storages import Neo4jGraph
 
 n4j = Neo4jGraph(
     url="bolt://localhost:7687",
-    username="neo4j",
-    password="Medical@123"
+    username="",
+    password=""
 )
 
 

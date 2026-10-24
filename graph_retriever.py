@@ -61,6 +61,40 @@ def find_entity(query):
 
     return None
 
+# ============================================================
+# SEARCH MULTIPLE ENTITIES
+# ============================================================
+
+def search_entities(query, limit=5):
+
+    query = query.lower().strip()
+
+    if not query:
+        return []
+
+    matches = []
+
+    for name, node in name_to_node.items():
+
+        if query == name:
+            score = 3
+
+        elif name.startswith(query):
+            score = 2
+
+        elif query in name:
+            score = 1
+
+        else:
+            continue
+
+        matches.append((score, len(name), node))
+
+    matches.sort(
+        key=lambda item: (-item[0], item[1])
+    )
+
+    return [item[2] for item in matches[:limit]]
 
 # ============================================================
 # GET RELATED ENTITIES
