@@ -1,7 +1,7 @@
 {
     "metadata": {
-        "nodes": 682,
-        "edges": 344,
+        "nodes": 800,
+        "edges": 281,
         "method": "Sentence-level rule-based ontology graph"
     },
     "nodes": [
@@ -131,454 +131,6 @@
             "ontology_class": "BodySystem",
             "semantic_types": [
                 "T023"
-            ]
-        },
-        {
-            "id": "C0427611",
-            "canonical_name": "Activated clotting time measurement",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C0150411",
-            "canonical_name": "Analysis of arterial blood gases and pH",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C0002778",
-            "canonical_name": "Analysis of substances",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C0474643",
-            "canonical_name": "Antibody titer measurement",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C0201985",
-            "canonical_name": "Base excess measurement",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C0005507",
-            "canonical_name": "Biological Assay",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C0005771",
-            "canonical_name": "Blood Cell Count",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C0005790",
-            "canonical_name": "Blood coagulation tests",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C0392201",
-            "canonical_name": "Blood glucose measurement",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C0007585",
-            "canonical_name": "Cell Culture Techniques",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C4761515",
-            "canonical_name": "Cell Expansion",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C4484264",
-            "canonical_name": "Clark",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C0009555",
-            "canonical_name": "Complete Blood Count",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C0597705",
-            "canonical_name": "Cryoelectron Microscopy",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C0206755",
-            "canonical_name": "Crystallography, X-Ray",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C0428445",
-            "canonical_name": "D-lactate measurement",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C1148554",
-            "canonical_name": "Determination Aspects",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C0079240",
-            "canonical_name": "Dilution technique",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C3830326",
-            "canonical_name": "Electrochemiluminescence",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C0013855",
-            "canonical_name": "Electrophoresis",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C0014441",
-            "canonical_name": "Enzyme-Linked Immunosorbent Assay",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C0016318",
-            "canonical_name": "Fluorescent Antibody Technique",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C0018904",
-            "canonical_name": "Hemagglutination Inhibition Tests",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C0018941",
-            "canonical_name": "Hematologic Tests",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C0079603",
-            "canonical_name": "Immunofluorescence assay",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C0021067",
-            "canonical_name": "Immunoperoxidase Techniques",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C5453732",
-            "canonical_name": "Incubation",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C0022662",
-            "canonical_name": "Kidney Function Tests",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C0022885",
-            "canonical_name": "Laboratory Procedures",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C0200370",
-            "canonical_name": "Laboratory reporting",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C0037813",
-            "canonical_name": "Mass Spectrometry",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C1449575",
-            "canonical_name": "Microarray Analysis",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C0806957",
-            "canonical_name": "Microbial susceptibility tests",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C4054524",
-            "canonical_name": "Microneutralization Assay",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C0026022",
-            "canonical_name": "Microscopy, Fluorescence",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C5555401",
-            "canonical_name": "Multiplex Assay",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C1578828",
-            "canonical_name": "Neutralization (Chemistry)",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C0027944",
-            "canonical_name": "Neutralization Tests",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C0200932",
-            "canonical_name": "Nucleic Acid Amplification Tests",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C1300517",
-            "canonical_name": "Nucleic acid hybridization procedure",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C1294197",
-            "canonical_name": "Nucleic acid sequencing",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C0030495",
-            "canonical_name": "Parasite Egg Count",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C1709474",
-            "canonical_name": "Passage tissue culture technique",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C0597239",
-            "canonical_name": "physical separation",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C0032181",
-            "canonical_name": "Platelet Count measurement",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C0474566",
-            "canonical_name": "Platelet hematocrit measurement",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C5552867",
-            "canonical_name": "Quantification Test",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C0600324",
-            "canonical_name": "Serodiagnosis",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C0036743",
-            "canonical_name": "Serologic tests",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C1315072",
-            "canonical_name": "Serology (antibodies and most antigens except blood bank and infectious agents)",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C0036787",
-            "canonical_name": "SERUM CHLORIDE ION TESTS",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C5555406",
-            "canonical_name": "Singleplex Assay",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C0487602",
-            "canonical_name": "Staining method",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C0200354",
-            "canonical_name": "Urine Specimen Collection",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C0200955",
-            "canonical_name": "Viral culture procedure",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
-            ]
-        },
-        {
-            "id": "C0023508",
-            "canonical_name": "White Blood Cell Count procedure",
-            "ontology_class": "DiagnosticTest",
-            "semantic_types": [
-                "T059"
             ]
         },
         {
@@ -1414,6 +966,1398 @@
             ]
         },
         {
+            "id": "C0001567",
+            "canonical_name": "Administrative District",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0001737",
+            "canonical_name": "Africa",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0001738",
+            "canonical_name": "Africa South of the Sahara",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0001741",
+            "canonical_name": "Africa, Eastern",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0001747",
+            "canonical_name": "Africa, Western",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0242536",
+            "canonical_name": "American Samoa",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0002454",
+            "canonical_name": "Americas",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0003980",
+            "canonical_name": "Asia",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0003983",
+            "canonical_name": "Asia, Southeastern",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0003984",
+            "canonical_name": "Asia, Western",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0004348",
+            "canonical_name": "Austria",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C3494471",
+            "canonical_name": "Balkan Peninsula",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0004732",
+            "canonical_name": "Bangladesh",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0004739",
+            "canonical_name": "Barbados",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0005005",
+            "canonical_name": "Benin Republic",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0005341",
+            "canonical_name": "Bhutan",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0005918",
+            "canonical_name": "Bolivia",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0006137",
+            "canonical_name": "Brazil",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0006409",
+            "canonical_name": "Burkina Faso",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0006797",
+            "canonical_name": "Cambodia",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0006823",
+            "canonical_name": "Canada",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0043122",
+            "canonical_name": "Caribbean Islands",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0007674",
+            "canonical_name": "Central America",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0008107",
+            "canonical_name": "Chile",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0008848",
+            "canonical_name": "Cities",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C3245499",
+            "canonical_name": "Colombia",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0009490",
+            "canonical_name": "Comoros",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0009778",
+            "canonical_name": "Connecticut",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0337062",
+            "canonical_name": "Construction site",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0009956",
+            "canonical_name": "Cook Islands",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0010182",
+            "canonical_name": "Costa Rica",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0454664",
+            "canonical_name": "Country",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0003761",
+            "canonical_name": "Country of Argentina",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0010435",
+            "canonical_name": "Cuba",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C5447118",
+            "canonical_name": "District",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0012836",
+            "canonical_name": "Djibouti",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0013014",
+            "canonical_name": "Dominican Republic",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C1452561",
+            "canonical_name": "East Timor",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0013593",
+            "canonical_name": "Ecuador",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0013715",
+            "canonical_name": "Egypt",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0013754",
+            "canonical_name": "El Salvador",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0015176",
+            "canonical_name": "Europe",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C5544435",
+            "canonical_name": "European Alpine Region",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0282244",
+            "canonical_name": "Federated States of Micronesia",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0016703",
+            "canonical_name": "French Guiana",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0016704",
+            "canonical_name": "French Polynesia",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0017446",
+            "canonical_name": "Geographic Locations",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C1301808",
+            "canonical_name": "Geographic state",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0681784",
+            "canonical_name": "geographical area",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0018367",
+            "canonical_name": "Guatemala",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0018408",
+            "canonical_name": "Guyana",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0018619",
+            "canonical_name": "Hawaii",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0019905",
+            "canonical_name": "Honduras",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0021201",
+            "canonical_name": "India",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0021247",
+            "canonical_name": "Indonesia",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C3846574",
+            "canonical_name": "Johnston Atoll",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0017550",
+            "canonical_name": "Kiribati",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0022771",
+            "canonical_name": "Korea",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0599634",
+            "canonical_name": "Landfills",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0023122",
+            "canonical_name": "Latin America",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C2828208",
+            "canonical_name": "Locality",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0024552",
+            "canonical_name": "Malaysia",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0024553",
+            "canonical_name": "Maldives",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C1318228",
+            "canonical_name": "Market",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0024853",
+            "canonical_name": "Martinique",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0024874",
+            "canonical_name": "Massachusetts (geographic location)",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0282645",
+            "canonical_name": "Mediterranean Region",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0025885",
+            "canonical_name": "Mexico",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0026655",
+            "canonical_name": "Mozambique",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0600182",
+            "canonical_name": "municipality",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0006416",
+            "canonical_name": "Myanmar",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0027689",
+            "canonical_name": "Nepal",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0027964",
+            "canonical_name": "New Caledonia",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0027976",
+            "canonical_name": "New York (geographic location)",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0028002",
+            "canonical_name": "Nicaragua",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0028075",
+            "canonical_name": "Nigeria",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0029195",
+            "canonical_name": "Oregon (geographic location)",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C1709359",
+            "canonical_name": "Outdoors",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0030168",
+            "canonical_name": "Pacific Islands",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0030211",
+            "canonical_name": "Pakistan",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0242397",
+            "canonical_name": "Palau",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0030266",
+            "canonical_name": "Panama",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0030428",
+            "canonical_name": "Paraguay",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0031238",
+            "canonical_name": "Peru",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0031529",
+            "canonical_name": "Philippines",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C5420326",
+            "canonical_name": "Point of Entry",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C1514578",
+            "canonical_name": "Province",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0034044",
+            "canonical_name": "Puerto Rico",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0034391",
+            "canonical_name": "Queensland",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C4744747",
+            "canonical_name": "Rio de Janeiro",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0178837",
+            "canonical_name": "Rural Area",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0036243",
+            "canonical_name": "Saudi Arabia",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0036493",
+            "canonical_name": "Sea",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C1708237",
+            "canonical_name": "Sector",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0036644",
+            "canonical_name": "Senegal",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0037173",
+            "canonical_name": "Singapore",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0037640",
+            "canonical_name": "Somalia",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0037712",
+            "canonical_name": "South Africa",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0037713",
+            "canonical_name": "South America",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0682374",
+            "canonical_name": "South Central Asia",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0038088",
+            "canonical_name": "Sri Lanka",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0442658",
+            "canonical_name": "Street (environment)",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C4727048",
+            "canonical_name": "Study Country",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0038642",
+            "canonical_name": "Sudan",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0039021",
+            "canonical_name": "Switzerland",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C2983136",
+            "canonical_name": "Territory",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0039711",
+            "canonical_name": "Texas",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0039725",
+            "canonical_name": "Thailand",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0040339",
+            "canonical_name": "Tobago",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0041703",
+            "canonical_name": "United States",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0442529",
+            "canonical_name": "Urban environment",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0042113",
+            "canonical_name": "Uruguay",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0042469",
+            "canonical_name": "Venezuela",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C3827654",
+            "canonical_name": "Veracruz",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0042658",
+            "canonical_name": "Vietnam",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0043038",
+            "canonical_name": "Washington state",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0563002",
+            "canonical_name": "Waterfall",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0043402",
+            "canonical_name": "Yemen (geographic area)",
+            "ontology_class": "GeographicRegion",
+            "semantic_types": [
+                "T083"
+            ]
+        },
+        {
+            "id": "C0427611",
+            "canonical_name": "Activated clotting time measurement",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C0150411",
+            "canonical_name": "Analysis of arterial blood gases and pH",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C0002778",
+            "canonical_name": "Analysis of substances",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C0474643",
+            "canonical_name": "Antibody titer measurement",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C0201985",
+            "canonical_name": "Base excess measurement",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C0005507",
+            "canonical_name": "Biological Assay",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C0005771",
+            "canonical_name": "Blood Cell Count",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C0005790",
+            "canonical_name": "Blood coagulation tests",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C0392201",
+            "canonical_name": "Blood glucose measurement",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C0007585",
+            "canonical_name": "Cell Culture Techniques",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C4761515",
+            "canonical_name": "Cell Expansion",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C4484264",
+            "canonical_name": "Clark",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C0009555",
+            "canonical_name": "Complete Blood Count",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C0597705",
+            "canonical_name": "Cryoelectron Microscopy",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C0206755",
+            "canonical_name": "Crystallography, X-Ray",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C0428445",
+            "canonical_name": "D-lactate measurement",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C1148554",
+            "canonical_name": "Determination Aspects",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C0079240",
+            "canonical_name": "Dilution technique",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C3830326",
+            "canonical_name": "Electrochemiluminescence",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C0013855",
+            "canonical_name": "Electrophoresis",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C0014441",
+            "canonical_name": "Enzyme-Linked Immunosorbent Assay",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C0016318",
+            "canonical_name": "Fluorescent Antibody Technique",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C0018904",
+            "canonical_name": "Hemagglutination Inhibition Tests",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C0018941",
+            "canonical_name": "Hematologic Tests",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C0079603",
+            "canonical_name": "Immunofluorescence assay",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C0021067",
+            "canonical_name": "Immunoperoxidase Techniques",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C5453732",
+            "canonical_name": "Incubation",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C0022662",
+            "canonical_name": "Kidney Function Tests",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C0022885",
+            "canonical_name": "Laboratory Procedures",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C0200370",
+            "canonical_name": "Laboratory reporting",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C0037813",
+            "canonical_name": "Mass Spectrometry",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C1449575",
+            "canonical_name": "Microarray Analysis",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C0806957",
+            "canonical_name": "Microbial susceptibility tests",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C4054524",
+            "canonical_name": "Microneutralization Assay",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C0026022",
+            "canonical_name": "Microscopy, Fluorescence",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C5555401",
+            "canonical_name": "Multiplex Assay",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C1578828",
+            "canonical_name": "Neutralization (Chemistry)",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C0027944",
+            "canonical_name": "Neutralization Tests",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C0200932",
+            "canonical_name": "Nucleic Acid Amplification Tests",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C1300517",
+            "canonical_name": "Nucleic acid hybridization procedure",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C1294197",
+            "canonical_name": "Nucleic acid sequencing",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C0030495",
+            "canonical_name": "Parasite Egg Count",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C1709474",
+            "canonical_name": "Passage tissue culture technique",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C0597239",
+            "canonical_name": "physical separation",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C0032181",
+            "canonical_name": "Platelet Count measurement",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C0474566",
+            "canonical_name": "Platelet hematocrit measurement",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C5552867",
+            "canonical_name": "Quantification Test",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C0600324",
+            "canonical_name": "Serodiagnosis",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C0036743",
+            "canonical_name": "Serologic tests",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C1315072",
+            "canonical_name": "Serology (antibodies and most antigens except blood bank and infectious agents)",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C0036787",
+            "canonical_name": "SERUM CHLORIDE ION TESTS",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C5555406",
+            "canonical_name": "Singleplex Assay",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C0487602",
+            "canonical_name": "Staining method",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C0200354",
+            "canonical_name": "Urine Specimen Collection",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C0200955",
+            "canonical_name": "Viral culture procedure",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
+            "id": "C0023508",
+            "canonical_name": "White Blood Cell Count procedure",
+            "ontology_class": "LaboratoryTest",
+            "semantic_types": [
+                "T059"
+            ]
+        },
+        {
             "id": "C0001002",
             "canonical_name": "acetone",
             "ontology_class": "Medication",
@@ -2186,6 +3130,54 @@
                 "T116",
                 "T121",
                 "T129"
+            ]
+        },
+        {
+            "id": "C0008109",
+            "canonical_name": "Chimera organism",
+            "ontology_class": "MosquitoSpecies",
+            "semantic_types": [
+                "T001"
+            ]
+        },
+        {
+            "id": "C1167395",
+            "canonical_name": "Host (organism)",
+            "ontology_class": "MosquitoSpecies",
+            "semantic_types": [
+                "T001"
+            ]
+        },
+        {
+            "id": "C0314732",
+            "canonical_name": "Infectious agent",
+            "ontology_class": "MosquitoSpecies",
+            "semantic_types": [
+                "T001"
+            ]
+        },
+        {
+            "id": "C0029235",
+            "canonical_name": "Organism",
+            "ontology_class": "MosquitoSpecies",
+            "semantic_types": [
+                "T001"
+            ]
+        },
+        {
+            "id": "C0450254",
+            "canonical_name": "Pathogenic organism",
+            "ontology_class": "MosquitoSpecies",
+            "semantic_types": [
+                "T001"
+            ]
+        },
+        {
+            "id": "C1514798",
+            "canonical_name": "Recombinants",
+            "ontology_class": "MosquitoSpecies",
+            "semantic_types": [
+                "T001"
             ]
         },
         {
@@ -5491,54 +6483,6 @@
             "semantic_types": [
                 "T061"
             ]
-        },
-        {
-            "id": "C0008109",
-            "canonical_name": "Chimera organism",
-            "ontology_class": "Vector",
-            "semantic_types": [
-                "T001"
-            ]
-        },
-        {
-            "id": "C1167395",
-            "canonical_name": "Host (organism)",
-            "ontology_class": "Vector",
-            "semantic_types": [
-                "T001"
-            ]
-        },
-        {
-            "id": "C0314732",
-            "canonical_name": "Infectious agent",
-            "ontology_class": "Vector",
-            "semantic_types": [
-                "T001"
-            ]
-        },
-        {
-            "id": "C0029235",
-            "canonical_name": "Organism",
-            "ontology_class": "Vector",
-            "semantic_types": [
-                "T001"
-            ]
-        },
-        {
-            "id": "C0450254",
-            "canonical_name": "Pathogenic organism",
-            "ontology_class": "Vector",
-            "semantic_types": [
-                "T001"
-            ]
-        },
-        {
-            "id": "C1514798",
-            "canonical_name": "Recombinants",
-            "ontology_class": "Vector",
-            "semantic_types": [
-                "T001"
-            ]
         }
     ],
     "edges": [
@@ -5578,62 +6522,6 @@
             "sentence": "Dr Anne Wilder Smith: principal investigator in dengue vaccine trial starting in 2009."
         },
         {
-            "source": "C0011311",
-            "target": "C0014441",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 21,
-            "sentence": "CD8 cluster of differentiation 8, T cell co-receptor transmembrane glycoprotein CFR case-fatality rate COMBI communication for behavioural impact DALY disability-adjusted life years DEET diethyl-meta-toluamide DENCO Dengue and Control study (multi-country study) DEN dengue DDT dichlorodiphenyltrichloroethane DF dengue fever DHF dengue haemorrhagic fever DNA deoxyribonucleic acid DSS dengue shock syndrome DT tablet for direct application EC emulsifiable concentrate ELISA enzyme-linked immunosorbent assay E/M envelop/membrane antigen FBC full blood count Fc-receptor fragment, crystallisable region, a cell receptor FRhL fetal rhesus lung cells GAC E/M-specific capture IgG ELISA GIS Geographical Information System GOARN Global Outbreak Alert and Response Network GPS global positioning system GR granule HI haemagglutination-inhibition HIV/AIDS human immunodeficiency virus/acquired immunodeficiency syndrome ICU intensive care unit IEC information, education, communication IgA immunoglobulin"
-        },
-        {
-            "source": "C0011311",
-            "target": "C0018904",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 21,
-            "sentence": "CD8 cluster of differentiation 8, T cell co-receptor transmembrane glycoprotein CFR case-fatality rate COMBI communication for behavioural impact DALY disability-adjusted life years DEET diethyl-meta-toluamide DENCO Dengue and Control study (multi-country study) DEN dengue DDT dichlorodiphenyltrichloroethane DF dengue fever DHF dengue haemorrhagic fever DNA deoxyribonucleic acid DSS dengue shock syndrome DT tablet for direct application EC emulsifiable concentrate ELISA enzyme-linked immunosorbent assay E/M envelop/membrane antigen FBC full blood count Fc-receptor fragment, crystallisable region, a cell receptor FRhL fetal rhesus lung cells GAC E/M-specific capture IgG ELISA GIS Geographical Information System GOARN Global Outbreak Alert and Response Network GPS global positioning system GR granule HI haemagglutination-inhibition HIV/AIDS human immunodeficiency virus/acquired immunodeficiency syndrome ICU intensive care unit IEC information, education, communication IgA immunoglobulin"
-        },
-        {
-            "source": "C0019100",
-            "target": "C0014441",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 21,
-            "sentence": "CD8 cluster of differentiation 8, T cell co-receptor transmembrane glycoprotein CFR case-fatality rate COMBI communication for behavioural impact DALY disability-adjusted life years DEET diethyl-meta-toluamide DENCO Dengue and Control study (multi-country study) DEN dengue DDT dichlorodiphenyltrichloroethane DF dengue fever DHF dengue haemorrhagic fever DNA deoxyribonucleic acid DSS dengue shock syndrome DT tablet for direct application EC emulsifiable concentrate ELISA enzyme-linked immunosorbent assay E/M envelop/membrane antigen FBC full blood count Fc-receptor fragment, crystallisable region, a cell receptor FRhL fetal rhesus lung cells GAC E/M-specific capture IgG ELISA GIS Geographical Information System GOARN Global Outbreak Alert and Response Network GPS global positioning system GR granule HI haemagglutination-inhibition HIV/AIDS human immunodeficiency virus/acquired immunodeficiency syndrome ICU intensive care unit IEC information, education, communication IgA immunoglobulin"
-        },
-        {
-            "source": "C0019100",
-            "target": "C0018904",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 21,
-            "sentence": "CD8 cluster of differentiation 8, T cell co-receptor transmembrane glycoprotein CFR case-fatality rate COMBI communication for behavioural impact DALY disability-adjusted life years DEET diethyl-meta-toluamide DENCO Dengue and Control study (multi-country study) DEN dengue DDT dichlorodiphenyltrichloroethane DF dengue fever DHF dengue haemorrhagic fever DNA deoxyribonucleic acid DSS dengue shock syndrome DT tablet for direct application EC emulsifiable concentrate ELISA enzyme-linked immunosorbent assay E/M envelop/membrane antigen FBC full blood count Fc-receptor fragment, crystallisable region, a cell receptor FRhL fetal rhesus lung cells GAC E/M-specific capture IgG ELISA GIS Geographical Information System GOARN Global Outbreak Alert and Response Network GPS global positioning system GR granule HI haemagglutination-inhibition HIV/AIDS human immunodeficiency virus/acquired immunodeficiency syndrome ICU intensive care unit IEC information, education, communication IgA immunoglobulin"
-        },
-        {
-            "source": "C0376300",
-            "target": "C0014441",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 21,
-            "sentence": "CD8 cluster of differentiation 8, T cell co-receptor transmembrane glycoprotein CFR case-fatality rate COMBI communication for behavioural impact DALY disability-adjusted life years DEET diethyl-meta-toluamide DENCO Dengue and Control study (multi-country study) DEN dengue DDT dichlorodiphenyltrichloroethane DF dengue fever DHF dengue haemorrhagic fever DNA deoxyribonucleic acid DSS dengue shock syndrome DT tablet for direct application EC emulsifiable concentrate ELISA enzyme-linked immunosorbent assay E/M envelop/membrane antigen FBC full blood count Fc-receptor fragment, crystallisable region, a cell receptor FRhL fetal rhesus lung cells GAC E/M-specific capture IgG ELISA GIS Geographical Information System GOARN Global Outbreak Alert and Response Network GPS global positioning system GR granule HI haemagglutination-inhibition HIV/AIDS human immunodeficiency virus/acquired immunodeficiency syndrome ICU intensive care unit IEC information, education, communication IgA immunoglobulin"
-        },
-        {
-            "source": "C0376300",
-            "target": "C0018904",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 21,
-            "sentence": "CD8 cluster of differentiation 8, T cell co-receptor transmembrane glycoprotein CFR case-fatality rate COMBI communication for behavioural impact DALY disability-adjusted life years DEET diethyl-meta-toluamide DENCO Dengue and Control study (multi-country study) DEN dengue DDT dichlorodiphenyltrichloroethane DF dengue fever DHF dengue haemorrhagic fever DNA deoxyribonucleic acid DSS dengue shock syndrome DT tablet for direct application EC emulsifiable concentrate ELISA enzyme-linked immunosorbent assay E/M envelop/membrane antigen FBC full blood count Fc-receptor fragment, crystallisable region, a cell receptor FRhL fetal rhesus lung cells GAC E/M-specific capture IgG ELISA GIS Geographical Information System GOARN Global Outbreak Alert and Response Network GPS global positioning system GR granule HI haemagglutination-inhibition HIV/AIDS human immunodeficiency virus/acquired immunodeficiency syndrome ICU intensive care unit IEC information, education, communication IgA immunoglobulin"
-        },
-        {
-            "source": "C0001175",
-            "target": "C0014441",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 21,
-            "sentence": "CD8 cluster of differentiation 8, T cell co-receptor transmembrane glycoprotein CFR case-fatality rate COMBI communication for behavioural impact DALY disability-adjusted life years DEET diethyl-meta-toluamide DENCO Dengue and Control study (multi-country study) DEN dengue DDT dichlorodiphenyltrichloroethane DF dengue fever DHF dengue haemorrhagic fever DNA deoxyribonucleic acid DSS dengue shock syndrome DT tablet for direct application EC emulsifiable concentrate ELISA enzyme-linked immunosorbent assay E/M envelop/membrane antigen FBC full blood count Fc-receptor fragment, crystallisable region, a cell receptor FRhL fetal rhesus lung cells GAC E/M-specific capture IgG ELISA GIS Geographical Information System GOARN Global Outbreak Alert and Response Network GPS global positioning system GR granule HI haemagglutination-inhibition HIV/AIDS human immunodeficiency virus/acquired immunodeficiency syndrome ICU intensive care unit IEC information, education, communication IgA immunoglobulin"
-        },
-        {
-            "source": "C0001175",
-            "target": "C0018904",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 21,
-            "sentence": "CD8 cluster of differentiation 8, T cell co-receptor transmembrane glycoprotein CFR case-fatality rate COMBI communication for behavioural impact DALY disability-adjusted life years DEET diethyl-meta-toluamide DENCO Dengue and Control study (multi-country study) DEN dengue DDT dichlorodiphenyltrichloroethane DF dengue fever DHF dengue haemorrhagic fever DNA deoxyribonucleic acid DSS dengue shock syndrome DT tablet for direct application EC emulsifiable concentrate ELISA enzyme-linked immunosorbent assay E/M envelop/membrane antigen FBC full blood count Fc-receptor fragment, crystallisable region, a cell receptor FRhL fetal rhesus lung cells GAC E/M-specific capture IgG ELISA GIS Geographical Information System GOARN Global Outbreak Alert and Response Network GPS global positioning system GR granule HI haemagglutination-inhibition HIV/AIDS human immunodeficiency virus/acquired immunodeficiency syndrome ICU intensive care unit IEC information, education, communication IgA immunoglobulin"
-        },
-        {
             "source": "C0001175",
             "target": "C2963174",
             "relation": "TREATED_WITH",
@@ -5651,13 +6539,6 @@
             "source": "C0001175",
             "target": "C0042210",
             "relation": "TREATED_WITH",
-            "chunk_id": 22,
-            "sentence": "R granule HI haemagglutination-inhibition HIV/AIDS human immunodeficiency virus/acquired immunodeficiency syndrome ICU intensive care unit IEC information, education, communication IgA immunoglobulin A IgG immunoglobulin G IgM immunoglobulin M INF gamma interferon gamma x IPCS International Programme on Chemical Safety IR3535 3-[N-acetyl-N-butyl]-aminopropionic acid ethyl ester ITM insecticide treated material IV intravenous LAV live attenuated vaccine MAC-ELISA IgM antibody-capture enzyme-linked immunosorbent assay MIA microsphere-based immunoassays MoE Ministry of Education MoH Ministry of Health NAAT nucleic acid amplification test NASBA nucleic acid sequence based amplification NGO nongovernmental organization NS non-structural protein NSAID non-steroidal anti-inflammatory drugs OD optical density ORS oral rehydration solution PAHO Pan American Health Organization PCR polymerase chain reaction PDVI Pediatric Dengue Vaccine Initiative pH measure of the acidity or basicity of a solut"
-        },
-        {
-            "source": "C0001175",
-            "target": "C0200932",
-            "relation": "DIAGNOSED_BY",
             "chunk_id": 22,
             "sentence": "R granule HI haemagglutination-inhibition HIV/AIDS human immunodeficiency virus/acquired immunodeficiency syndrome ICU intensive care unit IEC information, education, communication IgA immunoglobulin A IgG immunoglobulin G IgM immunoglobulin M INF gamma interferon gamma x IPCS International Programme on Chemical Safety IR3535 3-[N-acetyl-N-butyl]-aminopropionic acid ethyl ester ITM insecticide treated material IV intravenous LAV live attenuated vaccine MAC-ELISA IgM antibody-capture enzyme-linked immunosorbent assay MIA microsphere-based immunoassays MoE Ministry of Education MoH Ministry of Health NAAT nucleic acid amplification test NASBA nucleic acid sequence based amplification NGO nongovernmental organization NS non-structural protein NSAID non-steroidal anti-inflammatory drugs OD optical density ORS oral rehydration solution PAHO Pan American Health Organization PCR polymerase chain reaction PDVI Pediatric Dengue Vaccine Initiative pH measure of the acidity or basicity of a solut"
         },
@@ -5705,13 +6586,6 @@
         },
         {
             "source": "C0011311",
-            "target": "C0027944",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 23,
-            "sentence": "ical density ORS oral rehydration solution PAHO Pan American Health Organization PCR polymerase chain reaction PDVI Pediatric Dengue Vaccine Initiative pH measure of the acidity or basicity of a solution prM a region of the dengue genome PRNT plaque reduction and neutralization test RNA ribonucleic acid RT-PCR reverse transcriptase-polymerase chain reaction SC suspension concentrate TNF alfa tumor necrosis factor alfa T cells A group of lymphocytes important for cell-mediated immunity TDR Special Programme for Research and Training in Tropical Diseases WBC white blood cells WG Water-dispersible granule WHO World Health Organizaion WP wettable powder YF yellow fever 1 EPIDEMIOLOGY, BURDEN OF DISEASE AND TRANSMISSION 3 CHAPTER 1."
-        },
-        {
-            "source": "C0011311",
             "target": "C5666967",
             "relation": "TREATED_WITH",
             "chunk_id": 23,
@@ -5747,13 +6621,6 @@
         },
         {
             "source": "C0011389",
-            "target": "C0027944",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 23,
-            "sentence": "ical density ORS oral rehydration solution PAHO Pan American Health Organization PCR polymerase chain reaction PDVI Pediatric Dengue Vaccine Initiative pH measure of the acidity or basicity of a solution prM a region of the dengue genome PRNT plaque reduction and neutralization test RNA ribonucleic acid RT-PCR reverse transcriptase-polymerase chain reaction SC suspension concentrate TNF alfa tumor necrosis factor alfa T cells A group of lymphocytes important for cell-mediated immunity TDR Special Programme for Research and Training in Tropical Diseases WBC white blood cells WG Water-dispersible granule WHO World Health Organizaion WP wettable powder YF yellow fever 1 EPIDEMIOLOGY, BURDEN OF DISEASE AND TRANSMISSION 3 CHAPTER 1."
-        },
-        {
-            "source": "C0011389",
             "target": "C5666967",
             "relation": "TREATED_WITH",
             "chunk_id": 23,
@@ -5784,13 +6651,6 @@
             "source": "C1336827",
             "target": "C1548477",
             "relation": "TREATED_WITH",
-            "chunk_id": 23,
-            "sentence": "ical density ORS oral rehydration solution PAHO Pan American Health Organization PCR polymerase chain reaction PDVI Pediatric Dengue Vaccine Initiative pH measure of the acidity or basicity of a solution prM a region of the dengue genome PRNT plaque reduction and neutralization test RNA ribonucleic acid RT-PCR reverse transcriptase-polymerase chain reaction SC suspension concentrate TNF alfa tumor necrosis factor alfa T cells A group of lymphocytes important for cell-mediated immunity TDR Special Programme for Research and Training in Tropical Diseases WBC white blood cells WG Water-dispersible granule WHO World Health Organizaion WP wettable powder YF yellow fever 1 EPIDEMIOLOGY, BURDEN OF DISEASE AND TRANSMISSION 3 CHAPTER 1."
-        },
-        {
-            "source": "C1336827",
-            "target": "C0027944",
-            "relation": "DIAGNOSED_BY",
             "chunk_id": 23,
             "sentence": "ical density ORS oral rehydration solution PAHO Pan American Health Organization PCR polymerase chain reaction PDVI Pediatric Dengue Vaccine Initiative pH measure of the acidity or basicity of a solution prM a region of the dengue genome PRNT plaque reduction and neutralization test RNA ribonucleic acid RT-PCR reverse transcriptase-polymerase chain reaction SC suspension concentrate TNF alfa tumor necrosis factor alfa T cells A group of lymphocytes important for cell-mediated immunity TDR Special Programme for Research and Training in Tropical Diseases WBC white blood cells WG Water-dispersible granule WHO World Health Organizaion WP wettable powder YF yellow fever 1 EPIDEMIOLOGY, BURDEN OF DISEASE AND TRANSMISSION 3 CHAPTER 1."
         },
@@ -6033,34 +6893,6 @@
             "sentence": "Sangkawibha N et al. Risk factors in dengue shock syndrome: a prospective epidemiologic study in Rayong, Thailand."
         },
         {
-            "source": "C0011311",
-            "target": "C1315072",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 88,
-            "sentence": "Figure 2.1 The course of dengue illness* Days of illness Temperature Potential clinical issues Laboratory changes Serology and virology Dehydration Shock Reabsorption bleeding fl uid overload 1 2 3 4 5 6 7 8 9 10 Organ impairment Hematocrit Platelet Viraemia IgM/IgG Febrile Critical Recovery phasesCourse of dengue illness: 40° * Source: adapted from Yip (2) by chapter authors."
-        },
-        {
-            "source": "C0011311",
-            "target": "C0474566",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 88,
-            "sentence": "Figure 2.1 The course of dengue illness* Days of illness Temperature Potential clinical issues Laboratory changes Serology and virology Dehydration Shock Reabsorption bleeding fl uid overload 1 2 3 4 5 6 7 8 9 10 Organ impairment Hematocrit Platelet Viraemia IgM/IgG Febrile Critical Recovery phasesCourse of dengue illness: 40° * Source: adapted from Yip (2) by chapter authors."
-        },
-        {
-            "source": "C0009952",
-            "target": "C1315072",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 88,
-            "sentence": "Figure 2.1 The course of dengue illness* Days of illness Temperature Potential clinical issues Laboratory changes Serology and virology Dehydration Shock Reabsorption bleeding fl uid overload 1 2 3 4 5 6 7 8 9 10 Organ impairment Hematocrit Platelet Viraemia IgM/IgG Febrile Critical Recovery phasesCourse of dengue illness: 40° * Source: adapted from Yip (2) by chapter authors."
-        },
-        {
-            "source": "C0009952",
-            "target": "C0474566",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 88,
-            "sentence": "Figure 2.1 The course of dengue illness* Days of illness Temperature Potential clinical issues Laboratory changes Serology and virology Dehydration Shock Reabsorption bleeding fl uid overload 1 2 3 4 5 6 7 8 9 10 Organ impairment Hematocrit Platelet Viraemia IgM/IgG Febrile Critical Recovery phasesCourse of dengue illness: 40° * Source: adapted from Yip (2) by chapter authors."
-        },
-        {
             "source": "C0009952",
             "target": "C0016382",
             "relation": "HAS_SYMPTOM",
@@ -6115,13 +6947,6 @@
             "relation": "HAS_SYMPTOM",
             "chunk_id": 88,
             "sentence": "This acute febrile phase usually lasts 2–7 days and is often accompanied by facial flushing, skin erythema, generalized body ache, myalgia, arthralgia and headache (1)."
-        },
-        {
-            "source": "C0023530",
-            "target": "C0032181",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 90,
-            "sentence": "Progressive leukopenia (3) followed by a rapid decrease in platelet count usually precedes plasma leakage."
         },
         {
             "source": "C0032227",
@@ -6496,13 +7321,6 @@
         },
         {
             "source": "C0011311",
-            "target": "C0009555",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 113,
-            "sentence": "2.3.1.2 Step II—Diagnosis, assessment of disease phase and severity On the basis of evaluations of the history, physical examination and/or full blood count and haematocrit, clinicians should be able to determine whether the disease is dengue, which phase it is in (febrile, critical or recovery), whether there are warning signs, the hydration and haemodynamic status of the patient, and whether the patient requires admission (Textboxes E and F)."
-        },
-        {
-            "source": "C0011311",
             "target": "C1321013",
             "relation": "HAS_SIGN",
             "chunk_id": 113,
@@ -6512,13 +7330,6 @@
             "source": "C0009952",
             "target": "C4740734",
             "relation": "HAS_SIGN",
-            "chunk_id": 113,
-            "sentence": "2.3.1.2 Step II—Diagnosis, assessment of disease phase and severity On the basis of evaluations of the history, physical examination and/or full blood count and haematocrit, clinicians should be able to determine whether the disease is dengue, which phase it is in (febrile, critical or recovery), whether there are warning signs, the hydration and haemodynamic status of the patient, and whether the patient requires admission (Textboxes E and F)."
-        },
-        {
-            "source": "C0009952",
-            "target": "C0009555",
-            "relation": "DIAGNOSED_BY",
             "chunk_id": 113,
             "sentence": "2.3.1.2 Step II—Diagnosis, assessment of disease phase and severity On the basis of evaluations of the history, physical examination and/or full blood count and haematocrit, clinicians should be able to determine whether the disease is dengue, which phase it is in (febrile, critical or recovery), whether there are warning signs, the hydration and haemodynamic status of the patient, and whether the patient requires admission (Textboxes E and F)."
         },
@@ -6547,20 +7358,6 @@
             "source": "C0348801",
             "target": "C4281748",
             "relation": "HAS_SIGN",
-            "chunk_id": 117,
-            "sentence": "Patients who are sent home should be monitored daily by health care providers for temperature pattern, volume of fluid intake and losses, urine output (volume and frequency), warning signs, signs of plasma leakage and bleeding, haematocrit, and white blood cell and platelet counts (see group B)."
-        },
-        {
-            "source": "C0348801",
-            "target": "C0023508",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 117,
-            "sentence": "Patients who are sent home should be monitored daily by health care providers for temperature pattern, volume of fluid intake and losses, urine output (volume and frequency), warning signs, signs of plasma leakage and bleeding, haematocrit, and white blood cell and platelet counts (see group B)."
-        },
-        {
-            "source": "C0348801",
-            "target": "C0032181",
-            "relation": "DIAGNOSED_BY",
             "chunk_id": 117,
             "sentence": "Patients who are sent home should be monitored daily by health care providers for temperature pattern, volume of fluid intake and losses, urine output (volume and frequency), warning signs, signs of plasma leakage and bleeding, haematocrit, and white blood cell and platelet counts (see group B)."
         },
@@ -6922,30 +7719,9 @@
             "sentence": "tension in dengue shock and during induction for intubation, while correction of intravascular volume is being vigorously carried out; – further treatment of organ impairment, such as severe hepatic involvement or encephalopathy or encephalitis; – further treatment of cardiac abnormalities, such as conduction abnormalities, may occur (the latter usually not requiring interventions)."
         },
         {
-            "source": "C0009952",
-            "target": "C0032181",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 153,
-            "sentence": "ons Illnesses with neurological manifestations Meningo/encephalitis Febrile seizures Conditions that mimic the critical phase of dengue infection Infectious Acute gastroenteritis, malaria, leptospirosis, typhoid, typhus, viral hepatitis, acute HIV seroconversion illness, bacterial sepsis, septic shock Malignancies Acute leukaemia and other malignancies Other clinical pictures Acute abdomen – acute appendicitis – acute cholecystitis – perforated viscus Diabetic ketoacidosis Lactic acidosis Leukopenia and thrombocytopaenia ± bleeding Platelet disorders Renal failure Respiratory distress (Kussmaul’s breathing) Systemic Lupus Erythematosus Textbox C. Warning signs Clinical Abdominal pain or tenderness Persistent vomiting Clinical fluid accumulation Mucosal bleed Lethargy, restlessness Liver enlargement >2 cm Laboratory Increase in HCT concurrent with rapid decrease in platelet count 47 Textbox D. Haemodynamic assessment: continuum of haemodynamic changes Parameters Stable circulation Compe"
-        },
-        {
-            "source": "C0011311",
-            "target": "C0032181",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 153,
-            "sentence": "ons Illnesses with neurological manifestations Meningo/encephalitis Febrile seizures Conditions that mimic the critical phase of dengue infection Infectious Acute gastroenteritis, malaria, leptospirosis, typhoid, typhus, viral hepatitis, acute HIV seroconversion illness, bacterial sepsis, septic shock Malignancies Acute leukaemia and other malignancies Other clinical pictures Acute abdomen – acute appendicitis – acute cholecystitis – perforated viscus Diabetic ketoacidosis Lactic acidosis Leukopenia and thrombocytopaenia ± bleeding Platelet disorders Renal failure Respiratory distress (Kussmaul’s breathing) Systemic Lupus Erythematosus Textbox C. Warning signs Clinical Abdominal pain or tenderness Persistent vomiting Clinical fluid accumulation Mucosal bleed Lethargy, restlessness Liver enlargement >2 cm Laboratory Increase in HCT concurrent with rapid decrease in platelet count 47 Textbox D. Haemodynamic assessment: continuum of haemodynamic changes Parameters Stable circulation Compe"
-        },
-        {
             "source": "C1306859",
             "target": "C4055506",
             "relation": "HAS_SIGN",
-            "chunk_id": 153,
-            "sentence": "ons Illnesses with neurological manifestations Meningo/encephalitis Febrile seizures Conditions that mimic the critical phase of dengue infection Infectious Acute gastroenteritis, malaria, leptospirosis, typhoid, typhus, viral hepatitis, acute HIV seroconversion illness, bacterial sepsis, septic shock Malignancies Acute leukaemia and other malignancies Other clinical pictures Acute abdomen – acute appendicitis – acute cholecystitis – perforated viscus Diabetic ketoacidosis Lactic acidosis Leukopenia and thrombocytopaenia ± bleeding Platelet disorders Renal failure Respiratory distress (Kussmaul’s breathing) Systemic Lupus Erythematosus Textbox C. Warning signs Clinical Abdominal pain or tenderness Persistent vomiting Clinical fluid accumulation Mucosal bleed Lethargy, restlessness Liver enlargement >2 cm Laboratory Increase in HCT concurrent with rapid decrease in platelet count 47 Textbox D. Haemodynamic assessment: continuum of haemodynamic changes Parameters Stable circulation Compe"
-        },
-        {
-            "source": "C1306859",
-            "target": "C0032181",
-            "relation": "DIAGNOSED_BY",
             "chunk_id": 153,
             "sentence": "ons Illnesses with neurological manifestations Meningo/encephalitis Febrile seizures Conditions that mimic the critical phase of dengue infection Infectious Acute gastroenteritis, malaria, leptospirosis, typhoid, typhus, viral hepatitis, acute HIV seroconversion illness, bacterial sepsis, septic shock Malignancies Acute leukaemia and other malignancies Other clinical pictures Acute abdomen – acute appendicitis – acute cholecystitis – perforated viscus Diabetic ketoacidosis Lactic acidosis Leukopenia and thrombocytopaenia ± bleeding Platelet disorders Renal failure Respiratory distress (Kussmaul’s breathing) Systemic Lupus Erythematosus Textbox C. Warning signs Clinical Abdominal pain or tenderness Persistent vomiting Clinical fluid accumulation Mucosal bleed Lethargy, restlessness Liver enlargement >2 cm Laboratory Increase in HCT concurrent with rapid decrease in platelet count 47 Textbox D. Haemodynamic assessment: continuum of haemodynamic changes Parameters Stable circulation Compe"
         },
@@ -6957,23 +7733,9 @@
             "sentence": "ons Illnesses with neurological manifestations Meningo/encephalitis Febrile seizures Conditions that mimic the critical phase of dengue infection Infectious Acute gastroenteritis, malaria, leptospirosis, typhoid, typhus, viral hepatitis, acute HIV seroconversion illness, bacterial sepsis, septic shock Malignancies Acute leukaemia and other malignancies Other clinical pictures Acute abdomen – acute appendicitis – acute cholecystitis – perforated viscus Diabetic ketoacidosis Lactic acidosis Leukopenia and thrombocytopaenia ± bleeding Platelet disorders Renal failure Respiratory distress (Kussmaul’s breathing) Systemic Lupus Erythematosus Textbox C. Warning signs Clinical Abdominal pain or tenderness Persistent vomiting Clinical fluid accumulation Mucosal bleed Lethargy, restlessness Liver enlargement >2 cm Laboratory Increase in HCT concurrent with rapid decrease in platelet count 47 Textbox D. Haemodynamic assessment: continuum of haemodynamic changes Parameters Stable circulation Compe"
         },
         {
-            "source": "C0024530",
-            "target": "C0032181",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 153,
-            "sentence": "ons Illnesses with neurological manifestations Meningo/encephalitis Febrile seizures Conditions that mimic the critical phase of dengue infection Infectious Acute gastroenteritis, malaria, leptospirosis, typhoid, typhus, viral hepatitis, acute HIV seroconversion illness, bacterial sepsis, septic shock Malignancies Acute leukaemia and other malignancies Other clinical pictures Acute abdomen – acute appendicitis – acute cholecystitis – perforated viscus Diabetic ketoacidosis Lactic acidosis Leukopenia and thrombocytopaenia ± bleeding Platelet disorders Renal failure Respiratory distress (Kussmaul’s breathing) Systemic Lupus Erythematosus Textbox C. Warning signs Clinical Abdominal pain or tenderness Persistent vomiting Clinical fluid accumulation Mucosal bleed Lethargy, restlessness Liver enlargement >2 cm Laboratory Increase in HCT concurrent with rapid decrease in platelet count 47 Textbox D. Haemodynamic assessment: continuum of haemodynamic changes Parameters Stable circulation Compe"
-        },
-        {
             "source": "C0023364",
             "target": "C4055506",
             "relation": "HAS_SIGN",
-            "chunk_id": 153,
-            "sentence": "ons Illnesses with neurological manifestations Meningo/encephalitis Febrile seizures Conditions that mimic the critical phase of dengue infection Infectious Acute gastroenteritis, malaria, leptospirosis, typhoid, typhus, viral hepatitis, acute HIV seroconversion illness, bacterial sepsis, septic shock Malignancies Acute leukaemia and other malignancies Other clinical pictures Acute abdomen – acute appendicitis – acute cholecystitis – perforated viscus Diabetic ketoacidosis Lactic acidosis Leukopenia and thrombocytopaenia ± bleeding Platelet disorders Renal failure Respiratory distress (Kussmaul’s breathing) Systemic Lupus Erythematosus Textbox C. Warning signs Clinical Abdominal pain or tenderness Persistent vomiting Clinical fluid accumulation Mucosal bleed Lethargy, restlessness Liver enlargement >2 cm Laboratory Increase in HCT concurrent with rapid decrease in platelet count 47 Textbox D. Haemodynamic assessment: continuum of haemodynamic changes Parameters Stable circulation Compe"
-        },
-        {
-            "source": "C0023364",
-            "target": "C0032181",
-            "relation": "DIAGNOSED_BY",
             "chunk_id": 153,
             "sentence": "ons Illnesses with neurological manifestations Meningo/encephalitis Febrile seizures Conditions that mimic the critical phase of dengue infection Infectious Acute gastroenteritis, malaria, leptospirosis, typhoid, typhus, viral hepatitis, acute HIV seroconversion illness, bacterial sepsis, septic shock Malignancies Acute leukaemia and other malignancies Other clinical pictures Acute abdomen – acute appendicitis – acute cholecystitis – perforated viscus Diabetic ketoacidosis Lactic acidosis Leukopenia and thrombocytopaenia ± bleeding Platelet disorders Renal failure Respiratory distress (Kussmaul’s breathing) Systemic Lupus Erythematosus Textbox C. Warning signs Clinical Abdominal pain or tenderness Persistent vomiting Clinical fluid accumulation Mucosal bleed Lethargy, restlessness Liver enlargement >2 cm Laboratory Increase in HCT concurrent with rapid decrease in platelet count 47 Textbox D. Haemodynamic assessment: continuum of haemodynamic changes Parameters Stable circulation Compe"
         },
@@ -6985,23 +7747,9 @@
             "sentence": "ons Illnesses with neurological manifestations Meningo/encephalitis Febrile seizures Conditions that mimic the critical phase of dengue infection Infectious Acute gastroenteritis, malaria, leptospirosis, typhoid, typhus, viral hepatitis, acute HIV seroconversion illness, bacterial sepsis, septic shock Malignancies Acute leukaemia and other malignancies Other clinical pictures Acute abdomen – acute appendicitis – acute cholecystitis – perforated viscus Diabetic ketoacidosis Lactic acidosis Leukopenia and thrombocytopaenia ± bleeding Platelet disorders Renal failure Respiratory distress (Kussmaul’s breathing) Systemic Lupus Erythematosus Textbox C. Warning signs Clinical Abdominal pain or tenderness Persistent vomiting Clinical fluid accumulation Mucosal bleed Lethargy, restlessness Liver enlargement >2 cm Laboratory Increase in HCT concurrent with rapid decrease in platelet count 47 Textbox D. Haemodynamic assessment: continuum of haemodynamic changes Parameters Stable circulation Compe"
         },
         {
-            "source": "C0041466",
-            "target": "C0032181",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 153,
-            "sentence": "ons Illnesses with neurological manifestations Meningo/encephalitis Febrile seizures Conditions that mimic the critical phase of dengue infection Infectious Acute gastroenteritis, malaria, leptospirosis, typhoid, typhus, viral hepatitis, acute HIV seroconversion illness, bacterial sepsis, septic shock Malignancies Acute leukaemia and other malignancies Other clinical pictures Acute abdomen – acute appendicitis – acute cholecystitis – perforated viscus Diabetic ketoacidosis Lactic acidosis Leukopenia and thrombocytopaenia ± bleeding Platelet disorders Renal failure Respiratory distress (Kussmaul’s breathing) Systemic Lupus Erythematosus Textbox C. Warning signs Clinical Abdominal pain or tenderness Persistent vomiting Clinical fluid accumulation Mucosal bleed Lethargy, restlessness Liver enlargement >2 cm Laboratory Increase in HCT concurrent with rapid decrease in platelet count 47 Textbox D. Haemodynamic assessment: continuum of haemodynamic changes Parameters Stable circulation Compe"
-        },
-        {
             "source": "C0019159",
             "target": "C4055506",
             "relation": "HAS_SIGN",
-            "chunk_id": 153,
-            "sentence": "ons Illnesses with neurological manifestations Meningo/encephalitis Febrile seizures Conditions that mimic the critical phase of dengue infection Infectious Acute gastroenteritis, malaria, leptospirosis, typhoid, typhus, viral hepatitis, acute HIV seroconversion illness, bacterial sepsis, septic shock Malignancies Acute leukaemia and other malignancies Other clinical pictures Acute abdomen – acute appendicitis – acute cholecystitis – perforated viscus Diabetic ketoacidosis Lactic acidosis Leukopenia and thrombocytopaenia ± bleeding Platelet disorders Renal failure Respiratory distress (Kussmaul’s breathing) Systemic Lupus Erythematosus Textbox C. Warning signs Clinical Abdominal pain or tenderness Persistent vomiting Clinical fluid accumulation Mucosal bleed Lethargy, restlessness Liver enlargement >2 cm Laboratory Increase in HCT concurrent with rapid decrease in platelet count 47 Textbox D. Haemodynamic assessment: continuum of haemodynamic changes Parameters Stable circulation Compe"
-        },
-        {
-            "source": "C0019159",
-            "target": "C0032181",
-            "relation": "DIAGNOSED_BY",
             "chunk_id": 153,
             "sentence": "ons Illnesses with neurological manifestations Meningo/encephalitis Febrile seizures Conditions that mimic the critical phase of dengue infection Infectious Acute gastroenteritis, malaria, leptospirosis, typhoid, typhus, viral hepatitis, acute HIV seroconversion illness, bacterial sepsis, septic shock Malignancies Acute leukaemia and other malignancies Other clinical pictures Acute abdomen – acute appendicitis – acute cholecystitis – perforated viscus Diabetic ketoacidosis Lactic acidosis Leukopenia and thrombocytopaenia ± bleeding Platelet disorders Renal failure Respiratory distress (Kussmaul’s breathing) Systemic Lupus Erythematosus Textbox C. Warning signs Clinical Abdominal pain or tenderness Persistent vomiting Clinical fluid accumulation Mucosal bleed Lethargy, restlessness Liver enlargement >2 cm Laboratory Increase in HCT concurrent with rapid decrease in platelet count 47 Textbox D. Haemodynamic assessment: continuum of haemodynamic changes Parameters Stable circulation Compe"
         },
@@ -7013,23 +7761,9 @@
             "sentence": "ons Illnesses with neurological manifestations Meningo/encephalitis Febrile seizures Conditions that mimic the critical phase of dengue infection Infectious Acute gastroenteritis, malaria, leptospirosis, typhoid, typhus, viral hepatitis, acute HIV seroconversion illness, bacterial sepsis, septic shock Malignancies Acute leukaemia and other malignancies Other clinical pictures Acute abdomen – acute appendicitis – acute cholecystitis – perforated viscus Diabetic ketoacidosis Lactic acidosis Leukopenia and thrombocytopaenia ± bleeding Platelet disorders Renal failure Respiratory distress (Kussmaul’s breathing) Systemic Lupus Erythematosus Textbox C. Warning signs Clinical Abdominal pain or tenderness Persistent vomiting Clinical fluid accumulation Mucosal bleed Lethargy, restlessness Liver enlargement >2 cm Laboratory Increase in HCT concurrent with rapid decrease in platelet count 47 Textbox D. Haemodynamic assessment: continuum of haemodynamic changes Parameters Stable circulation Compe"
         },
         {
-            "source": "C0684256",
-            "target": "C0032181",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 153,
-            "sentence": "ons Illnesses with neurological manifestations Meningo/encephalitis Febrile seizures Conditions that mimic the critical phase of dengue infection Infectious Acute gastroenteritis, malaria, leptospirosis, typhoid, typhus, viral hepatitis, acute HIV seroconversion illness, bacterial sepsis, septic shock Malignancies Acute leukaemia and other malignancies Other clinical pictures Acute abdomen – acute appendicitis – acute cholecystitis – perforated viscus Diabetic ketoacidosis Lactic acidosis Leukopenia and thrombocytopaenia ± bleeding Platelet disorders Renal failure Respiratory distress (Kussmaul’s breathing) Systemic Lupus Erythematosus Textbox C. Warning signs Clinical Abdominal pain or tenderness Persistent vomiting Clinical fluid accumulation Mucosal bleed Lethargy, restlessness Liver enlargement >2 cm Laboratory Increase in HCT concurrent with rapid decrease in platelet count 47 Textbox D. Haemodynamic assessment: continuum of haemodynamic changes Parameters Stable circulation Compe"
-        },
-        {
             "source": "C0003615",
             "target": "C4055506",
             "relation": "HAS_SIGN",
-            "chunk_id": 153,
-            "sentence": "ons Illnesses with neurological manifestations Meningo/encephalitis Febrile seizures Conditions that mimic the critical phase of dengue infection Infectious Acute gastroenteritis, malaria, leptospirosis, typhoid, typhus, viral hepatitis, acute HIV seroconversion illness, bacterial sepsis, septic shock Malignancies Acute leukaemia and other malignancies Other clinical pictures Acute abdomen – acute appendicitis – acute cholecystitis – perforated viscus Diabetic ketoacidosis Lactic acidosis Leukopenia and thrombocytopaenia ± bleeding Platelet disorders Renal failure Respiratory distress (Kussmaul’s breathing) Systemic Lupus Erythematosus Textbox C. Warning signs Clinical Abdominal pain or tenderness Persistent vomiting Clinical fluid accumulation Mucosal bleed Lethargy, restlessness Liver enlargement >2 cm Laboratory Increase in HCT concurrent with rapid decrease in platelet count 47 Textbox D. Haemodynamic assessment: continuum of haemodynamic changes Parameters Stable circulation Compe"
-        },
-        {
-            "source": "C0003615",
-            "target": "C0032181",
-            "relation": "DIAGNOSED_BY",
             "chunk_id": 153,
             "sentence": "ons Illnesses with neurological manifestations Meningo/encephalitis Febrile seizures Conditions that mimic the critical phase of dengue infection Infectious Acute gastroenteritis, malaria, leptospirosis, typhoid, typhus, viral hepatitis, acute HIV seroconversion illness, bacterial sepsis, septic shock Malignancies Acute leukaemia and other malignancies Other clinical pictures Acute abdomen – acute appendicitis – acute cholecystitis – perforated viscus Diabetic ketoacidosis Lactic acidosis Leukopenia and thrombocytopaenia ± bleeding Platelet disorders Renal failure Respiratory distress (Kussmaul’s breathing) Systemic Lupus Erythematosus Textbox C. Warning signs Clinical Abdominal pain or tenderness Persistent vomiting Clinical fluid accumulation Mucosal bleed Lethargy, restlessness Liver enlargement >2 cm Laboratory Increase in HCT concurrent with rapid decrease in platelet count 47 Textbox D. Haemodynamic assessment: continuum of haemodynamic changes Parameters Stable circulation Compe"
         },
@@ -7041,23 +7775,9 @@
             "sentence": "ons Illnesses with neurological manifestations Meningo/encephalitis Febrile seizures Conditions that mimic the critical phase of dengue infection Infectious Acute gastroenteritis, malaria, leptospirosis, typhoid, typhus, viral hepatitis, acute HIV seroconversion illness, bacterial sepsis, septic shock Malignancies Acute leukaemia and other malignancies Other clinical pictures Acute abdomen – acute appendicitis – acute cholecystitis – perforated viscus Diabetic ketoacidosis Lactic acidosis Leukopenia and thrombocytopaenia ± bleeding Platelet disorders Renal failure Respiratory distress (Kussmaul’s breathing) Systemic Lupus Erythematosus Textbox C. Warning signs Clinical Abdominal pain or tenderness Persistent vomiting Clinical fluid accumulation Mucosal bleed Lethargy, restlessness Liver enlargement >2 cm Laboratory Increase in HCT concurrent with rapid decrease in platelet count 47 Textbox D. Haemodynamic assessment: continuum of haemodynamic changes Parameters Stable circulation Compe"
         },
         {
-            "source": "C0149520",
-            "target": "C0032181",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 153,
-            "sentence": "ons Illnesses with neurological manifestations Meningo/encephalitis Febrile seizures Conditions that mimic the critical phase of dengue infection Infectious Acute gastroenteritis, malaria, leptospirosis, typhoid, typhus, viral hepatitis, acute HIV seroconversion illness, bacterial sepsis, septic shock Malignancies Acute leukaemia and other malignancies Other clinical pictures Acute abdomen – acute appendicitis – acute cholecystitis – perforated viscus Diabetic ketoacidosis Lactic acidosis Leukopenia and thrombocytopaenia ± bleeding Platelet disorders Renal failure Respiratory distress (Kussmaul’s breathing) Systemic Lupus Erythematosus Textbox C. Warning signs Clinical Abdominal pain or tenderness Persistent vomiting Clinical fluid accumulation Mucosal bleed Lethargy, restlessness Liver enlargement >2 cm Laboratory Increase in HCT concurrent with rapid decrease in platelet count 47 Textbox D. Haemodynamic assessment: continuum of haemodynamic changes Parameters Stable circulation Compe"
-        },
-        {
             "source": "C0011880",
             "target": "C4055506",
             "relation": "HAS_SIGN",
-            "chunk_id": 153,
-            "sentence": "ons Illnesses with neurological manifestations Meningo/encephalitis Febrile seizures Conditions that mimic the critical phase of dengue infection Infectious Acute gastroenteritis, malaria, leptospirosis, typhoid, typhus, viral hepatitis, acute HIV seroconversion illness, bacterial sepsis, septic shock Malignancies Acute leukaemia and other malignancies Other clinical pictures Acute abdomen – acute appendicitis – acute cholecystitis – perforated viscus Diabetic ketoacidosis Lactic acidosis Leukopenia and thrombocytopaenia ± bleeding Platelet disorders Renal failure Respiratory distress (Kussmaul’s breathing) Systemic Lupus Erythematosus Textbox C. Warning signs Clinical Abdominal pain or tenderness Persistent vomiting Clinical fluid accumulation Mucosal bleed Lethargy, restlessness Liver enlargement >2 cm Laboratory Increase in HCT concurrent with rapid decrease in platelet count 47 Textbox D. Haemodynamic assessment: continuum of haemodynamic changes Parameters Stable circulation Compe"
-        },
-        {
-            "source": "C0011880",
-            "target": "C0032181",
-            "relation": "DIAGNOSED_BY",
             "chunk_id": 153,
             "sentence": "ons Illnesses with neurological manifestations Meningo/encephalitis Febrile seizures Conditions that mimic the critical phase of dengue infection Infectious Acute gastroenteritis, malaria, leptospirosis, typhoid, typhus, viral hepatitis, acute HIV seroconversion illness, bacterial sepsis, septic shock Malignancies Acute leukaemia and other malignancies Other clinical pictures Acute abdomen – acute appendicitis – acute cholecystitis – perforated viscus Diabetic ketoacidosis Lactic acidosis Leukopenia and thrombocytopaenia ± bleeding Platelet disorders Renal failure Respiratory distress (Kussmaul’s breathing) Systemic Lupus Erythematosus Textbox C. Warning signs Clinical Abdominal pain or tenderness Persistent vomiting Clinical fluid accumulation Mucosal bleed Lethargy, restlessness Liver enlargement >2 cm Laboratory Increase in HCT concurrent with rapid decrease in platelet count 47 Textbox D. Haemodynamic assessment: continuum of haemodynamic changes Parameters Stable circulation Compe"
         },
@@ -7069,23 +7789,9 @@
             "sentence": "ons Illnesses with neurological manifestations Meningo/encephalitis Febrile seizures Conditions that mimic the critical phase of dengue infection Infectious Acute gastroenteritis, malaria, leptospirosis, typhoid, typhus, viral hepatitis, acute HIV seroconversion illness, bacterial sepsis, septic shock Malignancies Acute leukaemia and other malignancies Other clinical pictures Acute abdomen – acute appendicitis – acute cholecystitis – perforated viscus Diabetic ketoacidosis Lactic acidosis Leukopenia and thrombocytopaenia ± bleeding Platelet disorders Renal failure Respiratory distress (Kussmaul’s breathing) Systemic Lupus Erythematosus Textbox C. Warning signs Clinical Abdominal pain or tenderness Persistent vomiting Clinical fluid accumulation Mucosal bleed Lethargy, restlessness Liver enlargement >2 cm Laboratory Increase in HCT concurrent with rapid decrease in platelet count 47 Textbox D. Haemodynamic assessment: continuum of haemodynamic changes Parameters Stable circulation Compe"
         },
         {
-            "source": "C0001125",
-            "target": "C0032181",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 153,
-            "sentence": "ons Illnesses with neurological manifestations Meningo/encephalitis Febrile seizures Conditions that mimic the critical phase of dengue infection Infectious Acute gastroenteritis, malaria, leptospirosis, typhoid, typhus, viral hepatitis, acute HIV seroconversion illness, bacterial sepsis, septic shock Malignancies Acute leukaemia and other malignancies Other clinical pictures Acute abdomen – acute appendicitis – acute cholecystitis – perforated viscus Diabetic ketoacidosis Lactic acidosis Leukopenia and thrombocytopaenia ± bleeding Platelet disorders Renal failure Respiratory distress (Kussmaul’s breathing) Systemic Lupus Erythematosus Textbox C. Warning signs Clinical Abdominal pain or tenderness Persistent vomiting Clinical fluid accumulation Mucosal bleed Lethargy, restlessness Liver enlargement >2 cm Laboratory Increase in HCT concurrent with rapid decrease in platelet count 47 Textbox D. Haemodynamic assessment: continuum of haemodynamic changes Parameters Stable circulation Compe"
-        },
-        {
             "source": "C0005818",
             "target": "C4055506",
             "relation": "HAS_SIGN",
-            "chunk_id": 153,
-            "sentence": "ons Illnesses with neurological manifestations Meningo/encephalitis Febrile seizures Conditions that mimic the critical phase of dengue infection Infectious Acute gastroenteritis, malaria, leptospirosis, typhoid, typhus, viral hepatitis, acute HIV seroconversion illness, bacterial sepsis, septic shock Malignancies Acute leukaemia and other malignancies Other clinical pictures Acute abdomen – acute appendicitis – acute cholecystitis – perforated viscus Diabetic ketoacidosis Lactic acidosis Leukopenia and thrombocytopaenia ± bleeding Platelet disorders Renal failure Respiratory distress (Kussmaul’s breathing) Systemic Lupus Erythematosus Textbox C. Warning signs Clinical Abdominal pain or tenderness Persistent vomiting Clinical fluid accumulation Mucosal bleed Lethargy, restlessness Liver enlargement >2 cm Laboratory Increase in HCT concurrent with rapid decrease in platelet count 47 Textbox D. Haemodynamic assessment: continuum of haemodynamic changes Parameters Stable circulation Compe"
-        },
-        {
-            "source": "C0005818",
-            "target": "C0032181",
-            "relation": "DIAGNOSED_BY",
             "chunk_id": 153,
             "sentence": "ons Illnesses with neurological manifestations Meningo/encephalitis Febrile seizures Conditions that mimic the critical phase of dengue infection Infectious Acute gastroenteritis, malaria, leptospirosis, typhoid, typhus, viral hepatitis, acute HIV seroconversion illness, bacterial sepsis, septic shock Malignancies Acute leukaemia and other malignancies Other clinical pictures Acute abdomen – acute appendicitis – acute cholecystitis – perforated viscus Diabetic ketoacidosis Lactic acidosis Leukopenia and thrombocytopaenia ± bleeding Platelet disorders Renal failure Respiratory distress (Kussmaul’s breathing) Systemic Lupus Erythematosus Textbox C. Warning signs Clinical Abdominal pain or tenderness Persistent vomiting Clinical fluid accumulation Mucosal bleed Lethargy, restlessness Liver enlargement >2 cm Laboratory Increase in HCT concurrent with rapid decrease in platelet count 47 Textbox D. Haemodynamic assessment: continuum of haemodynamic changes Parameters Stable circulation Compe"
         },
@@ -7097,32 +7803,11 @@
             "sentence": "ons Illnesses with neurological manifestations Meningo/encephalitis Febrile seizures Conditions that mimic the critical phase of dengue infection Infectious Acute gastroenteritis, malaria, leptospirosis, typhoid, typhus, viral hepatitis, acute HIV seroconversion illness, bacterial sepsis, septic shock Malignancies Acute leukaemia and other malignancies Other clinical pictures Acute abdomen – acute appendicitis – acute cholecystitis – perforated viscus Diabetic ketoacidosis Lactic acidosis Leukopenia and thrombocytopaenia ± bleeding Platelet disorders Renal failure Respiratory distress (Kussmaul’s breathing) Systemic Lupus Erythematosus Textbox C. Warning signs Clinical Abdominal pain or tenderness Persistent vomiting Clinical fluid accumulation Mucosal bleed Lethargy, restlessness Liver enlargement >2 cm Laboratory Increase in HCT concurrent with rapid decrease in platelet count 47 Textbox D. Haemodynamic assessment: continuum of haemodynamic changes Parameters Stable circulation Compe"
         },
         {
-            "source": "C0035078",
-            "target": "C0032181",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 153,
-            "sentence": "ons Illnesses with neurological manifestations Meningo/encephalitis Febrile seizures Conditions that mimic the critical phase of dengue infection Infectious Acute gastroenteritis, malaria, leptospirosis, typhoid, typhus, viral hepatitis, acute HIV seroconversion illness, bacterial sepsis, septic shock Malignancies Acute leukaemia and other malignancies Other clinical pictures Acute abdomen – acute appendicitis – acute cholecystitis – perforated viscus Diabetic ketoacidosis Lactic acidosis Leukopenia and thrombocytopaenia ± bleeding Platelet disorders Renal failure Respiratory distress (Kussmaul’s breathing) Systemic Lupus Erythematosus Textbox C. Warning signs Clinical Abdominal pain or tenderness Persistent vomiting Clinical fluid accumulation Mucosal bleed Lethargy, restlessness Liver enlargement >2 cm Laboratory Increase in HCT concurrent with rapid decrease in platelet count 47 Textbox D. Haemodynamic assessment: continuum of haemodynamic changes Parameters Stable circulation Compe"
-        },
-        {
             "source": "C0024141",
             "target": "C4055506",
             "relation": "HAS_SIGN",
             "chunk_id": 153,
             "sentence": "ons Illnesses with neurological manifestations Meningo/encephalitis Febrile seizures Conditions that mimic the critical phase of dengue infection Infectious Acute gastroenteritis, malaria, leptospirosis, typhoid, typhus, viral hepatitis, acute HIV seroconversion illness, bacterial sepsis, septic shock Malignancies Acute leukaemia and other malignancies Other clinical pictures Acute abdomen – acute appendicitis – acute cholecystitis – perforated viscus Diabetic ketoacidosis Lactic acidosis Leukopenia and thrombocytopaenia ± bleeding Platelet disorders Renal failure Respiratory distress (Kussmaul’s breathing) Systemic Lupus Erythematosus Textbox C. Warning signs Clinical Abdominal pain or tenderness Persistent vomiting Clinical fluid accumulation Mucosal bleed Lethargy, restlessness Liver enlargement >2 cm Laboratory Increase in HCT concurrent with rapid decrease in platelet count 47 Textbox D. Haemodynamic assessment: continuum of haemodynamic changes Parameters Stable circulation Compe"
-        },
-        {
-            "source": "C0024141",
-            "target": "C0032181",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 153,
-            "sentence": "ons Illnesses with neurological manifestations Meningo/encephalitis Febrile seizures Conditions that mimic the critical phase of dengue infection Infectious Acute gastroenteritis, malaria, leptospirosis, typhoid, typhus, viral hepatitis, acute HIV seroconversion illness, bacterial sepsis, septic shock Malignancies Acute leukaemia and other malignancies Other clinical pictures Acute abdomen – acute appendicitis – acute cholecystitis – perforated viscus Diabetic ketoacidosis Lactic acidosis Leukopenia and thrombocytopaenia ± bleeding Platelet disorders Renal failure Respiratory distress (Kussmaul’s breathing) Systemic Lupus Erythematosus Textbox C. Warning signs Clinical Abdominal pain or tenderness Persistent vomiting Clinical fluid accumulation Mucosal bleed Lethargy, restlessness Liver enlargement >2 cm Laboratory Increase in HCT concurrent with rapid decrease in platelet count 47 Textbox D. Haemodynamic assessment: continuum of haemodynamic changes Parameters Stable circulation Compe"
-        },
-        {
-            "source": "C0745178",
-            "target": "C0032181",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 154,
-            "sentence": "largement >2 cm Laboratory Increase in HCT concurrent with rapid decrease in platelet count 47 Textbox D. Haemodynamic assessment: continuum of haemodynamic changes Parameters Stable circulation Compensated shock Hypotensive shock Hypotensive shock Clear and lucid Clear and lucid (shock can be Change of mental state (restless, missed if you do not touch the combative) patient) Capillary refill time Brisk (<2 sec) Prolonged (>2 sec) Very prolonged, mottled skin Extremities Warm and pink Cool peripheries Cold, clammy extremities extremities Peripheral Good volume Weak and thready Feeble or absent pulse volume Heart rate Normal for age Tachycardia Severe tachycardia with bradycardia in late shock Blood pressure Normal for age Normal systolic pressure but Narrowed pulse pressure Normal pulse rising diastolic pressure (<20 mmHg) pressure for age Narrowing pulse pressure Hypotension (see definition Postural hypotension below) Unrecordable blood pressure Respiratory rate Normal for age Tachyp"
         },
         {
             "source": "C0745178",
@@ -7156,13 +7841,6 @@
             "source": "C0745178",
             "target": "C0428977",
             "relation": "HAS_SIGN",
-            "chunk_id": 154,
-            "sentence": "largement >2 cm Laboratory Increase in HCT concurrent with rapid decrease in platelet count 47 Textbox D. Haemodynamic assessment: continuum of haemodynamic changes Parameters Stable circulation Compensated shock Hypotensive shock Hypotensive shock Clear and lucid Clear and lucid (shock can be Change of mental state (restless, missed if you do not touch the combative) patient) Capillary refill time Brisk (<2 sec) Prolonged (>2 sec) Very prolonged, mottled skin Extremities Warm and pink Cool peripheries Cold, clammy extremities extremities Peripheral Good volume Weak and thready Feeble or absent pulse volume Heart rate Normal for age Tachycardia Severe tachycardia with bradycardia in late shock Blood pressure Normal for age Normal systolic pressure but Narrowed pulse pressure Normal pulse rising diastolic pressure (<20 mmHg) pressure for age Narrowing pulse pressure Hypotension (see definition Postural hypotension below) Unrecordable blood pressure Respiratory rate Normal for age Tachyp"
-        },
-        {
-            "source": "C0020651",
-            "target": "C0032181",
-            "relation": "DIAGNOSED_BY",
             "chunk_id": 154,
             "sentence": "largement >2 cm Laboratory Increase in HCT concurrent with rapid decrease in platelet count 47 Textbox D. Haemodynamic assessment: continuum of haemodynamic changes Parameters Stable circulation Compensated shock Hypotensive shock Hypotensive shock Clear and lucid Clear and lucid (shock can be Change of mental state (restless, missed if you do not touch the combative) patient) Capillary refill time Brisk (<2 sec) Prolonged (>2 sec) Very prolonged, mottled skin Extremities Warm and pink Cool peripheries Cold, clammy extremities extremities Peripheral Good volume Weak and thready Feeble or absent pulse volume Heart rate Normal for age Tachycardia Severe tachycardia with bradycardia in late shock Blood pressure Normal for age Normal systolic pressure but Narrowed pulse pressure Normal pulse rising diastolic pressure (<20 mmHg) pressure for age Narrowing pulse pressure Hypotension (see definition Postural hypotension below) Unrecordable blood pressure Respiratory rate Normal for age Tachyp"
         },
@@ -7259,13 +7937,6 @@
         },
         {
             "source": "C0032227",
-            "target": "C0032181",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 155,
-            "sentence": "ising diastolic pressure (<20 mmHg) pressure for age Narrowing pulse pressure Hypotension (see definition Postural hypotension below) Unrecordable blood pressure Respiratory rate Normal for age Tachypnoea Metabolic acidosis hyperpnoea/ Kussmaul’s breathing Textbox E. Admission criteria Warning signs Any of the warning signs (Textbox C) Signs and symptoms related to hypotension Dehydrated patient, unable to tolerate oral fluids (possible plasma leakage) Giddiness or postural hypotension Profuse perspiration, fainting, prostration during defervescence Hypotension or cold extremities Bleeding Spontaneous bleeding, independent of the platelet count Organ impairment Renal, hepatic, neurological or cardiac – enlarged, tender liver, although not yet in shock – chest pain or respiratory distress, cyanosis Findings through further investigations Rising haematocrit Pleural effusion, ascites or asymptomatic gall-bladder thickening Co-existing conditions Pregnancy Co-morbid conditions, such as dia"
-        },
-        {
-            "source": "C0032227",
             "target": "C0023884",
             "relation": "AFFECTS",
             "chunk_id": 155,
@@ -7296,13 +7967,6 @@
             "source": "C0003962",
             "target": "C0277925",
             "relation": "HAS_SIGN",
-            "chunk_id": 155,
-            "sentence": "ising diastolic pressure (<20 mmHg) pressure for age Narrowing pulse pressure Hypotension (see definition Postural hypotension below) Unrecordable blood pressure Respiratory rate Normal for age Tachypnoea Metabolic acidosis hyperpnoea/ Kussmaul’s breathing Textbox E. Admission criteria Warning signs Any of the warning signs (Textbox C) Signs and symptoms related to hypotension Dehydrated patient, unable to tolerate oral fluids (possible plasma leakage) Giddiness or postural hypotension Profuse perspiration, fainting, prostration during defervescence Hypotension or cold extremities Bleeding Spontaneous bleeding, independent of the platelet count Organ impairment Renal, hepatic, neurological or cardiac – enlarged, tender liver, although not yet in shock – chest pain or respiratory distress, cyanosis Findings through further investigations Rising haematocrit Pleural effusion, ascites or asymptomatic gall-bladder thickening Co-existing conditions Pregnancy Co-morbid conditions, such as dia"
-        },
-        {
-            "source": "C0003962",
-            "target": "C0032181",
-            "relation": "DIAGNOSED_BY",
             "chunk_id": 155,
             "sentence": "ising diastolic pressure (<20 mmHg) pressure for age Narrowing pulse pressure Hypotension (see definition Postural hypotension below) Unrecordable blood pressure Respiratory rate Normal for age Tachypnoea Metabolic acidosis hyperpnoea/ Kussmaul’s breathing Textbox E. Admission criteria Warning signs Any of the warning signs (Textbox C) Signs and symptoms related to hypotension Dehydrated patient, unable to tolerate oral fluids (possible plasma leakage) Giddiness or postural hypotension Profuse perspiration, fainting, prostration during defervescence Hypotension or cold extremities Bleeding Spontaneous bleeding, independent of the platelet count Organ impairment Renal, hepatic, neurological or cardiac – enlarged, tender liver, although not yet in shock – chest pain or respiratory distress, cyanosis Findings through further investigations Rising haematocrit Pleural effusion, ascites or asymptomatic gall-bladder thickening Co-existing conditions Pregnancy Co-morbid conditions, such as dia"
         },
@@ -7580,60 +8244,11 @@
             "sentence": "ns who have not previously been infected with a flavivirus or immunized with a flavivirus vaccine (e.g. for yellow fever, Japanese encephalitis, tick-borne encephalitis), the patients develop a primary antibody response characterized by a slow increase of specific antibodies."
         },
         {
-            "source": "C0009952",
-            "target": "C0007585",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 292,
-            "sentence": "Before day 5 of illness, during the febrile period, dengue infections may be diagnosed by virus isolation in cell culture, by detection of viral RNA by nucleic acid amplification tests (NAAT), or by detection of viral antigens by ELISA or rapid tests."
-        },
-        {
-            "source": "C0009952",
-            "target": "C0200932",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 292,
-            "sentence": "Before day 5 of illness, during the febrile period, dengue infections may be diagnosed by virus isolation in cell culture, by detection of viral RNA by nucleic acid amplification tests (NAAT), or by detection of viral antigens by ELISA or rapid tests."
-        },
-        {
-            "source": "C0011311",
-            "target": "C0007585",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 292,
-            "sentence": "Before day 5 of illness, during the febrile period, dengue infections may be diagnosed by virus isolation in cell culture, by detection of viral RNA by nucleic acid amplification tests (NAAT), or by detection of viral antigens by ELISA or rapid tests."
-        },
-        {
-            "source": "C0011311",
-            "target": "C0200932",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 292,
-            "sentence": "Before day 5 of illness, during the febrile period, dengue infections may be diagnosed by virus isolation in cell culture, by detection of viral RNA by nucleic acid amplification tests (NAAT), or by detection of viral antigens by ELISA or rapid tests."
-        },
-        {
-            "source": "C0011311",
-            "target": "C0200955",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 294,
-            "sentence": "Table 4.1 Summary of operating characteristics and comparative costs of dengue diagnostic methods (9) Diagnostic Diagnosis Time to Specimen Time of collection Facilities Cost methods of acute results after onset of infection symptoms Viral isolation Confirmed 1–2 weeks Whole blood, 1–5 days Mosquito or cell culture facilities, $$$ and serotype serum, tissues BSL-2/BSL-3 a laboratory, identification fluorescence microscope or molecular biology equipment Nucleic acid Confirmed 1 or 2 days Tissues, whole 1–5 days BSL-2 laboratory, equipment $$$ detection blood, serum, fo"
-        },
-        {
-            "source": "C0206608",
-            "target": "C0018904",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 297,
-            "sentence": "A four-fold or greater increase in antibody levels measured by IgG ELISA or by haemagglutination inhibition (HI) test in paired sera indicates an acute or recent flavivirus infection."
-        },
-        {
             "source": "C0521471",
             "target": "C4281748",
             "relation": "HAS_SIGN",
             "chunk_id": 299,
             "sentence": "4.2.2 Outbreak investigations During outbreaks some patients may be seen presenting with fever with or without rash during the acute illness stage; some others may present with signs of plasma leakage or shock, and others with signs of haemorrhages, while still others may be observed during the convalescent pha"
-        },
-        {
-            "source": "C0011311",
-            "target": "C0036743",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 300,
-            "sentence": "If specimens are collected after day 5 of illness, commercial IgM ELISA or sensitive dengue IgM rapid tests may suggest a dengue outbreak, but results are preferably confirmed with reliable serological tests performed in a reference laboratory with broad arbovirus diagnos"
         },
         {
             "source": "C0442886",
@@ -7650,104 +8265,6 @@
             "sentence": "As with standard PRNTs, antibodies measured by micromethods from individuals with secondary infections may react broadly with all four dengue viruses."
         },
         {
-            "source": "C0442886",
-            "target": "C0007585",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 306,
-            "sentence": "mpact on patient •Needs expertise and expensive laboratory management equipment •Not possible to differentiate between primary and secondary infection Isolation in cell culture •Specific •Need expertise and facility and identification using •Possible to identify for cell culture and fluorescent microscopy immuno-fluorescence serotype by using specific antibodies •T akes more than 1 week •Not possible to differentiate between primary and secondary infection Antigen detection •Easy to perform •Not as sensitive as virus isolation or in clinical specimens •Opportunity for early diagnosis may RNA detection impact on patient treatment Serologic tests: •Useful for confirmation of acute infection •May miss cases because IgM levels may IgM tests •Least expensive be low or undetectable in some secondary Seroconversion: 4-fold •Easy to perform infections rise in HI or ELISA IgG •Can distinguish between primary •Need two samples titres between acute and secondary infection •Delay in confirming dia"
-        },
-        {
-            "source": "C0442886",
-            "target": "C0026022",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 306,
-            "sentence": "mpact on patient •Needs expertise and expensive laboratory management equipment •Not possible to differentiate between primary and secondary infection Isolation in cell culture •Specific •Need expertise and facility and identification using •Possible to identify for cell culture and fluorescent microscopy immuno-fluorescence serotype by using specific antibodies •T akes more than 1 week •Not possible to differentiate between primary and secondary infection Antigen detection •Easy to perform •Not as sensitive as virus isolation or in clinical specimens •Opportunity for early diagnosis may RNA detection impact on patient treatment Serologic tests: •Useful for confirmation of acute infection •May miss cases because IgM levels may IgM tests •Least expensive be low or undetectable in some secondary Seroconversion: 4-fold •Easy to perform infections rise in HI or ELISA IgG •Can distinguish between primary •Need two samples titres between acute and secondary infection •Delay in confirming dia"
-        },
-        {
-            "source": "C0442886",
-            "target": "C0036743",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 306,
-            "sentence": "mpact on patient •Needs expertise and expensive laboratory management equipment •Not possible to differentiate between primary and secondary infection Isolation in cell culture •Specific •Need expertise and facility and identification using •Possible to identify for cell culture and fluorescent microscopy immuno-fluorescence serotype by using specific antibodies •T akes more than 1 week •Not possible to differentiate between primary and secondary infection Antigen detection •Easy to perform •Not as sensitive as virus isolation or in clinical specimens •Opportunity for early diagnosis may RNA detection impact on patient treatment Serologic tests: •Useful for confirmation of acute infection •May miss cases because IgM levels may IgM tests •Least expensive be low or undetectable in some secondary Seroconversion: 4-fold •Easy to perform infections rise in HI or ELISA IgG •Can distinguish between primary •Need two samples titres between acute and secondary infection •Delay in confirming dia"
-        },
-        {
-            "source": "C0275518",
-            "target": "C0007585",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 306,
-            "sentence": "mpact on patient •Needs expertise and expensive laboratory management equipment •Not possible to differentiate between primary and secondary infection Isolation in cell culture •Specific •Need expertise and facility and identification using •Possible to identify for cell culture and fluorescent microscopy immuno-fluorescence serotype by using specific antibodies •T akes more than 1 week •Not possible to differentiate between primary and secondary infection Antigen detection •Easy to perform •Not as sensitive as virus isolation or in clinical specimens •Opportunity for early diagnosis may RNA detection impact on patient treatment Serologic tests: •Useful for confirmation of acute infection •May miss cases because IgM levels may IgM tests •Least expensive be low or undetectable in some secondary Seroconversion: 4-fold •Easy to perform infections rise in HI or ELISA IgG •Can distinguish between primary •Need two samples titres between acute and secondary infection •Delay in confirming dia"
-        },
-        {
-            "source": "C0275518",
-            "target": "C0026022",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 306,
-            "sentence": "mpact on patient •Needs expertise and expensive laboratory management equipment •Not possible to differentiate between primary and secondary infection Isolation in cell culture •Specific •Need expertise and facility and identification using •Possible to identify for cell culture and fluorescent microscopy immuno-fluorescence serotype by using specific antibodies •T akes more than 1 week •Not possible to differentiate between primary and secondary infection Antigen detection •Easy to perform •Not as sensitive as virus isolation or in clinical specimens •Opportunity for early diagnosis may RNA detection impact on patient treatment Serologic tests: •Useful for confirmation of acute infection •May miss cases because IgM levels may IgM tests •Least expensive be low or undetectable in some secondary Seroconversion: 4-fold •Easy to perform infections rise in HI or ELISA IgG •Can distinguish between primary •Need two samples titres between acute and secondary infection •Delay in confirming dia"
-        },
-        {
-            "source": "C0275518",
-            "target": "C0036743",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 306,
-            "sentence": "mpact on patient •Needs expertise and expensive laboratory management equipment •Not possible to differentiate between primary and secondary infection Isolation in cell culture •Specific •Need expertise and facility and identification using •Possible to identify for cell culture and fluorescent microscopy immuno-fluorescence serotype by using specific antibodies •T akes more than 1 week •Not possible to differentiate between primary and secondary infection Antigen detection •Easy to perform •Not as sensitive as virus isolation or in clinical specimens •Opportunity for early diagnosis may RNA detection impact on patient treatment Serologic tests: •Useful for confirmation of acute infection •May miss cases because IgM levels may IgM tests •Least expensive be low or undetectable in some secondary Seroconversion: 4-fold •Easy to perform infections rise in HI or ELISA IgG •Can distinguish between primary •Need two samples titres between acute and secondary infection •Delay in confirming dia"
-        },
-        {
-            "source": "C0851162",
-            "target": "C0007585",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 306,
-            "sentence": "mpact on patient •Needs expertise and expensive laboratory management equipment •Not possible to differentiate between primary and secondary infection Isolation in cell culture •Specific •Need expertise and facility and identification using •Possible to identify for cell culture and fluorescent microscopy immuno-fluorescence serotype by using specific antibodies •T akes more than 1 week •Not possible to differentiate between primary and secondary infection Antigen detection •Easy to perform •Not as sensitive as virus isolation or in clinical specimens •Opportunity for early diagnosis may RNA detection impact on patient treatment Serologic tests: •Useful for confirmation of acute infection •May miss cases because IgM levels may IgM tests •Least expensive be low or undetectable in some secondary Seroconversion: 4-fold •Easy to perform infections rise in HI or ELISA IgG •Can distinguish between primary •Need two samples titres between acute and secondary infection •Delay in confirming dia"
-        },
-        {
-            "source": "C0851162",
-            "target": "C0026022",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 306,
-            "sentence": "mpact on patient •Needs expertise and expensive laboratory management equipment •Not possible to differentiate between primary and secondary infection Isolation in cell culture •Specific •Need expertise and facility and identification using •Possible to identify for cell culture and fluorescent microscopy immuno-fluorescence serotype by using specific antibodies •T akes more than 1 week •Not possible to differentiate between primary and secondary infection Antigen detection •Easy to perform •Not as sensitive as virus isolation or in clinical specimens •Opportunity for early diagnosis may RNA detection impact on patient treatment Serologic tests: •Useful for confirmation of acute infection •May miss cases because IgM levels may IgM tests •Least expensive be low or undetectable in some secondary Seroconversion: 4-fold •Easy to perform infections rise in HI or ELISA IgG •Can distinguish between primary •Need two samples titres between acute and secondary infection •Delay in confirming dia"
-        },
-        {
-            "source": "C0851162",
-            "target": "C0036743",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 306,
-            "sentence": "mpact on patient •Needs expertise and expensive laboratory management equipment •Not possible to differentiate between primary and secondary infection Isolation in cell culture •Specific •Need expertise and facility and identification using •Possible to identify for cell culture and fluorescent microscopy immuno-fluorescence serotype by using specific antibodies •T akes more than 1 week •Not possible to differentiate between primary and secondary infection Antigen detection •Easy to perform •Not as sensitive as virus isolation or in clinical specimens •Opportunity for early diagnosis may RNA detection impact on patient treatment Serologic tests: •Useful for confirmation of acute infection •May miss cases because IgM levels may IgM tests •Least expensive be low or undetectable in some secondary Seroconversion: 4-fold •Easy to perform infections rise in HI or ELISA IgG •Can distinguish between primary •Need two samples titres between acute and secondary infection •Delay in confirming dia"
-        },
-        {
-            "source": "C0851162",
-            "target": "C0200955",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 307,
-            "sentence": "dary Seroconversion: 4-fold •Easy to perform infections rise in HI or ELISA IgG •Can distinguish between primary •Need two samples titres between acute and secondary infection •Delay in confirming diagnosis and convalescent samples Surveillance IgM detection •Identify probable dengue cases •May miss cases because IgM levels may and outbreak •Easy to perform for case detection in be low in secondary infections identification; sentinel laboratories Monitor effectiveness Viral isolation and •Confirm cases •Can be performed only in reference of interventions RNA detection •Identify serotypes laboratories •Need acute samples 97 In drug trials, patients should have confirmed etiological diagnosis (see Table 4.2 for highly suggestive and confirmed diagnosis)."
-        },
-        {
-            "source": "C0442886",
-            "target": "C0200955",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 307,
-            "sentence": "dary Seroconversion: 4-fold •Easy to perform infections rise in HI or ELISA IgG •Can distinguish between primary •Need two samples titres between acute and secondary infection •Delay in confirming diagnosis and convalescent samples Surveillance IgM detection •Identify probable dengue cases •May miss cases because IgM levels may and outbreak •Easy to perform for case detection in be low in secondary infections identification; sentinel laboratories Monitor effectiveness Viral isolation and •Confirm cases •Can be performed only in reference of interventions RNA detection •Identify serotypes laboratories •Need acute samples 97 In drug trials, patients should have confirmed etiological diagnosis (see Table 4.2 for highly suggestive and confirmed diagnosis)."
-        },
-        {
-            "source": "C0011311",
-            "target": "C0026022",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 311,
-            "sentence": "They offer better sensitivity compared to virus isolation Indications Diagnostic Tests Advantages Limitations Diagnosis of Nucleic acid detection •Most sensitive and specific •Potential false positive due to acute dengue •Possible to identify serotype contamination infection •Early appearance (pre-antibody), •Expensive so opportunity to impact on patient •Needs expertise and expensive laboratory management equipment •Not possible to differentiate between primary and secondary infection Isolation in cell culture •Specific •Need expertise and facility and identification using •Possible to identify for cell culture and fluorescent microscopy immuno-fluorescence serotype by using specific antibodies •T akes more than 1 week •Not possible to differentiate between primary and secondary infection Antigen detection •Easy to perform •Not as sensitive as virus isolation or in clinical specimens •Opportunity for early diagnosis may RNA"
-        },
-        {
-            "source": "C0275518",
-            "target": "C0200955",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 312,
-            "sentence": "ible to differentiate between primary and secondary infection Antigen detection •Easy to perform •Not as sensitive as virus isolation or in clinical specimens •Opportunity for early diagnosis may RNA detection impact on patient treatment Serologic tests: •Useful for confirmation of acute infection •May miss cases because IgM levels may IgM tests •Least expensive be low or undetectable in some secondary Seroconversion: 4-fold •Easy to perform infections rise in HI or ELISA IgG •Can distinguish between primary •Need two samples titres between acute and secondary infection •Delay in confirming diagnosis and convalescent samples Surveillance IgM detection •Identify probable dengue cases •May miss cases because IgM levels may and outbreak •Easy to perform for case detection in be low in secondary infections identification; sentinel laboratories Monitor effectiveness Viral isolation and •Confirm cases •Can be performed only in reference of interventions RNA detection •Identify serotypes labo"
-        },
-        {
-            "source": "C0011311",
-            "target": "C0005507",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 314,
-            "sentence": "Many laboratories utilize a nested RT-PCR assay, using universal dengue primers targeting the C/prM region of the genome for an initial reverse transcription and amplification step, followed by a nested PCR amplification that is serotype-specific (14)."
-        },
-        {
             "source": "C0011311",
             "target": "C0014047",
             "relation": "CAUSED_BY",
@@ -7781,13 +8298,6 @@
             "relation": "CAUSED_BY",
             "chunk_id": 328,
             "sentence": "The assay does not discriminate between infections by closely related fl aviviruses (e.g. between dengue virus and Japanese encephalitis virus or West Nile virus) nor between immunoglobulin isotypes."
-        },
-        {
-            "source": "C0011311",
-            "target": "C0018941",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 329,
-            "sentence": "4.3.5 Haematological tests Platelets and haematocrit values are commonly measured during the acute stages of dengue infection."
         },
         {
             "source": "C0011389",
@@ -7795,13 +8305,6 @@
             "relation": "CAUSED_BY",
             "chunk_id": 340,
             "sentence": "Morens DM et al. Simplified plaque reduction neutralization assay for dengue viruses by semimicro methods in BHK-21 cells: comparison of the BHK suspension test with standard plaque reduction neutralization."
-        },
-        {
-            "source": "C0011311",
-            "target": "C0600324",
-            "relation": "DIAGNOSED_BY",
-            "chunk_id": 343,
-            "sentence": "Nawa M. Immunoglobulin A antibody responses in dengue patients: a useful marker for serodiagnosis of dengue virus infection."
         },
         {
             "source": "C0752357",

@@ -170,22 +170,34 @@ def add_nodes_emb(n4j):
 # ADD EMBEDDINGS TO NEW GRAPH ELEMENTS
 # ============================================================
 
+import re
+
+def normalize_entity_name(name):
+    text = str(name).strip()
+
+    if text.lower() in ["john", "patient", "the patient"]:
+        return "Patient"
+
+    return re.sub(r"\s+", " ", text)
 def add_ge_emb(graph_element):
 
     for node in graph_element.nodes:
 
-        print(
-            f"Generating embedding for node: {node.id}"
-        )
+        entity_name = normalize_entity_name(node.id)
 
-        embedding = get_embedding(
-            node.id
-        )
+        print(f"Generating embedding for node: {entity_name}")
 
+        embedding = get_embedding(entity_name)
+
+        if node.properties is None:
+            node.properties = {}
+
+        node.id = entity_name
+        node.properties["id"] = entity_name
+        node.properties["name"] = entity_name
         node.properties["embedding"] = embedding
 
     return graph_element
-
 
 # ============================================================
 # ADD GRAPH ID
@@ -392,34 +404,15 @@ def link_context(n4j, gid):
 def merge_similar_nodes(n4j, gid):
 
     merge_query = """
-    WITH 0.85 AS threshold
-
-    MATCH (n), (m)
-
-    WHERE NOT n:Summary
-      AND NOT m:Summary
-      AND n.gid = $gid
-      AND m.gid = $gid
-      AND n <> m
-      AND n.embedding IS NOT NULL
-      AND m.embedding IS NOT NULL
-
-    WITH n, m,
-         gds.similarity.cosine(
-             n.embedding,
-             m.embedding
-         ) AS similarity
-
-    WHERE similarity > threshold
-
-    WITH n, m
+    MATCH (n),(m)
+    WHERE n.gid=$gid
+      AND m.gid=$gid
+      AND n.id=m.id
+      AND elementId(n)<elementId(m)
 
     CALL apoc.refactor.mergeNodes(
-        [n, m],
-        {
-            properties: 'overwrite',
-            mergeRels: true
-        }
+        [n,m],
+        {properties:'overwrite', mergeRels:true}
     )
     YIELD node
 
@@ -428,11 +421,8 @@ def merge_similar_nodes(n4j, gid):
 
     return n4j.query(
         merge_query,
-        {
-            "gid": gid,
-        },
+        {"gid": gid},
     )
-
 
 # ============================================================
 # CREATE REFERENCE LINKS BETWEEN TWO GRAPHS

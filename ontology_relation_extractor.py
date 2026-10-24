@@ -463,7 +463,28 @@ else:
 # ============================================================
 # ONTOLOGY CLASSIFICATION
 # ============================================================
+CUSTOM_ENTITY_CLASSES = {
+    "dengue shock syndrome": "Complication",
+    "severe dengue": "Complication",
+    "dengue haemorrhagic fever": "Complication",
 
+    "platelet": "LaboratoryTest",
+    "hematocrit": "LaboratoryTest",
+    "full blood count": "LaboratoryTest",
+    "ns1": "DiagnosticTest",
+    "elisa": "DiagnosticTest",
+    "pcr": "DiagnosticTest",
+
+    "mosquito net": "PreventionMethod",
+    "repellent": "PreventionMethod",
+    "vector control": "PreventionMethod",
+
+    "aedes aegypti": "MosquitoSpecies",
+    "aedes albopictus": "MosquitoSpecies",
+
+    "tropical": "GeographicRegion",
+    "subtropical": "GeographicRegion"
+}
 def classify_entity(entity):
     """
     Map UMLS semantic types to the ontology.
@@ -489,7 +510,13 @@ def classify_entity(entity):
         ontology class
         or "Other"
     """
+    
+    name = entity["canonical_name"].lower()
 
+# Match WHO-specific terms using substring matching
+    for term, ontology_class in CUSTOM_ENTITY_CLASSES.items():
+        if term in name:
+             return ontology_class
     semantic_types = set(
         entity.get(
             "semantic_types",
@@ -514,34 +541,25 @@ def classify_entity(entity):
     # --------------------------------------------------------
 
     class_priority = [
-
-        "Disease",
-
-        "Symptom",
-
-        "Sign",
-
-        "DiagnosticTest",
-
-        "Treatment",
-
-        "Medication",
-
-        "Pathogen",
-
-        "VirusSerotype",
-
-        "Vector",
-
-        "RiskFactor",
-
-        "ClinicalPhase",
-
-        "BodySystem",
-
-        "PatientGroup"
-    ]
-
+    "Disease",
+    "Complication",
+    "Symptom",
+    "Sign",
+    "LaboratoryTest",
+    "DiagnosticTest",
+    "Treatment",
+    "PreventionMethod",
+    "Medication",
+    "Pathogen",
+    "MosquitoSpecies",
+    "VirusSerotype",
+    "Vector",
+    "RiskFactor",
+    "ClinicalPhase",
+    "BodySystem",
+    "PatientGroup",
+    "GeographicRegion"
+]
 
     for class_name in class_priority:
 
