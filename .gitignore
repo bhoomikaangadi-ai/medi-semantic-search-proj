@@ -39,3 +39,14 @@ Thumbs.db
 *.safetensors
 *.npy
 *.index
+# Additional virtual environments
+.venv-ontology/
+
+# Node dependencies and build output
+node_modules/
+dist/
+build/
+
+# Large backup file
+medical_chunks_source_backup.json
+backend/candidate_inferences.json

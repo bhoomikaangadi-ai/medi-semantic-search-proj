@@ -1,0 +1,2187 @@
+[
+    {
+        "concept_1": "Dengue, Classical",
+        "concept_1_id": "mesh::C0011311",
+        "concept_2": "Diagnosis",
+        "concept_2_id": "mesh::C0011900",
+        "relationship": "CO_OCCURS_WITH",
+        "inference_type": "candidate_association",
+        "supporting_chunks": 118,
+        "supporting_documents": 2,
+        "evidence": [
+            {
+                "document": "20240521_342849-B_PRESS_READY_PocketGuideDCMC_UPDATE.pdf",
+                "source": "cdc",
+                "document_path": "cdc/20240521_342849-b_press_ready_pocketguidedcmc_update.pdf",
+                "chunk_id": 19
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 3
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 9
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 10
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 13
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 14
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 20
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 22
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 23
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 27
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 33
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 40
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 41
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 42
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 48
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 55
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 56
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 61
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 62
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 63
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 71
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 72
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 78
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 83
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 85
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 89
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 90
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 92
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 100
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 107
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 114
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 117
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 118
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 120
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 128
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 129
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 135
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 141
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 142
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 149
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 155
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 159
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 164
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 168
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 185
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 186
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 188
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 189
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 190
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 193
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 194
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 200
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 201
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 209
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 216
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 224
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 232
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 240
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 246
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 255
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 261
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 270
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 272
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 278
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 286
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 294
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 299
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 300
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 303
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 307
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 309
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 310
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 311
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 312
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 313
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 318
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 320
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 322
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 326
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 327
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 328
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 336
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 337
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 343
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 344
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 349
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 350
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 352
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 354
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 358
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 360
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 364
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 370
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 373
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 381
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 382
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 383
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 389
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 398
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 407
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 414
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 415
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 421
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 423
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 431
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 432
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 435
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 436
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 439
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 440
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 446
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 452
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 456
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 465
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 474
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 482
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 483
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 489
+            }
+        ],
+        "clinical_causation_established": false,
+        "rule_validation": {
+            "status": "needs_review",
+            "rule_score": 0.7,
+            "reasons": []
+        },
+        "evidence_text": [
+            {
+                "chunk_node_id": "chunk::cdc::cdc/20240521_342849-b_press_ready_pocketguidedcmc_update.pdf::19",
+                "document": "20240521_342849-B_PRESS_READY_PocketGuideDCMC_UPDATE.pdf",
+                "source": "cdc",
+                "document_path": "cdc/20240521_342849-b_press_ready_pocketguidedcmc_update.pdf",
+                "chunk_id": 19,
+                "text": "inty of the \nevidence\nSigns and Symptoms\nDengue Chikungunya Zika\nHIGH\n(findings that \ndifferentiate them)\n- Thrombocytopenia\n- Progressive increase in\n hematocrit\n- Leukopenia\nArthralgias Pruritus\nMODERATE\n(findings that \nprobably \ndifferentiate them)\n- Anorexia or hyporexia\n- Vomiting\n- Abdominal pain\n- Chills\n- Hemorrhages (includes\n bleeding on the skin,\n mucous membranes,\n or both)\nRash\nConjunctivitis\nArthritis\nMyalgias or bone \npain\nRash\nConjunctivitis\nLOW\n(findings that may \ndifferentiate them)\n- Retro-ocular pain\n- Hepatomegaly\n- Headache\n- Diarrhea\n- Dysgeusia\n- Cough\n- Elevated transaminases\n- Positive tourniquet test\nHemorrhages \n(includes \nbleeding on the \nskin, mucous \nmembranes, or \nboth)\nAdenopathies\nPharyngitis or \nodynophagia\nGuidelines for the Clinical Diagnosis and Treatment of Dengue, Chikungunya, and Zika. Washington, D.C.: Pan American Health Organization; 2022 \nLicense: CC BY-NC-SA 3.0 IGO. https://doi.org/10.37774/9789275124871\nPaz-Bailey G, Adams LE, Deen J, And"
+            },
+            {
+                "chunk_node_id": "chunk::who::who/9789241547871_eng.pdf::3",
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 3,
+                "text": "ial is being distributed without warranty of any \nkind, either expressed or implied. The responsibility for the interpretation and use of the material lies with \nthe reader. In no event shall the World Health Organization be liable for damages arising from its use.\nPrinted in France\nCover and Layout: P. Tissot WHO/HTM/NTD\nWHO Library Cataloguing-in-Publication Data\nDengue: guidelines for diagnosis, treatment, prevention and control -- New edition.\n1.Dengue - diagnosis. 2.Dengue - therapy. 3.Dengue - prevention and control. 4.Endemic Diseases - \nprevention and control. 5.Fluid therapy. 6.Diagnosis, differential. 7.Disease outbreaks - prevention and \ncontrol. 8.Mosquito control. 9.Guidelines. I.World Health Organization.\nISBN 978 92 4 154787 1 (NLM classification: WC 528)\n\n[Page 5]\niii\nIntroduction, Methodology, Acknowledgements, Abbreviations, Preface\nCONTENTS\nPreface ------------------------------------------------------------------------------------------------------------------------"
+            },
+            {
+                "chunk_node_id": "chunk::who::who/9789241547871_eng.pdf::9",
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 9,
+                "text": "ssessment ---------------------------------------------------------------------------------------------128\n 5.5 References ------------------------------------------------------------------------------------------------------------------------132\nChapter 6 New avenues\n 6.1 Overview --------------------------------------------------------------------------------------------------------------------------137\n 6.2 Dengue vaccines ----------------------------------------------------------------------------------------------------------137\n 6.3 Dengue antiviral drugs ----------------------------------------------------------------------------------------------141\n 6.4 References ------------------------------------------------------------------------------------------------------------------------144\n\n[Page 6]\niv\nDengue: Guidelines for diagnosis, treatment, prevention and control\n\n[Page 7]\nv\nIntroduction, Methodology, Acknowledgements, Abbreviations, Preface\nPREFACE\nSince the second edition"
+            },
+            {
+                "chunk_node_id": "chunk::who::who/9789241547871_eng.pdf::10",
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 10,
+                "text": "--144\n\n[Page 6]\niv\nDengue: Guidelines for diagnosis, treatment, prevention and control\n\n[Page 7]\nv\nIntroduction, Methodology, Acknowledgements, Abbreviations, Preface\nPREFACE\nSince the second edition of Dengue haemorrhagic fever: diagnosis, treatment, prevention \nand control was published by the World Health Organization (WHO) in 1997, the \nmagnitude of the dengue problem has increased dramatically and has extended \ngeographically to many previously unaffected areas. It was then, and remains today, \nthe most important arthropod-borne viral disease of humans.\nActivities undertaken by WHO regarding dengue are most recently guided at the global \npolicy level by World Health Assembly resolution WHA55.17 (adopted by the Fifty-fifth \nWorld Health Assembly in 2002) and at the regional level by resolution CE140.R17 of \nthe Pan American Sanitary Conference (2007), resolution WPR/RC59.R6 of the WHO \nRegional Committee for the Western Pacific (2008) and resolution SEA/RC61/R5 of \nthe WHO Regional"
+            },
+            {
+                "chunk_node_id": "chunk::who::who/9789241547871_eng.pdf::13",
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 13,
+                "text": "is intended to contribute to prevention and control of the morbidity and \nmortality associated with dengue and to serve as an authoritative reference source for \nhealth workers and researchers. These guidelines are not intended to replace national \nguidelines but to assist in the development of national or regional guidelines. They are \nexpected to remain valid for five years (until 2014), although developments in research \ncould change their validity, since many aspects of the prevention and control of dengue \nare currently being investigated in a variety of studies. The guidelines contain the most \nup-to-date information at the time of writing. However, the results of studies are being \npublished regularly and should be taken into account. To address this challenge, the \nguide is also available on the Internet and will be updated regularly by WHO.\n\n[Page 8]\nvi\nDengue: Guidelines for diagnosis, treatment, prevention and control\nMETHODOLOGY\nThese guidelines were written using the foll"
+            }
+        ],
+        "llm_validation": {
+            "decision": "accepted",
+            "relationship_description": "The evidence supports that Dengue and Diagnosis are meaningfully related as the document explicitly mentions guidelines for the diagnosis of Dengue.",
+            "evidence_summary": "The document explicitly states that the guidelines are intended to contribute to the diagnosis of dengue and serve as an authoritative reference source for health workers and researchers.",
+            "supporting_evidence": [
+                "Since the second edition of Dengue haemorrhagic fever: diagnosis, treatment, prevention and control was published by the World Health Organization (WHO) in 1997, the magnitude of the dengue problem has increased dramatically and has extended geographically to many previously unaffected areas. It was then, and remains today, the most important arthropod-borne viral disease of humans. These guidelines are intended to contribute to the prevention and control of the morbidity and mortality associated with dengue and to serve as an authoritative reference source for health workers and researchers."
+            ],
+            "contradicting_evidence": [],
+            "confidence": 1.0,
+            "reason": "The evidence clearly indicates that the document is focused on providing guidelines for the diagnosis of Dengue, thus establishing a meaningful relationship between the two concepts."
+        },
+        "validation_status": "needs_review"
+    },
+    {
+        "concept_1": "Dengue, Classical",
+        "concept_1_id": "mesh::C0011311",
+        "concept_2": "disease management",
+        "concept_2_id": "mesh::C0039798",
+        "relationship": "CO_OCCURS_WITH",
+        "inference_type": "candidate_association",
+        "supporting_chunks": 110,
+        "supporting_documents": 2,
+        "evidence": [
+            {
+                "document": "20240521_342849-B_PRESS_READY_PocketGuideDCMC_UPDATE.pdf",
+                "source": "cdc",
+                "document_path": "cdc/20240521_342849-b_press_ready_pocketguidedcmc_update.pdf",
+                "chunk_id": 19
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 3
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 5
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 9
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 10
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 13
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 14
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 20
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 22
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 23
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 27
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 33
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 40
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 41
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 48
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 50
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 51
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 55
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 56
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 63
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 71
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 72
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 78
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 83
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 85
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 89
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 90
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 92
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 100
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 106
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 107
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 109
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 114
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 115
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 120
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 128
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 129
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 135
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 137
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 138
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 141
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 142
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 143
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 147
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 149
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 155
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 156
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 159
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 164
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 168
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 173
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 185
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 188
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 189
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 190
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 194
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 200
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 201
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 209
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 216
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 220
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 221
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 224
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 232
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 240
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 246
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 255
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 261
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 270
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 278
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 286
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 294
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 299
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 303
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 310
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 318
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 328
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 336
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 337
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 343
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 344
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 349
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 350
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 354
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 360
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 364
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 373
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 382
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 383
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 389
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 398
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 407
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 415
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 423
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 429
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 431
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 432
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 436
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 437
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 440
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 445
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 446
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 452
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 456
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 465
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 474
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 482
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 483
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 489
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 490
+            }
+        ],
+        "clinical_causation_established": false,
+        "rule_validation": {
+            "status": "passed",
+            "rule_score": 1.0,
+            "reasons": []
+        },
+        "evidence_text": [
+            {
+                "chunk_node_id": "chunk::cdc::cdc/20240521_342849-b_press_ready_pocketguidedcmc_update.pdf::19",
+                "document": "20240521_342849-B_PRESS_READY_PocketGuideDCMC_UPDATE.pdf",
+                "source": "cdc",
+                "document_path": "cdc/20240521_342849-b_press_ready_pocketguidedcmc_update.pdf",
+                "chunk_id": 19,
+                "text": "inty of the \nevidence\nSigns and Symptoms\nDengue Chikungunya Zika\nHIGH\n(findings that \ndifferentiate them)\n- Thrombocytopenia\n- Progressive increase in\n hematocrit\n- Leukopenia\nArthralgias Pruritus\nMODERATE\n(findings that \nprobably \ndifferentiate them)\n- Anorexia or hyporexia\n- Vomiting\n- Abdominal pain\n- Chills\n- Hemorrhages (includes\n bleeding on the skin,\n mucous membranes,\n or both)\nRash\nConjunctivitis\nArthritis\nMyalgias or bone \npain\nRash\nConjunctivitis\nLOW\n(findings that may \ndifferentiate them)\n- Retro-ocular pain\n- Hepatomegaly\n- Headache\n- Diarrhea\n- Dysgeusia\n- Cough\n- Elevated transaminases\n- Positive tourniquet test\nHemorrhages \n(includes \nbleeding on the \nskin, mucous \nmembranes, or \nboth)\nAdenopathies\nPharyngitis or \nodynophagia\nGuidelines for the Clinical Diagnosis and Treatment of Dengue, Chikungunya, and Zika. Washington, D.C.: Pan American Health Organization; 2022 \nLicense: CC BY-NC-SA 3.0 IGO. https://doi.org/10.37774/9789275124871\nPaz-Bailey G, Adams LE, Deen J, And"
+            },
+            {
+                "chunk_node_id": "chunk::who::who/9789241547871_eng.pdf::3",
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 3,
+                "text": "ial is being distributed without warranty of any \nkind, either expressed or implied. The responsibility for the interpretation and use of the material lies with \nthe reader. In no event shall the World Health Organization be liable for damages arising from its use.\nPrinted in France\nCover and Layout: P. Tissot WHO/HTM/NTD\nWHO Library Cataloguing-in-Publication Data\nDengue: guidelines for diagnosis, treatment, prevention and control -- New edition.\n1.Dengue - diagnosis. 2.Dengue - therapy. 3.Dengue - prevention and control. 4.Endemic Diseases - \nprevention and control. 5.Fluid therapy. 6.Diagnosis, differential. 7.Disease outbreaks - prevention and \ncontrol. 8.Mosquito control. 9.Guidelines. I.World Health Organization.\nISBN 978 92 4 154787 1 (NLM classification: WC 528)\n\n[Page 5]\niii\nIntroduction, Methodology, Acknowledgements, Abbreviations, Preface\nCONTENTS\nPreface ------------------------------------------------------------------------------------------------------------------------"
+            },
+            {
+                "chunk_node_id": "chunk::who::who/9789241547871_eng.pdf::5",
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 5,
+                "text": "--------------------------------------------------------------------------3\n 1.2 Burden of disease --------------------------------------------------------------------------------------------------------12\n 1.3 Dengue in international travel --------------------------------------------------------------------------------13\n 1.4 Transmission ---------------------------------------------------------------------------------------------------------------------14\n 1.5 References ------------------------------------------------------------------------------------------------------------------------17\nChapter 2 Clinical management and delivery of clinical services\n 2.1 Overview --------------------------------------------------------------------------------------------------------------------------25\n 2.2 Delivery of clinical services and case management ---------------------------------29\n 2.3 Recommendations for treatment ---------------------------------------------------------------------"
+            },
+            {
+                "chunk_node_id": "chunk::who::who/9789241547871_eng.pdf::9",
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 9,
+                "text": "ssessment ---------------------------------------------------------------------------------------------128\n 5.5 References ------------------------------------------------------------------------------------------------------------------------132\nChapter 6 New avenues\n 6.1 Overview --------------------------------------------------------------------------------------------------------------------------137\n 6.2 Dengue vaccines ----------------------------------------------------------------------------------------------------------137\n 6.3 Dengue antiviral drugs ----------------------------------------------------------------------------------------------141\n 6.4 References ------------------------------------------------------------------------------------------------------------------------144\n\n[Page 6]\niv\nDengue: Guidelines for diagnosis, treatment, prevention and control\n\n[Page 7]\nv\nIntroduction, Methodology, Acknowledgements, Abbreviations, Preface\nPREFACE\nSince the second edition"
+            },
+            {
+                "chunk_node_id": "chunk::who::who/9789241547871_eng.pdf::10",
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 10,
+                "text": "--144\n\n[Page 6]\niv\nDengue: Guidelines for diagnosis, treatment, prevention and control\n\n[Page 7]\nv\nIntroduction, Methodology, Acknowledgements, Abbreviations, Preface\nPREFACE\nSince the second edition of Dengue haemorrhagic fever: diagnosis, treatment, prevention \nand control was published by the World Health Organization (WHO) in 1997, the \nmagnitude of the dengue problem has increased dramatically and has extended \ngeographically to many previously unaffected areas. It was then, and remains today, \nthe most important arthropod-borne viral disease of humans.\nActivities undertaken by WHO regarding dengue are most recently guided at the global \npolicy level by World Health Assembly resolution WHA55.17 (adopted by the Fifty-fifth \nWorld Health Assembly in 2002) and at the regional level by resolution CE140.R17 of \nthe Pan American Sanitary Conference (2007), resolution WPR/RC59.R6 of the WHO \nRegional Committee for the Western Pacific (2008) and resolution SEA/RC61/R5 of \nthe WHO Regional"
+            }
+        ],
+        "llm_validation": {
+            "decision": "accepted",
+            "relationship_description": "The documents indicate that the management of dengue is a key aspect of its treatment and prevention, suggesting a meaningful relationship.",
+            "evidence_summary": "The documents mention 'Clinical management and delivery of clinical services' and 'Guidelines for diagnosis, treatment, prevention and control', indicating that dengue management is a critical component of its overall care.",
+            "supporting_evidence": [
+                "The document '9789241547871_eng.pdf' mentions 'Chapter 2 Clinical management and delivery of clinical services', which suggests that dengue management is an important part of its treatment and prevention."
+            ],
+            "contradicting_evidence": [],
+            "confidence": 0.8,
+            "reason": "The documents explicitly mention the clinical management of dengue, indicating a clear relationship between the two concepts."
+        },
+        "validation_status": "accepted"
+    },
+    {
+        "concept_1": "Dengue, Classical",
+        "concept_1_id": "mesh::C0011311",
+        "concept_2": "prevention",
+        "concept_2_id": "mesh::C2700409",
+        "relationship": "CO_OCCURS_WITH",
+        "inference_type": "candidate_association",
+        "supporting_chunks": 100,
+        "supporting_documents": 1,
+        "evidence": [
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 3
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 9
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 10
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 12
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 13
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 14
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 20
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 22
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 23
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 27
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 33
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 40
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 41
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 48
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 55
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 56
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 63
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 71
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 72
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 78
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 83
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 85
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 89
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 90
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 92
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 100
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 107
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 114
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 120
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 128
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 129
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 135
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 141
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 142
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 149
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 155
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 159
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 164
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 168
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 169
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 185
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 188
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 189
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 190
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 194
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 195
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 200
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 201
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 209
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 216
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 224
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 232
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 240
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 246
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 255
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 261
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 270
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 271
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 272
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 278
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 286
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 294
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 299
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 303
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 310
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 318
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 328
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 336
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 337
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 343
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 344
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 349
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 350
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 354
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 360
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 361
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 364
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 370
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 373
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 380
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 382
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 383
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 389
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 398
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 407
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 414
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 415
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 421
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 423
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 431
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 432
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 440
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 446
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 452
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 456
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 465
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 474
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 483
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 487
+            },
+            {
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 489
+            }
+        ],
+        "clinical_causation_established": false,
+        "rule_validation": {
+            "status": "needs_review",
+            "rule_score": 0.5,
+            "reasons": []
+        },
+        "evidence_text": [
+            {
+                "chunk_node_id": "chunk::who::who/9789241547871_eng.pdf::3",
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 3,
+                "text": "ial is being distributed without warranty of any \nkind, either expressed or implied. The responsibility for the interpretation and use of the material lies with \nthe reader. In no event shall the World Health Organization be liable for damages arising from its use.\nPrinted in France\nCover and Layout: P. Tissot WHO/HTM/NTD\nWHO Library Cataloguing-in-Publication Data\nDengue: guidelines for diagnosis, treatment, prevention and control -- New edition.\n1.Dengue - diagnosis. 2.Dengue - therapy. 3.Dengue - prevention and control. 4.Endemic Diseases - \nprevention and control. 5.Fluid therapy. 6.Diagnosis, differential. 7.Disease outbreaks - prevention and \ncontrol. 8.Mosquito control. 9.Guidelines. I.World Health Organization.\nISBN 978 92 4 154787 1 (NLM classification: WC 528)\n\n[Page 5]\niii\nIntroduction, Methodology, Acknowledgements, Abbreviations, Preface\nCONTENTS\nPreface ------------------------------------------------------------------------------------------------------------------------"
+            },
+            {
+                "chunk_node_id": "chunk::who::who/9789241547871_eng.pdf::9",
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 9,
+                "text": "ssessment ---------------------------------------------------------------------------------------------128\n 5.5 References ------------------------------------------------------------------------------------------------------------------------132\nChapter 6 New avenues\n 6.1 Overview --------------------------------------------------------------------------------------------------------------------------137\n 6.2 Dengue vaccines ----------------------------------------------------------------------------------------------------------137\n 6.3 Dengue antiviral drugs ----------------------------------------------------------------------------------------------141\n 6.4 References ------------------------------------------------------------------------------------------------------------------------144\n\n[Page 6]\niv\nDengue: Guidelines for diagnosis, treatment, prevention and control\n\n[Page 7]\nv\nIntroduction, Methodology, Acknowledgements, Abbreviations, Preface\nPREFACE\nSince the second edition"
+            },
+            {
+                "chunk_node_id": "chunk::who::who/9789241547871_eng.pdf::10",
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 10,
+                "text": "--144\n\n[Page 6]\niv\nDengue: Guidelines for diagnosis, treatment, prevention and control\n\n[Page 7]\nv\nIntroduction, Methodology, Acknowledgements, Abbreviations, Preface\nPREFACE\nSince the second edition of Dengue haemorrhagic fever: diagnosis, treatment, prevention \nand control was published by the World Health Organization (WHO) in 1997, the \nmagnitude of the dengue problem has increased dramatically and has extended \ngeographically to many previously unaffected areas. It was then, and remains today, \nthe most important arthropod-borne viral disease of humans.\nActivities undertaken by WHO regarding dengue are most recently guided at the global \npolicy level by World Health Assembly resolution WHA55.17 (adopted by the Fifty-fifth \nWorld Health Assembly in 2002) and at the regional level by resolution CE140.R17 of \nthe Pan American Sanitary Conference (2007), resolution WPR/RC59.R6 of the WHO \nRegional Committee for the Western Pacific (2008) and resolution SEA/RC61/R5 of \nthe WHO Regional"
+            },
+            {
+                "chunk_node_id": "chunk::who::who/9789241547871_eng.pdf::12",
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 12,
+                "text": "promising avenues of research are also \ndescribed. Additional and more detailed specific guidance on the various specialist \nareas related to dengue are available from other sources in WHO and elsewhere, \nsome of which are cited in the references. \nThe contributions of, and review by, many experts both within and outside WHO have \nfacilitated the preparation of this publication through consultative and peer review \nprocesses. All contributors are gratefully acknowledged, a list of whom appears under \n“Acknowledgements”. These guidelines are the result of collaboration between the \nWHO Department of Control Neglected Tropical Diseases, the WHO Department of \nEpidemic and Pandemic Alert and Response, and the Special Programme for Research \nand Training in Tropical Diseases.\nThis publication is intended to contribute to prevention and control of the morbidity and \nmortality associated with dengue and to serve as an authoritative reference source for \nhealth workers and researchers. These"
+            },
+            {
+                "chunk_node_id": "chunk::who::who/9789241547871_eng.pdf::13",
+                "document": "9789241547871_eng.pdf",
+                "source": "who",
+                "document_path": "who/9789241547871_eng.pdf",
+                "chunk_id": 13,
+                "text": "is intended to contribute to prevention and control of the morbidity and \nmortality associated with dengue and to serve as an authoritative reference source for \nhealth workers and researchers. These guidelines are not intended to replace national \nguidelines but to assist in the development of national or regional guidelines. They are \nexpected to remain valid for five years (until 2014), although developments in research \ncould change their validity, since many aspects of the prevention and control of dengue \nare currently being investigated in a variety of studies. The guidelines contain the most \nup-to-date information at the time of writing. However, the results of studies are being \npublished regularly and should be taken into account. To address this challenge, the \nguide is also available on the Internet and will be updated regularly by WHO.\n\n[Page 8]\nvi\nDengue: Guidelines for diagnosis, treatment, prevention and control\nMETHODOLOGY\nThese guidelines were written using the foll"
+            }
+        ],
+        "llm_validation": {
+            "decision": "accepted",
+            "relationship_description": "The document explicitly mentions 'Dengue: Guidelines for diagnosis, treatment, prevention and control', indicating a clear relationship between dengue and prevention.",
+            "evidence_summary": "The document explicitly lists 'Dengue - prevention and control' as one of the topics covered in the book, and the preface states that the guidelines are intended to contribute to the prevention and control of dengue.",
+            "supporting_evidence": [
+                "The document explicitly lists 'Dengue - prevention and control' as one of the topics covered in the book.",
+                "The preface states that the guidelines are intended to contribute to the prevention and control of dengue."
+            ],
+            "contradicting_evidence": [],
+            "confidence": 1.0,
+            "reason": "The evidence is clear and directly supports the relationship between dengue and prevention."
+        },
+        "validation_status": "needs_review"
+    }
+]

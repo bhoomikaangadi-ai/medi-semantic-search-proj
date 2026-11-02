@@ -1,1596 +1,817 @@
-# ============================================================
-# ONTOLOGY ENTITY EXTRACTOR
-# ============================================================
-#
-# GENERAL-PURPOSE MEDICAL ONTOLOGY PIPELINE
-#
-# Pipeline:
-#
-# Medical chunks
-#       ↓
-# SciSpaCy
-#       ↓
-# UMLS Entity Linking
-#       ↓
-# Multiple Candidate Validation
-#       ↓
-# Entity Noise Filtering
-#       ↓
-# Ontology Classification
-#       ↓
-# Duplicate Removal
-#       ↓
-# Chunk Mapping
-#       ↓
-# JSON Output
-#
-# This is NOT dengue-specific.
-#
-# It can process:
-#
-#   Dengue
-#   Diabetes
-#   Malaria
-#   Pneumonia
-#   Cancer
-#   Hypertension
-#   Tuberculosis
-#   etc.
-#
-# ============================================================
-
 
 # ============================================================
-# ENVIRONMENT
+# ONTOLOGY RELATION EXTRACTOR
 # ============================================================
-
-import os
-
-os.environ[
-    "KMP_DUPLICATE_LIB_OK"
-] = "TRUE"
-
-os.environ[
-    "OMP_NUM_THREADS"
-] = "1"
-
-
-# ============================================================
-# IMPORTS
+#
+# Input:
+#   ontology_entities.json
+#   medical_chunks_source.json
+#   ontology_schema.json
+#
+# Output:
+#   medical_knowledge_graph.json
+#
+# Features:
+#   - Sentence-level evidence
+#   - Entity mention matching
+#   - Ontology relationship validation
+#   - Duplicate removal
+#   - Source and chunk provenance
+#   - Graph endpoint validation
+#
+# This is a general-purpose, pattern-based candidate extractor.
+# It does not guarantee that extracted relationships are
+# clinically correct.
 # ============================================================
 
 import json
+import re
 import time
-
-from collections import (
-    Counter,
-    defaultdict
-)
-
-import spacy
-
-# IMPORTANT:
-# This import registers the SciSpaCy linker factory.
-from scispacy.linking import EntityLinker
-
-from entity_validator import (
-    validate_entity,
-    is_generic_term,
-    is_document_noise
-)
-
-from entity_filter import (
-    clean_concept
-)
+from pathlib import Path
+from collections import Counter, defaultdict
 
 
 # ============================================================
 # CONFIGURATION
 # ============================================================
 
-ONTOLOGY_FILE = (
-    "ontology_schema.json"
-)
+BASE_DIR = Path(__file__).resolve().parent
 
-CHUNKS_FILE = (
-    "medical_chunks_source.json"
-)
+ENTITIES_FILE = BASE_DIR / "ontology_entities.json"
+CHUNKS_FILE = BASE_DIR / "medical_chunks_source.json"
+ONTOLOGY_FILE = BASE_DIR / "ontology_schema.json"
 
-OUTPUT_FILE = (
-    "ontology_entities.json"
-)
+OUTPUT_FILE = BASE_DIR / "medical_knowledge_graph.json"
 
-
-# ============================================================
-# TEST MODE
-# ============================================================
-#
-# None:
-#     Process ALL chunks.
-#
-# Example:
-#
-# TEST_CHUNK_ID = 88
-#
-# processes only chunk 88.
-#
-# ============================================================
-
-TEST_CHUNK_ID = None
-
-
-# ============================================================
-# SCISPACY CONFIGURATION
-# ============================================================
-
-MODEL_NAME = (
-    "en_core_sci_sm"
-)
-
-LINKER_NAME = (
-    "umls"
-)
-
-
-# ============================================================
-# UMLS VALIDATION
-# ============================================================
-
-MIN_LINKING_SCORE = 0.80
-
-MAX_CANDIDATES = 5
-
-
-# ============================================================
-# PROGRESS
-# ============================================================
-
-PROGRESS_EVERY = 10
-
-
-# ============================================================
-# STATISTICS
-# ============================================================
-
-statistics = {
-
-    "chunks_total": 0,
-
-    "chunks_processed": 0,
-
-    "chunks_empty": 0,
-
-    "chunks_failed": 0,
-
-    "scispacy_mentions": 0,
-
-    "generic_noise": 0,
-
-    "document_noise": 0,
-
-    "no_umls_candidate": 0,
-
-    "weak_linking_score": 0,
-
-    "mention_canonical_mismatch": 0,
-
-    "outside_ontology": 0,
-
-    "accepted_mentions": 0,
-
-    "unique_entities": 0
+# Keep the excluded source consistent with your project.
+EXCLUDED_PATHS = {
+    "kaggle/dengue.csv",
 }
 
-
-# ============================================================
-# LOAD ONTOLOGY
-# ============================================================
-
-print()
-print("=" * 70)
-print("LOADING ONTOLOGY")
-print("=" * 70)
-
-
-with open(
-    ONTOLOGY_FILE,
-    "r",
-    encoding="utf-8"
-) as f:
-
-    ontology = json.load(f)
-
-
-# ============================================================
-# ENTITY CLASSES
-# ============================================================
-
-ENTITY_CLASSES = ontology.get(
-    "entity_classes",
-    {}
-)
-
-
-# ============================================================
-# RELATIONSHIPS
-# ============================================================
-
-ALLOWED_RELATIONS = set(
-    ontology.get(
-        "relationship_types",
-        []
-    )
-)
-
-
-print(
-    f"Ontology entity classes: "
-    f"{len(ENTITY_CLASSES)}"
-)
-
-print(
-    f"Ontology relationships: "
-    f"{len(ALLOWED_RELATIONS)}"
-)
-
-
-# ============================================================
-# DISPLAY ONTOLOGY
-# ============================================================
-
-print()
-print("Ontology classes:")
-
-for (
-    class_name,
-    semantic_types
-) in ENTITY_CLASSES.items():
-
-    print(
-        f"  {class_name} "
-        f"-> {semantic_types}"
-    )
-
-
-# ============================================================
-# LOAD SCISPACY
-# ============================================================
-
-print()
-print("=" * 70)
-print("LOADING SCISPACY")
-print("=" * 70)
-
-print(
-    f"Loading model: "
-    f"{MODEL_NAME}"
-)
-
-
-nlp = spacy.load(
-    MODEL_NAME
-)
-
-
-print(
-    "SciSpaCy model loaded."
-)
-
-
-# ============================================================
-# CHECK SCISPACY LINKER FACTORY
-# ============================================================
-
-print()
-print(
-    "Checking scispacy_linker factory..."
-)
-
-
-if (
-    "scispacy_linker"
-    not in nlp.factories
-):
-
-    raise RuntimeError(
-        "\n"
-        "scispacy_linker factory is not registered.\n\n"
-        "Make sure this import exists:\n\n"
-        "from scispacy.linking import EntityLinker\n"
-    )
-
-
-print(
-    "scispacy_linker factory found."
-)
-
-
-# ============================================================
-# LOAD UMLS LINKER
-# ============================================================
-
-print()
-print(
-    f"Loading linker: "
-    f"{LINKER_NAME}"
-)
-
-
-try:
-
-    nlp.add_pipe(
-        "scispacy_linker",
-        config={
-            "resolve_abbreviations": True,
-            "linker_name": LINKER_NAME
-        }
-    )
-
-except Exception as e:
-
-    print()
-    print("=" * 70)
-    print("ERROR WHILE LOADING UMLS LINKER")
-    print("=" * 70)
-
-    print(
-        f"Error type: "
-        f"{type(e).__name__}"
-    )
-
-    print(
-        f"Error: "
-        f"{e}"
-    )
-
-    print()
-    print(
-        "The SciSpaCy UMLS resource could not be loaded."
-    )
-
-    print(
-        "Your network/resource cache must be available "
-        "the first time the UMLS linker is initialized."
-    )
-
-    raise
-
-
-# ============================================================
-# GET LINKER
-# ============================================================
-
-linker = nlp.get_pipe(
-    "scispacy_linker"
-)
-
-
-print()
-print(
-    "UMLS linker loaded successfully."
-)
-
-
-# ============================================================
-# LOAD MEDICAL CHUNKS
-# ============================================================
-
-print()
-print("=" * 70)
-print("LOADING MEDICAL CHUNKS")
-print("=" * 70)
-
-
-with open(
-    CHUNKS_FILE,
-    "r",
-    encoding="utf-8"
-) as f:
-
-    chunks = json.load(f)
-
-
-if not isinstance(
-    chunks,
-    list
-):
-
-    raise ValueError(
-        "medical_chunks_source.json "
-        "must contain a list."
-    )
-
-
-statistics[
-    "chunks_total"
-] = len(chunks)
-
-
-print(
-    f"Loaded {len(chunks)} chunks."
-)
-
-
-# ============================================================
-# SELECT CHUNKS
-# ============================================================
-
-if TEST_CHUNK_ID is not None:
-
-    selected_chunks = [
-
-        chunk
-
-        for chunk in chunks
-
-        if chunk.get(
-            "chunk_id"
-        ) == TEST_CHUNK_ID
-    ]
-
-    if not selected_chunks:
-
-        raise ValueError(
-            f"Chunk {TEST_CHUNK_ID} "
-            f"not found."
-        )
-
-    print()
-    print(
-        "TEST MODE"
-    )
-
-    print(
-        f"Processing chunk "
-        f"{TEST_CHUNK_ID}"
-    )
-
-else:
-
-    selected_chunks = chunks
-
-    print()
-    print(
-        "FULL DATASET MODE"
-    )
-
-    print(
-        f"Processing all "
-        f"{len(selected_chunks)} chunks."
-    )
-
-
-# ============================================================
-# ONTOLOGY CLASSIFICATION
-# ============================================================
-CUSTOM_ENTITY_CLASSES = {
-    "dengue shock syndrome": "Complication",
-    "severe dengue": "Complication",
-    "dengue haemorrhagic fever": "Complication",
-
-    "platelet": "LaboratoryTest",
-    "hematocrit": "LaboratoryTest",
-    "full blood count": "LaboratoryTest",
-    "ns1": "DiagnosticTest",
-    "elisa": "DiagnosticTest",
-    "pcr": "DiagnosticTest",
-
-    "mosquito net": "PreventionMethod",
-    "repellent": "PreventionMethod",
-    "vector control": "PreventionMethod",
-
-    "aedes aegypti": "MosquitoSpecies",
-    "aedes albopictus": "MosquitoSpecies",
-
-    "tropical": "GeographicRegion",
-    "subtropical": "GeographicRegion"
-}
-def classify_entity(entity):
-    """
-    Map UMLS semantic types to the ontology.
-
-    IMPORTANT:
-    WarningSign and SevereManifestation overlap with
-    ordinary Sign/Symptom/Disease semantic types.
-
-    Therefore this function intentionally uses the
-    general/base ontology class.
-
-    Contextual classification such as:
-
-        dengue
-          |
-          HAS_WARNING_SIGN
-          |
-          bleeding
-
-    should happen during relation extraction.
-
-    Returns:
-        ontology class
-        or "Other"
-    """
-    
-    name = entity["canonical_name"].lower()
-
-# Match WHO-specific terms using substring matching
-    for term, ontology_class in CUSTOM_ENTITY_CLASSES.items():
-        if term in name:
-             return ontology_class
-    semantic_types = set(
-        entity.get(
-            "semantic_types",
-            []
-        )
-    )
-
-
-    # --------------------------------------------------------
-    # IMPORTANT CLASSIFICATION ORDER
-    # --------------------------------------------------------
-    #
-    # More general/base classes are selected first.
-    #
-    # This prevents:
-    #
-    # T047 -> SevereManifestation
-    #
-    # from incorrectly turning every disease into a
-    # severe manifestation.
-    #
-    # --------------------------------------------------------
-
-    class_priority = [
-    "Disease",
-    "Complication",
-    "Symptom",
-    "Sign",
-    "LaboratoryTest",
-    "DiagnosticTest",
-    "Treatment",
-    "PreventionMethod",
-    "Medication",
-    "Pathogen",
-    "MosquitoSpecies",
-    "VirusSerotype",
-    "Vector",
-    "RiskFactor",
-    "ClinicalPhase",
-    "BodySystem",
-    "PatientGroup",
-    "GeographicRegion"
+# Minimum UMLS linking score carried by both endpoints.
+# Set to 0.0 to retain all scores produced by the entity extractor.
+MIN_ENTITY_SCORE = 0.0
+
+# Avoid connecting every entity in a long sentence.
+MAX_ENTITY_DISTANCE_CHARS = 500
+
+# Only use patterns that occur between the two entity mentions.
+# The first entity is the source; the second is the target.
+#
+# Relationship names are matched against ontology_schema.json.
+# If an equivalent allowed relationship cannot be found,
+# the pattern is skipped rather than inventing a schema relation.
+RELATION_PATTERNS = [
+    {
+        "aliases": [
+            "HAS_SYMPTOM",
+            "HAS_SIGN",
+            "HAS_CLINICAL_MANIFESTATION",
+        ],
+        "patterns": [
+            r"\bpresents with\b",
+            r"\bsymptoms include\b",
+            r"\bsigns include\b",
+            r"\bcharacterized by\b",
+            r"\bmanifest(?:s|ed|ing)? with\b",
+        ],
+    },
+    {
+        "aliases": [
+            "CAUSES",
+            "CAUSE",
+            "LEADS_TO",
+            "RESULTS_IN",
+        ],
+        "patterns": [
+            r"\bcauses\b",
+            r"\bleads to\b",
+            r"\bresults in\b",
+            r"\bcan cause\b",
+            r"\bmay cause\b",
+        ],
+    },
+    {
+        "aliases": [
+            "TREATED_WITH",
+            "TREATMENT_FOR",
+            "HAS_TREATMENT",
+        ],
+        "patterns": [
+            r"\bis treated with\b",
+            r"\bare treated with\b",
+            r"\btreated using\b",
+            r"\bmanagement includes\b",
+            r"\btreatment includes\b",
+            r"\btherapy includes\b",
+        ],
+    },
+    {
+        "aliases": [
+            "DIAGNOSED_BY",
+            "DETECTED_BY",
+            "CONFIRMED_BY",
+        ],
+        "patterns": [
+            r"\bdiagnosed by\b",
+            r"\bdiagnosed using\b",
+            r"\bdetected by\b",
+            r"\bconfirmed by\b",
+            r"\bidentified by\b",
+        ],
+    },
+    {
+        "aliases": [
+            "TRANSMITTED_BY",
+            "SPREAD_BY",
+            "TRANSMITTED_THROUGH",
+        ],
+        "patterns": [
+            r"\btransmitted by\b",
+            r"\bspread by\b",
+            r"\btransmitted through\b",
+            r"\bspread through\b",
+        ],
+    },
+    {
+        "aliases": [
+            "RISK_FACTOR",
+            "HAS_RISK_FACTOR",
+            "INCREASES_RISK_OF",
+        ],
+        "patterns": [
+            r"\brisk factor for\b",
+            r"\brisk factors include\b",
+            r"\bincreases the risk of\b",
+            r"\bincreased risk of\b",
+        ],
+    },
+    {
+        "aliases": [
+            "PREVENTED_BY",
+            "PREVENTION_METHOD",
+            "PREVENTS",
+        ],
+        "patterns": [
+            r"\bprevented by\b",
+            r"\bprevention includes\b",
+            r"\bprevented through\b",
+        ],
+    },
 ]
 
-    for class_name in class_priority:
+PROGRESS_EVERY = 50
 
-        type_codes = set(
-            ENTITY_CLASSES.get(
-                class_name,
-                []
+
+# ============================================================
+# GENERAL HELPERS
+# ============================================================
+
+def load_json(path):
+    if not path.exists():
+        raise FileNotFoundError(f"Required file not found: {path}")
+
+    with path.open("r", encoding="utf-8") as file:
+        return json.load(file)
+
+
+def normalize_path(value):
+    return str(value or "unknown").replace("\\", "/").strip()
+
+
+def is_excluded_path(path):
+    normalized = normalize_path(path).lower()
+
+    return any(
+        normalized == excluded.lower()
+        or normalized.endswith("/" + excluded.lower())
+        for excluded in EXCLUDED_PATHS
+    )
+
+
+def get_chunk_id(chunk, index):
+    value = chunk.get("chunk_id", chunk.get("id"))
+
+    if value is None:
+        return f"chunk::{index}"
+
+    return str(value)
+
+
+def get_chunk_text(chunk):
+    for field in ("text", "chunk_text", "content", "page_content"):
+        value = chunk.get(field)
+
+        if isinstance(value, str) and value.strip():
+            return value.strip()
+
+    return ""
+
+
+def get_source_path(chunk):
+    for field in (
+        "document_path",
+        "source_path",
+        "file_path",
+        "source",
+        "file",
+    ):
+        value = chunk.get(field)
+
+        if value:
+            return normalize_path(value)
+
+    return "unknown"
+
+
+def normalize_relation_name(value):
+    """
+    Convert relationship labels to a comparable form.
+
+    Examples:
+        has symptom -> HAS_SYMPTOM
+        Has-Symptom -> HAS_SYMPTOM
+    """
+    value = str(value or "").strip().upper()
+    value = re.sub(r"[^A-Z0-9]+", "_", value)
+    return value.strip("_")
+
+
+def normalize_entity_name(value):
+    value = str(value or "").lower()
+    value = re.sub(r"[^a-z0-9]+", " ", value)
+    return " ".join(value.split())
+
+
+def safe_score(value):
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return 0.0
+
+
+# ============================================================
+# LOAD INPUT DATA
+# ============================================================
+
+def main():
+    start_time = time.time()
+
+    print("=" * 70)
+    print("LOADING ONTOLOGY AND ENTITY DATA")
+    print("=" * 70)
+
+    entity_data = load_json(ENTITIES_FILE)
+    chunk_data = load_json(CHUNKS_FILE)
+    ontology = load_json(ONTOLOGY_FILE)
+
+    if not isinstance(entity_data, dict):
+        raise ValueError("ontology_entities.json must contain a JSON object.")
+
+    if not isinstance(chunk_data, list):
+        raise ValueError("medical_chunks_source.json must contain a JSON list.")
+
+    if not isinstance(ontology, dict):
+        raise ValueError("ontology_schema.json must contain a JSON object.")
+
+    allowed_relations_raw = ontology.get("relationship_types", [])
+
+    if not isinstance(allowed_relations_raw, list):
+        raise ValueError(
+            "ontology_schema.json: relationship_types must be a list."
+        )
+
+    allowed_relations = {
+        normalize_relation_name(value): value
+        for value in allowed_relations_raw
+        if isinstance(value, str) and value.strip()
+    }
+
+    print(f"Source chunks: {len(chunk_data)}")
+    print(f"Ontology relationship types: {len(allowed_relations)}")
+
+    entity_mentions = entity_data.get("entity_mentions", [])
+
+    if not isinstance(entity_mentions, list):
+        raise ValueError(
+            "ontology_entities.json must contain an entity_mentions list."
+        )
+
+    unique_entities = entity_data.get("entities", [])
+
+    if not isinstance(unique_entities, list):
+        unique_entities = []
+
+    print(f"Entity mentions: {len(entity_mentions)}")
+    print(f"Unique entities: {len(unique_entities)}")
+
+    # --------------------------------------------------------
+    # Index the source chunks by their chunk IDs.
+    # --------------------------------------------------------
+
+    chunks_by_id = {}
+    chunk_sources = {}
+
+    stats = Counter()
+
+    for index, chunk in enumerate(chunk_data):
+        if not isinstance(chunk, dict):
+            stats["invalid_chunks"] += 1
+            continue
+
+        chunk_id = get_chunk_id(chunk, index)
+        source_path = get_source_path(chunk)
+
+        if is_excluded_path(source_path):
+            stats["excluded_chunks"] += 1
+            continue
+
+        text = get_chunk_text(chunk)
+
+        if not text:
+            stats["empty_chunks"] += 1
+            continue
+
+        if chunk_id in chunks_by_id:
+            stats["duplicate_chunk_ids"] += 1
+            continue
+
+        chunks_by_id[chunk_id] = text
+        chunk_sources[chunk_id] = source_path
+
+    print(f"Usable chunks: {len(chunks_by_id)}")
+    print(f"Excluded chunks: {stats['excluded_chunks']}")
+
+    # --------------------------------------------------------
+    # Create a canonical entity index.
+    #
+    # CUI is the primary identity where available.
+    # --------------------------------------------------------
+
+    entity_index = {}
+
+    for entity in unique_entities:
+        if not isinstance(entity, dict):
+            continue
+
+        cui = entity.get("cui")
+
+        if not cui:
+            continue
+
+        cui = str(cui)
+
+        entity_index[cui] = {
+            "id": cui,
+            "cui": cui,
+            "name": entity.get("canonical_name") or cui,
+            "ontology_class": entity.get("ontology_class", "Other"),
+            "semantic_types": entity.get("semantic_types", []),
+            "best_score": safe_score(entity.get("best_score", 0.0)),
+        }
+
+    # Add any entity that appears in mentions but is missing
+    # from the unique-entity list.
+    for mention in entity_mentions:
+        if not isinstance(mention, dict):
+            continue
+
+        cui = mention.get("cui")
+
+        if not cui:
+            continue
+
+        cui = str(cui)
+
+        if cui not in entity_index:
+            entity_index[cui] = {
+                "id": cui,
+                "cui": cui,
+                "name": mention.get("canonical_name") or cui,
+                "ontology_class": mention.get("ontology_class", "Other"),
+                "semantic_types": mention.get("semantic_types", []),
+                "best_score": safe_score(mention.get("score", 0.0)),
+            }
+
+    # --------------------------------------------------------
+    # Build a lookup of mentions by chunk.
+    # --------------------------------------------------------
+
+    mentions_by_chunk = defaultdict(list)
+
+    for mention in entity_mentions:
+        if not isinstance(mention, dict):
+            stats["invalid_entity_mentions"] += 1
+            continue
+
+        cui = mention.get("cui")
+        chunk_id = mention.get("chunk_id")
+        text = mention.get("text")
+
+        if cui is None or chunk_id is None or not text:
+            stats["incomplete_entity_mentions"] += 1
+            continue
+
+        cui = str(cui)
+        chunk_id = str(chunk_id)
+
+        if cui not in entity_index:
+            stats["missing_entity_records"] += 1
+            continue
+
+        score = safe_score(mention.get("score", 0.0))
+
+        if score < MIN_ENTITY_SCORE:
+            stats["low_score_mentions"] += 1
+            continue
+
+        if chunk_id not in chunks_by_id:
+            stats["mentions_without_source_chunk"] += 1
+            continue
+
+        mentions_by_chunk[chunk_id].append({
+            "cui": cui,
+            "text": str(text).strip(),
+            "normalized_text": normalize_entity_name(text),
+            "score": score,
+            "ontology_class": mention.get(
+                "ontology_class",
+                entity_index[cui]["ontology_class"],
+            ),
+        })
+
+    print(f"Entities indexed: {len(entity_index)}")
+    print(f"Chunks with entity mentions: {len(mentions_by_chunk)}")
+
+    # --------------------------------------------------------
+    # Resolve configured relation names to the ontology schema.
+    # --------------------------------------------------------
+
+    resolved_patterns = []
+
+    for definition in RELATION_PATTERNS:
+        matched_relation = None
+
+        for alias in definition["aliases"]:
+            normalized_alias = normalize_relation_name(alias)
+
+            if normalized_alias in allowed_relations:
+                matched_relation = allowed_relations[normalized_alias]
+                break
+
+        if matched_relation is None:
+            continue
+
+        compiled_patterns = [
+            re.compile(pattern, re.IGNORECASE)
+            for pattern in definition["patterns"]
+        ]
+
+        resolved_patterns.append({
+            "relation": matched_relation,
+            "patterns": compiled_patterns,
+        })
+
+    if not resolved_patterns:
+        print()
+        print("WARNING: No configured relationship patterns matched")
+        print("the relationship names in ontology_schema.json.")
+        print("No relationships will be created until names are aligned.")
+        print("Allowed relationships:")
+
+        for relation in sorted(allowed_relations.values()):
+            print(f"  - {relation}")
+
+    else:
+        print(f"Relationship pattern groups enabled: {len(resolved_patterns)}")
+
+    # --------------------------------------------------------
+    # Sentence splitting.
+    #
+    # This avoids creating a relationship across unrelated
+    # sentences in the same chunk.
+    # --------------------------------------------------------
+
+    try:
+        import spacy
+
+        nlp = spacy.blank("en")
+        nlp.add_pipe("sentencizer")
+
+    except Exception as exc:
+        raise RuntimeError(
+            "Could not initialize sentence splitting."
+        ) from exc
+
+    # --------------------------------------------------------
+    # Match entity mentions in each sentence.
+    # --------------------------------------------------------
+
+    def find_mentions_in_sentence(sentence_text, chunk_mentions):
+        found = []
+
+        for mention in chunk_mentions:
+            mention_text = mention["text"]
+
+            if not mention_text:
+                continue
+
+            # Escape the entity text to treat it literally.
+            # Word boundaries are used for ordinary alphanumeric
+            # names, while punctuation-containing names use a
+            # flexible whitespace pattern.
+            escaped = re.escape(mention_text)
+            escaped = escaped.replace(r"\ ", r"\s+")
+
+            pattern = re.compile(
+                rf"(?<!\w){escaped}(?!\w)",
+                flags=re.IGNORECASE,
+            )
+
+            for match in pattern.finditer(sentence_text):
+                found.append({
+                    **mention,
+                    "start": match.start(),
+                    "end": match.end(),
+                    "surface": match.group(0),
+                })
+
+        # Prefer longer spans where two names overlap.
+        found.sort(
+            key=lambda item: (
+                item["start"],
+                -(item["end"] - item["start"]),
             )
         )
 
-        if semantic_types.intersection(
-            type_codes
-        ):
+        non_overlapping = []
 
-            return class_name
+        for item in found:
+            overlaps = any(
+                item["start"] < existing["end"]
+                and item["end"] > existing["start"]
+                for existing in non_overlapping
+            )
 
+            if overlaps:
+                continue
 
-    return "Other"
+            non_overlapping.append(item)
 
+        return sorted(non_overlapping, key=lambda item: item["start"])
 
-# ============================================================
-# SELECT BEST UMLS CANDIDATE
-# ============================================================
+    # --------------------------------------------------------
+    # Search for a relationship phrase between ordered mentions.
+    # --------------------------------------------------------
 
-def select_best_umls_candidate(
-    mention,
-    candidates
-):
-    """
-    Examine multiple UMLS candidates.
+    def find_relation_between(sentence_text, first, second):
+        if first["end"] > second["start"]:
+            return None
 
-    Returns:
+        distance = second["start"] - first["end"]
 
-        (cui, score, concept)
+        if distance > MAX_ENTITY_DISTANCE_CHARS:
+            return None
 
-    or:
+        between = sentence_text[first["end"]:second["start"]]
 
-        None
-    """
+        # Skip pairs where a sentence boundary or strong clause
+        # boundary appears between the two entities.
+        if re.search(r"[.!?;\n]", between):
+            return None
 
-    if not candidates:
+        for definition in resolved_patterns:
+            for pattern in definition["patterns"]:
+                match = pattern.search(between)
+
+                if match:
+                    return {
+                        "relation": definition["relation"],
+                        "evidence_phrase": match.group(0),
+                    }
 
         return None
 
+    # --------------------------------------------------------
+    # Create graph nodes.
+    # --------------------------------------------------------
+
+    nodes = []
+
+    for cui in sorted(entity_index):
+        entity = entity_index[cui]
+
+        nodes.append({
+            "id": entity["id"],
+            "cui": entity["cui"],
+            "label": entity["name"],
+            "name": entity["name"],
+            "type": "MedicalEntity",
+            "ontology_class": entity["ontology_class"],
+            "semantic_types": entity["semantic_types"],
+            "best_score": entity["best_score"],
+        })
 
     # --------------------------------------------------------
-    # Examine candidates in ranking order
+    # Extract candidate relationships.
     # --------------------------------------------------------
 
-    for (
-        cui,
-        raw_score
-    ) in candidates:
+    print()
+    print("=" * 70)
+    print("EXTRACTING RELATIONSHIPS")
+    print("=" * 70)
 
-        try:
+    relationships = []
+    seen_relationships = set()
 
-            score = float(
-                raw_score
+    chunk_ids = list(chunks_by_id.keys())
+
+    for index, chunk_id in enumerate(chunk_ids, start=1):
+        if index == 1 or index % PROGRESS_EVERY == 0 or index == len(chunk_ids):
+            print(f"Processed {index}/{len(chunk_ids)} chunks")
+
+        text = chunks_by_id[chunk_id]
+        source_path = chunk_sources[chunk_id]
+        chunk_mentions = mentions_by_chunk.get(chunk_id, [])
+
+        if not chunk_mentions:
+            continue
+
+        doc = nlp(text)
+
+        for sentence_index, sentence in enumerate(doc.sents):
+            sentence_text = sentence.text.strip()
+
+            if not sentence_text:
+                continue
+
+            stats["sentences_checked"] += 1
+
+            sentence_mentions = find_mentions_in_sentence(
+                sentence_text,
+                chunk_mentions,
             )
 
-        except (
-            TypeError,
-            ValueError
-        ):
+            stats["matched_sentence_mentions"] += len(sentence_mentions)
 
+            if len(sentence_mentions) < 2:
+                continue
+
+            # Consider pairs in their textual order.
+            for first_index, first in enumerate(sentence_mentions):
+                for second in sentence_mentions[first_index + 1:]:
+                    if first["cui"] == second["cui"]:
+                        continue
+
+                    relation_match = find_relation_between(
+                        sentence_text,
+                        first,
+                        second,
+                    )
+
+                    if relation_match is None:
+                        continue
+
+                    relation = relation_match["relation"]
+
+                    key = (
+                        chunk_id,
+                        sentence_index,
+                        first["cui"],
+                        relation,
+                        second["cui"],
+                        sentence_text,
+                    )
+
+                    if key in seen_relationships:
+                        stats["duplicate_relationships"] += 1
+                        continue
+
+                    seen_relationships.add(key)
+
+                    relationships.append({
+                        "id": f"rel::{len(relationships) + 1}",
+                        "source": first["cui"],
+                        "source_name": entity_index[first["cui"]]["name"],
+                        "source_mention": first["surface"],
+                        "relation": relation,
+                        "target": second["cui"],
+                        "target_name": entity_index[second["cui"]]["name"],
+                        "target_mention": second["surface"],
+                        "evidence_phrase": relation_match["evidence_phrase"],
+                        "evidence_sentence": sentence_text,
+                        "source_path": source_path,
+                        "chunk_id": chunk_id,
+                        "sentence_index": sentence_index,
+                        "source_score": first["score"],
+                        "target_score": second["score"],
+                        "extraction_method": "sentence_pattern",
+                        "review_status": "candidate",
+                    })
+
+                    stats["candidate_relationships"] += 1
+
+    # --------------------------------------------------------
+    # Validate graph endpoints and allowed relationship types.
+    # --------------------------------------------------------
+
+    node_ids = {node["id"] for node in nodes}
+    valid_relationships = []
+
+    for relationship in relationships:
+        if relationship["source"] not in node_ids:
+            stats["invalid_source_endpoints"] += 1
             continue
 
-
-        # ----------------------------------------------------
-        # Score
-        # ----------------------------------------------------
-
-        if (
-            score
-            < MIN_LINKING_SCORE
-        ):
-
+        if relationship["target"] not in node_ids:
+            stats["invalid_target_endpoints"] += 1
             continue
 
-
-        # ----------------------------------------------------
-        # CUI existence
-        # ----------------------------------------------------
-
-        if (
-            cui
-            not in linker.kb.cui_to_entity
-        ):
-
-            continue
-
-
-        concept = (
-            linker.kb.cui_to_entity[
-                cui
-            ]
+        normalized_relation = normalize_relation_name(
+            relationship["relation"]
         )
 
-
-        canonical_name = (
-            concept.canonical_name
-        )
-
-
-        # ----------------------------------------------------
-        # Validate candidate
-        # ----------------------------------------------------
-
-        try:
-
-            valid = validate_entity(
-
-                mention=mention,
-
-                canonical_name=(
-                    canonical_name
-                ),
-
-                score=score,
-
-                min_score=(
-                    MIN_LINKING_SCORE
-                )
-            )
-
-        except Exception:
-
-            valid = False
-
-
-        if not valid:
-
+        if normalized_relation not in allowed_relations:
+            stats["disallowed_relationship_types"] += 1
             continue
 
+        valid_relationships.append(relationship)
 
-        # ----------------------------------------------------
-        # Candidate accepted
-        # ----------------------------------------------------
+    # --------------------------------------------------------
+    # Count relation types.
+    # --------------------------------------------------------
 
-        return (
-            cui,
-            score,
-            concept
-        )
-
-
-    return None
-
-
-# ============================================================
-# GLOBAL STORAGE
-# ============================================================
-
-all_entity_mentions = []
-
-all_unique_entities = {}
-
-entity_to_chunks = defaultdict(
-    set
-)
-
-entity_to_mentions = defaultdict(
-    set
-)
-
-
-# ============================================================
-# ONTOLOGY COUNTS
-# ============================================================
-
-ontology_class_counts = Counter()
-
-
-# ============================================================
-# START TIMER
-# ============================================================
-
-start_time = time.time()
-
-
-# ============================================================
-# PROCESS CHUNKS
-# ============================================================
-
-print()
-print("=" * 70)
-print("PROCESSING MEDICAL CHUNKS")
-print("=" * 70)
-
-
-for (
-    index,
-    chunk
-) in enumerate(
-    selected_chunks,
-    start=1
-):
-
-
-    # ========================================================
-    # CHUNK INFORMATION
-    # ========================================================
-
-    chunk_id = chunk.get(
-        "chunk_id"
+    relation_counts = Counter(
+        relationship["relation"]
+        for relationship in valid_relationships
     )
 
-    text = chunk.get(
-        "text",
-        ""
+    entity_class_counts = Counter(
+        node["ontology_class"]
+        for node in nodes
     )
 
+    stats["total_nodes"] = len(nodes)
+    stats["total_relationships"] = len(valid_relationships)
+    stats["unique_entities"] = len(nodes)
+    stats["chunks_processed"] = len(chunks_by_id)
 
-    # ========================================================
-    # EMPTY CHUNK
-    # ========================================================
+    # --------------------------------------------------------
+    # Build output.
+    # --------------------------------------------------------
 
-    if not isinstance(
-        text,
-        str
-    ):
+    result = {
+        "metadata": {
+            "project": "Medical Ontology Knowledge Graph",
+            "input_entities_file": ENTITIES_FILE.name,
+            "input_chunks_file": CHUNKS_FILE.name,
+            "ontology_file": ONTOLOGY_FILE.name,
+            "excluded_paths": sorted(EXCLUDED_PATHS),
+            "minimum_entity_score": MIN_ENTITY_SCORE,
+            "maximum_entity_distance_chars": MAX_ENTITY_DISTANCE_CHARS,
+            "extraction_method": "sentence-level pattern matching",
+            "warning": (
+                "Relationships are automatically extracted candidates. "
+                "They are not clinically verified facts and should be "
+                "reviewed before clinical use."
+            ),
+        },
+        "statistics": dict(stats),
+        "ontology_class_counts": dict(entity_class_counts),
+        "relationship_counts": dict(relation_counts),
+        "allowed_relationships": sorted(allowed_relations.values()),
+        "nodes": nodes,
+        "relationships": valid_relationships,
+    }
 
-        statistics[
-            "chunks_empty"
-        ] += 1
+    # --------------------------------------------------------
+    # Save JSON.
+    # --------------------------------------------------------
 
-        continue
+    with OUTPUT_FILE.open("w", encoding="utf-8") as file:
+        json.dump(result, file, indent=2, ensure_ascii=False)
 
+    elapsed = time.time() - start_time
 
-    text = text.strip()
+    print()
+    print("=" * 70)
+    print("ONTOLOGY RELATION EXTRACTION COMPLETE")
+    print("=" * 70)
+    print(f"Unique entity nodes: {len(nodes)}")
+    print(f"Candidate relationships: {len(valid_relationships)}")
+    print(f"Sentences checked: {stats['sentences_checked']}")
+    print(f"Relationship types found: {len(relation_counts)}")
+    print(f"Elapsed time: {elapsed:.2f} seconds")
+    print(f"Output: {OUTPUT_FILE}")
 
-
-    if not text:
-
-        statistics[
-            "chunks_empty"
-        ] += 1
-
-        continue
-
-
-    # ========================================================
-    # PROGRESS
-    # ========================================================
-
-    if (
-        index == 1
-        or index % PROGRESS_EVERY == 0
-        or index == len(selected_chunks)
-    ):
-
-        print(
-            f"[{index}/"
-            f"{len(selected_chunks)}] "
-            f"Processing chunk "
-            f"{chunk_id}..."
-        )
-
-
-    # ========================================================
-    # RUN SCISPACY
-    # ========================================================
-
-    try:
-
-        doc = nlp(
-            text
-        )
-
-    except Exception as e:
-
-        statistics[
-            "chunks_failed"
-        ] += 1
-
+    if not valid_relationships:
         print()
+        print("No relationships were extracted.")
+        print("Check the relationship names in ontology_schema.json.")
+        print("They must match the aliases configured in RELATION_PATTERNS.")
 
-        print(
-            f"WARNING: Failed "
-            f"chunk {chunk_id}"
-        )
+    print("=" * 70)
 
-        print(
-            f"{type(e).__name__}: {e}"
-        )
 
-        continue
-
-
-    statistics[
-        "chunks_processed"
-    ] += 1
-
-
-    # ========================================================
-    # ENTITY EXTRACTION
-    # ========================================================
-
-    for ent in doc.ents:
-
-
-        statistics[
-            "scispacy_mentions"
-        ] += 1
-
-
-        # ----------------------------------------------------
-        # Mention
-        # ----------------------------------------------------
-
-        mention = (
-            ent.text.strip()
-        )
-
-
-        if not mention:
-
-            continue
-
-
-        # ----------------------------------------------------
-        # Generic term
-        # ----------------------------------------------------
-
-        try:
-
-            if is_generic_term(
-                mention
-            ):
-
-                statistics[
-                    "generic_noise"
-                ] += 1
-
-                continue
-
-        except Exception:
-
-            pass
-
-
-        # ----------------------------------------------------
-        # Document noise
-        # ----------------------------------------------------
-
-        try:
-
-            if is_document_noise(
-                mention
-            ):
-
-                statistics[
-                    "document_noise"
-                ] += 1
-
-                continue
-
-        except Exception:
-
-            pass
-
-
-        # ----------------------------------------------------
-        # UMLS candidates
-        # ----------------------------------------------------
-
-        if not ent._.kb_ents:
-
-            statistics[
-                "no_umls_candidate"
-            ] += 1
-
-            continue
-
-
-        # ----------------------------------------------------
-        # Candidate list
-        # ----------------------------------------------------
-
-        candidates = (
-            ent._.kb_ents[
-                :MAX_CANDIDATES
-            ]
-        )
-
-
-        # ----------------------------------------------------
-        # Select valid candidate
-        # ----------------------------------------------------
-
-        selected_candidate = (
-            select_best_umls_candidate(
-                mention,
-                candidates
-            )
-        )
-
-
-        # ====================================================
-        # NO VALID CANDIDATE
-        # ====================================================
-
-        if selected_candidate is None:
-
-
-            best_cui, best_score = (
-                candidates[0]
-            )
-
-
-            try:
-
-                best_score = float(
-                    best_score
-                )
-
-            except (
-                TypeError,
-                ValueError
-            ):
-
-                best_score = 0.0
-
-
-            if (
-                best_score
-                < MIN_LINKING_SCORE
-            ):
-
-                statistics[
-                    "weak_linking_score"
-                ] += 1
-
-            else:
-
-                statistics[
-                    "mention_canonical_mismatch"
-                ] += 1
-
-
-            continue
-
-
-        # ====================================================
-        # VALID CANDIDATE
-        # ====================================================
-
-        (
-            cui,
-            score,
-            concept
-        ) = selected_candidate
-
-
-        # ====================================================
-        # BASIC FILTER
-        # ====================================================
-
-        concept_for_filter = {
-
-            "name": mention
-        }
-
-
-        try:
-
-            clean_result = (
-                clean_concept(
-                    concept_for_filter
-                )
-            )
-
-        except Exception:
-
-            clean_result = True
-
-
-        if not clean_result:
-
-            statistics[
-                "generic_noise"
-            ] += 1
-
-            continue
-
-
-        # ====================================================
-        # CREATE ENTITY
-        # ====================================================
-
-        entity = {
-
-            "text":
-                mention,
-
-            "cui":
-                cui,
-
-            "canonical_name":
-                concept.canonical_name,
-
-            "semantic_types":
-                list(concept.types),
-
-            "score":
-                float(score)
-        }
-
-
-        # ====================================================
-        # ONTOLOGY CLASSIFICATION
-        # ====================================================
-
-        ontology_class = (
-            classify_entity(
-                entity
-            )
-        )
-
-
-        entity[
-            "ontology_class"
-        ] = ontology_class
-
-
-        # ====================================================
-        # OUTSIDE ONTOLOGY
-        # ====================================================
-
-        if (
-            ontology_class
-            == "Other"
-        ):
-
-            statistics[
-                "outside_ontology"
-            ] += 1
-
-            continue
-
-
-        # ====================================================
-        # CHUNK ID
-        # ====================================================
-
-        entity[
-            "chunk_id"
-        ] = chunk_id
-
-
-        # ====================================================
-        # ACCEPT ENTITY
-        # ========================================================
-
-        all_entity_mentions.append(
-            entity
-        )
-
-
-        statistics[
-            "accepted_mentions"
-        ] += 1
-
-
-        # ====================================================
-        # ONTOLOGY COUNT
-        # ====================================================
-
-        ontology_class_counts[
-            ontology_class
-        ] += 1
-
-
-        # ====================================================
-        # UNIQUE ENTITY KEY
-        # ====================================================
-
-        entity_key = (
-
-            cui,
-
-            concept.canonical_name,
-
-            ontology_class
-        )
-
-
-        # ====================================================
-        # CREATE UNIQUE ENTITY
-        # ====================================================
-
-        if (
-            entity_key
-            not in all_unique_entities
-        ):
-
-            all_unique_entities[
-                entity_key
-            ] = {
-
-                "cui":
-                    cui,
-
-                "canonical_name":
-                    concept.canonical_name,
-
-                "ontology_class":
-                    ontology_class,
-
-                "semantic_types":
-                    list(
-                        concept.types
-                    ),
-
-                "best_score":
-                    float(score),
-
-                "mentions":
-                    [],
-
-                "chunk_ids":
-                    []
-            }
-
-
-        # ====================================================
-        # TRACK MENTION
-        # ====================================================
-
-        entity_to_mentions[
-            entity_key
-        ].add(
-            mention
-        )
-
-
-        # ====================================================
-        # TRACK CHUNK
-        # ====================================================
-
-        entity_to_chunks[
-            entity_key
-        ].add(
-            chunk_id
-        )
-
-
-        # ====================================================
-        # UPDATE BEST SCORE
-        # ====================================================
-
-        if (
-            score
-            >
-            all_unique_entities[
-                entity_key
-            ][
-                "best_score"
-            ]
-        ):
-
-            all_unique_entities[
-                entity_key
-            ][
-                "best_score"
-            ] = float(
-                score
-            )
-
-
-# ============================================================
-# FINALIZE UNIQUE ENTITIES
-# ============================================================
-
-for (
-    entity_key,
-    entity
-) in all_unique_entities.items():
-
-    entity[
-        "mentions"
-    ] = sorted(
-        entity_to_mentions[
-            entity_key
-        ]
-    )
-
-    entity[
-        "chunk_ids"
-    ] = sorted(
-        entity_to_chunks[
-            entity_key
-        ]
-    )
-
-
-statistics[
-    "unique_entities"
-] = len(
-    all_unique_entities
-)
-
-
-# ============================================================
-# PROCESSING TIME
-# ============================================================
-
-elapsed_time = (
-    time.time()
-    - start_time
-)
-
-
-# ============================================================
-# DISPLAY SUMMARY
-# ============================================================
-
-print()
-print("=" * 70)
-print("PROCESSING COMPLETE")
-print("=" * 70)
-
-print(
-    f"Chunks processed: "
-    f"{statistics['chunks_processed']}"
-)
-
-print(
-    f"SciSpaCy mentions: "
-    f"{statistics['scispacy_mentions']}"
-)
-
-print(
-    f"Accepted mentions: "
-    f"{statistics['accepted_mentions']}"
-)
-
-print(
-    f"Unique medical entities: "
-    f"{statistics['unique_entities']}"
-)
-
-print(
-    f"Processing time: "
-    f"{elapsed_time:.2f} seconds"
-)
-if statistics["scispacy_mentions"] > 0:
-    acceptance_rate = (
-        statistics["accepted_mentions"]
-        / statistics["scispacy_mentions"]
-    ) * 100
-else:
-    acceptance_rate = 0.0
-
-print(
-    f"Entity acceptance rate: "
-    f"{acceptance_rate:.2f}%"
-)
-
-# ============================================================
-# ONTOLOGY COUNTS
-# ============================================================
-
-print()
-print("=" * 70)
-print("ONTOLOGY CLASS COUNTS")
-print("=" * 70)
-
-
-if ontology_class_counts:
-
-    for (
-        class_name,
-        count
-    ) in sorted(
-        ontology_class_counts.items()
-    ):
-
-        print(
-            f"{class_name}: "
-            f"{count}"
-        )
-
-else:
-
-    print(
-        "No ontology entities found."
-    )
-
-
-# ============================================================
-# VALIDATION STATISTICS
-# ============================================================
-
-print()
-print("=" * 70)
-print("VALIDATION STATISTICS")
-print("=" * 70)
-
-
-for (
-    key,
-    value
-) in statistics.items():
-
-    print(
-        f"{key}: {value}"
-    )
-
-
-# ============================================================
-# UNIQUE ENTITY LIST
-# ============================================================
-
-unique_entities_list = list(
-    all_unique_entities.values()
-)
-
-
-unique_entities_list.sort(
-    key=lambda x: (
-        x[
-            "ontology_class"
-        ],
-        x[
-            "canonical_name"
-        ].lower()
-    )
-)
-
-
-# ============================================================
-# CHUNK → ENTITIES
-# ============================================================
-
-chunk_entities = defaultdict(
-    list
-)
-
-
-for entity in all_entity_mentions:
-
-    chunk_id = entity[
-        "chunk_id"
-    ]
-
-    chunk_entities[
-        chunk_id
-    ].append(
-        entity
-    )
-
-
-chunk_entities = {
-
-    str(chunk_id): entities
-
-    for (
-        chunk_id,
-        entities
-    )
-    in chunk_entities.items()
-}
-
-
-# ============================================================
-# FINAL RESULT
-# ============================================================
-
-result = {
-
-    "metadata": {
-
-        "ontology_file":
-            ONTOLOGY_FILE,
-
-        "chunks_file":
-            CHUNKS_FILE,
-
-        "model":
-            MODEL_NAME,
-
-        "linker":
-            LINKER_NAME,
-
-        "min_linking_score":
-            MIN_LINKING_SCORE,
-
-        "max_candidates":
-            MAX_CANDIDATES,
-
-        "test_chunk_id":
-            TEST_CHUNK_ID,
-
-        "total_chunks":
-            len(selected_chunks),
-
-        "processed_chunks":
-            statistics[
-                "chunks_processed"
-            ],
-
-               "unique_entities":
-            statistics[
-                "unique_entities"
-            ],
-
-        "entity_acceptance_rate":
-            round(
-                acceptance_rate,
-                2
-            )
-        
-    },
-        
-
-
-    # --------------------------------------------------------
-    # UNIQUE MEDICAL CONCEPTS
-    # --------------------------------------------------------
-
-    "entities":
-        unique_entities_list,
-
-
-    # --------------------------------------------------------
-    # MENTION LEVEL
-    # --------------------------------------------------------
-
-    "entity_mentions":
-        all_entity_mentions,
-
-
-    # --------------------------------------------------------
-    # CHUNK → ENTITY
-    # --------------------------------------------------------
-
-    "chunk_entities":
-        chunk_entities,
-
-
-    # --------------------------------------------------------
-    # ONTOLOGY COUNTS
-    # --------------------------------------------------------
-
-    "ontology_class_counts":
-        dict(
-            ontology_class_counts
-        ),
-
-
-    # --------------------------------------------------------
-    # ALLOWED RELATIONSHIPS
-    # --------------------------------------------------------
-
-    "allowed_relationships":
-        sorted(
-            ALLOWED_RELATIONS
-        ),
-
-
-    # --------------------------------------------------------
-    # STATISTICS
-    # --------------------------------------------------------
-
-    "statistics":
-        statistics
-}
-
-
-# ============================================================
-# SAVE JSON
-# ============================================================
-
-print()
-print("=" * 70)
-print("SAVING RESULTS")
-print("=" * 70)
-
-
-with open(
-    OUTPUT_FILE,
-    "w",
-    encoding="utf-8"
-) as f:
-
-    json.dump(
-        result,
-        f,
-        indent=4,
-        ensure_ascii=False
-    )
-
-
-# ============================================================
-# FINAL OUTPUT
-# ============================================================
-
-print()
-print("=" * 70)
-print("ONTOLOGY ENTITY EXTRACTION COMPLETE")
-print("=" * 70)
-
-print(
-    f"Total chunks: "
-    f"{len(selected_chunks)}"
-)
-
-print(
-    f"Processed chunks: "
-    f"{statistics['chunks_processed']}"
-)
-
-print(
-    f"SciSpaCy mentions: "
-    f"{statistics['scispacy_mentions']}"
-)
-
-print(
-    f"Accepted entity mentions: "
-    f"{statistics['accepted_mentions']}"
-)
-
-print(
-    f"Unique medical entities: "
-    f"{statistics['unique_entities']}"
-)
-
-print(
-    f"Output file: "
-    f"{OUTPUT_FILE}"
-)
-
-print("=" * 70)
+if __name__ == "__main__":
+    main()
